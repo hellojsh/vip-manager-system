@@ -3,6 +3,7 @@ package cn.vip.controller;
 import cn.vip.pojo.AuUser;
 import cn.vip.service.AuUserService;
 import cn.vip.utils.Constants;
+import cn.vip.utils.EncryptUtil;
 import cn.vip.utils.JacksonUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,13 +33,14 @@ public class LoginController {
     @ResponseBody
     public String liginDo(@RequestParam(value ="user") String user, HttpSession session) throws IOException {
         AuUser loginUser = JacksonUtil.json2Bean(user, AuUser.class);
-
+        String password = EncryptUtil.MD5(loginUser.getPassword());
         AuUser auUser=auUserService.loginDo(loginUser.getLogincode());
         if (auUser != null){
-            if(!auUser.getPassword().equals(loginUser.getPassword())){
+            if(!password.equals(auUser.getPassword())){
                 return "pwderror";
             }else {
-                session.setAttribute("auUser", Constants.LOGIN_USER);
+                System.out.println(auUser.toString());
+                session.setAttribute(Constants.LOGIN_USER,auUser);
                 return "success";
             }
         }else {

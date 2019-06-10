@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.vip.mapper.UserAccountLog201404Mapper" >
+  <resultMap id="BaseResultMap" type="cn.vip.pojo.UserAccountLog201404" >
+    <id column="accountLogId" property="accountlogid" jdbcType="BIGINT" />
+    <result column="userId" property="userid" jdbcType="BIGINT" />
+    <result column="actionTime" property="actiontime" jdbcType="DATE" />
+    <result column="actionDesc" property="actiondesc" jdbcType="VARCHAR" />
+    <result column="actionType" property="actiontype" jdbcType="DECIMAL" />
+    <result column="baseIn" property="basein" jdbcType="DECIMAL" />
+    <result column="baseOut" property="baseout" jdbcType="DECIMAL" />
+    <result column="baseBalance" property="basebalance" jdbcType="DECIMAL" />
+    <result column="repeatIn" property="repeatin" jdbcType="DECIMAL" />
+    <result column="repeatOut" property="repeatout" jdbcType="DECIMAL" />
+    <result column="repeatBalance" property="repeatbalance" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    accountLogId, userId, actionTime, actionDesc, actionType, baseIn, baseOut, baseBalance, 
+    repeatIn, repeatOut, repeatBalance
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.UserAccountLog201404Example" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_account_log_201404
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_account_log_201404
+    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user_account_log_201404
+    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.vip.pojo.UserAccountLog201404Example" >
+    delete from user_account_log_201404
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.vip.pojo.UserAccountLog201404" >
+    insert into user_account_log_201404 (accountLogId, userId, actionTime, 
+      actionDesc, actionType, baseIn, 
+      baseOut, baseBalance, repeatIn, 
+      repeatOut, repeatBalance)
+    values (#{accountlogid,jdbcType=BIGINT}, #{userid,jdbcType=BIGINT}, #{actiontime,jdbcType=DATE}, 
+      #{actiondesc,jdbcType=VARCHAR}, #{actiontype,jdbcType=DECIMAL}, #{basein,jdbcType=DECIMAL}, 
+      #{baseout,jdbcType=DECIMAL}, #{basebalance,jdbcType=DECIMAL}, #{repeatin,jdbcType=DECIMAL}, 
+      #{repeatout,jdbcType=DECIMAL}, #{repeatbalance,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.vip.pojo.UserAccountLog201404" >
+    insert into user_account_log_201404
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="accountlogid != null" >
+        accountLogId,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+      <if test="actiontime != null" >
+        actionTime,
+      </if>
+      <if test="actiondesc != null" >
+        actionDesc,
+      </if>
+      <if test="actiontype != null" >
+        actionType,
+      </if>
+      <if test="basein != null" >
+        baseIn,
+      </if>
+      <if test="baseout != null" >
+        baseOut,
+      </if>
+      <if test="basebalance != null" >
+        baseBalance,
+      </if>
+      <if test="repeatin != null" >
+        repeatIn,
+      </if>
+      <if test="repeatout != null" >
+        repeatOut,
+      </if>
+      <if test="repeatbalance != null" >
+        repeatBalance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="accountlogid != null" >
+        #{accountlogid,jdbcType=BIGINT},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=BIGINT},
+      </if>
+      <if test="actiontime != null" >
+        #{actiontime,jdbcType=DATE},
+      </if>
+      <if test="actiondesc != null" >
+        #{actiondesc,jdbcType=VARCHAR},
+      </if>
+      <if test="actiontype != null" >
+        #{actiontype,jdbcType=DECIMAL},
+      </if>
+      <if test="basein != null" >
+        #{basein,jdbcType=DECIMAL},
+      </if>
+      <if test="baseout != null" >
+        #{baseout,jdbcType=DECIMAL},
+      </if>
+      <if test="basebalance != null" >
+        #{basebalance,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatin != null" >
+        #{repeatin,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatout != null" >
+        #{repeatout,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatbalance != null" >
+        #{repeatbalance,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.vip.pojo.UserAccountLog201404Example" resultType="java.lang.Integer" >
+    select count(*) from user_account_log_201404
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user_account_log_201404
+    <set >
+      <if test="record.accountlogid != null" >
+        accountLogId = #{record.accountlogid,jdbcType=BIGINT},
+      </if>
+      <if test="record.userid != null" >
+        userId = #{record.userid,jdbcType=BIGINT},
+      </if>
+      <if test="record.actiontime != null" >
+        actionTime = #{record.actiontime,jdbcType=DATE},
+      </if>
+      <if test="record.actiondesc != null" >
+        actionDesc = #{record.actiondesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.actiontype != null" >
+        actionType = #{record.actiontype,jdbcType=DECIMAL},
+      </if>
+      <if test="record.basein != null" >
+        baseIn = #{record.basein,jdbcType=DECIMAL},
+      </if>
+      <if test="record.baseout != null" >
+        baseOut = #{record.baseout,jdbcType=DECIMAL},
+      </if>
+      <if test="record.basebalance != null" >
+        baseBalance = #{record.basebalance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.repeatin != null" >
+        repeatIn = #{record.repeatin,jdbcType=DECIMAL},
+      </if>
+      <if test="record.repeatout != null" >
+        repeatOut = #{record.repeatout,jdbcType=DECIMAL},
+      </if>
+      <if test="record.repeatbalance != null" >
+        repeatBalance = #{record.repeatbalance,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user_account_log_201404
+    set accountLogId = #{record.accountlogid,jdbcType=BIGINT},
+      userId = #{record.userid,jdbcType=BIGINT},
+      actionTime = #{record.actiontime,jdbcType=DATE},
+      actionDesc = #{record.actiondesc,jdbcType=VARCHAR},
+      actionType = #{record.actiontype,jdbcType=DECIMAL},
+      baseIn = #{record.basein,jdbcType=DECIMAL},
+      baseOut = #{record.baseout,jdbcType=DECIMAL},
+      baseBalance = #{record.basebalance,jdbcType=DECIMAL},
+      repeatIn = #{record.repeatin,jdbcType=DECIMAL},
+      repeatOut = #{record.repeatout,jdbcType=DECIMAL},
+      repeatBalance = #{record.repeatbalance,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.UserAccountLog201404" >
+    update user_account_log_201404
+    <set >
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=BIGINT},
+      </if>
+      <if test="actiontime != null" >
+        actionTime = #{actiontime,jdbcType=DATE},
+      </if>
+      <if test="actiondesc != null" >
+        actionDesc = #{actiondesc,jdbcType=VARCHAR},
+      </if>
+      <if test="actiontype != null" >
+        actionType = #{actiontype,jdbcType=DECIMAL},
+      </if>
+      <if test="basein != null" >
+        baseIn = #{basein,jdbcType=DECIMAL},
+      </if>
+      <if test="baseout != null" >
+        baseOut = #{baseout,jdbcType=DECIMAL},
+      </if>
+      <if test="basebalance != null" >
+        baseBalance = #{basebalance,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatin != null" >
+        repeatIn = #{repeatin,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatout != null" >
+        repeatOut = #{repeatout,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatbalance != null" >
+        repeatBalance = #{repeatbalance,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.UserAccountLog201404" >
+    update user_account_log_201404
+    set userId = #{userid,jdbcType=BIGINT},
+      actionTime = #{actiontime,jdbcType=DATE},
+      actionDesc = #{actiondesc,jdbcType=VARCHAR},
+      actionType = #{actiontype,jdbcType=DECIMAL},
+      baseIn = #{basein,jdbcType=DECIMAL},
+      baseOut = #{baseout,jdbcType=DECIMAL},
+      baseBalance = #{basebalance,jdbcType=DECIMAL},
+      repeatIn = #{repeatin,jdbcType=DECIMAL},
+      repeatOut = #{repeatout,jdbcType=DECIMAL},
+      repeatBalance = #{repeatbalance,jdbcType=DECIMAL}
+    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+  </update>
+</mapper>

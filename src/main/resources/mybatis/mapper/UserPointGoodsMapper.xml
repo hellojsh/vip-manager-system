@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.vip.mapper.UserPointGoodsMapper" >
+  <resultMap id="BaseResultMap" type="cn.vip.pojo.UserPointGoods" >
+    <id column="POINT_GOODS_ID" property="pointGoodsId" jdbcType="VARCHAR" />
+    <result column="PICK_TIME" property="pickTime" jdbcType="DATE" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="BUY_PV" property="buyPv" jdbcType="DECIMAL" />
+    <result column="ORDER_ID" property="orderId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    POINT_GOODS_ID, PICK_TIME, USER_ID, BUY_PV, ORDER_ID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.UserPointGoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_point_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_point_goods
+    where POINT_GOODS_ID = #{pointGoodsId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from user_point_goods
+    where POINT_GOODS_ID = #{pointGoodsId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.vip.pojo.UserPointGoodsExample" >
+    delete from user_point_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.vip.pojo.UserPointGoods" >
+    insert into user_point_goods (POINT_GOODS_ID, PICK_TIME, USER_ID, 
+      BUY_PV, ORDER_ID)
+    values (#{pointGoodsId,jdbcType=VARCHAR}, #{pickTime,jdbcType=DATE}, #{userId,jdbcType=VARCHAR}, 
+      #{buyPv,jdbcType=DECIMAL}, #{orderId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.vip.pojo.UserPointGoods" >
+    insert into user_point_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pointGoodsId != null" >
+        POINT_GOODS_ID,
+      </if>
+      <if test="pickTime != null" >
+        PICK_TIME,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="buyPv != null" >
+        BUY_PV,
+      </if>
+      <if test="orderId != null" >
+        ORDER_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pointGoodsId != null" >
+        #{pointGoodsId,jdbcType=VARCHAR},
+      </if>
+      <if test="pickTime != null" >
+        #{pickTime,jdbcType=DATE},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="buyPv != null" >
+        #{buyPv,jdbcType=DECIMAL},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.vip.pojo.UserPointGoodsExample" resultType="java.lang.Integer" >
+    select count(*) from user_point_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user_point_goods
+    <set >
+      <if test="record.pointGoodsId != null" >
+        POINT_GOODS_ID = #{record.pointGoodsId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pickTime != null" >
+        PICK_TIME = #{record.pickTime,jdbcType=DATE},
+      </if>
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyPv != null" >
+        BUY_PV = #{record.buyPv,jdbcType=DECIMAL},
+      </if>
+      <if test="record.orderId != null" >
+        ORDER_ID = #{record.orderId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user_point_goods
+    set POINT_GOODS_ID = #{record.pointGoodsId,jdbcType=VARCHAR},
+      PICK_TIME = #{record.pickTime,jdbcType=DATE},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      BUY_PV = #{record.buyPv,jdbcType=DECIMAL},
+      ORDER_ID = #{record.orderId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.UserPointGoods" >
+    update user_point_goods
+    <set >
+      <if test="pickTime != null" >
+        PICK_TIME = #{pickTime,jdbcType=DATE},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="buyPv != null" >
+        BUY_PV = #{buyPv,jdbcType=DECIMAL},
+      </if>
+      <if test="orderId != null" >
+        ORDER_ID = #{orderId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where POINT_GOODS_ID = #{pointGoodsId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.UserPointGoods" >
+    update user_point_goods
+    set PICK_TIME = #{pickTime,jdbcType=DATE},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      BUY_PV = #{buyPv,jdbcType=DECIMAL},
+      ORDER_ID = #{orderId,jdbcType=VARCHAR}
+    where POINT_GOODS_ID = #{pointGoodsId,jdbcType=VARCHAR}
+  </update>
+</mapper>

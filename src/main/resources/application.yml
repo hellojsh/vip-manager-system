@@ -5,7 +5,7 @@ spring:
       suffix: .jsp
   datasource:
     username: root
-    password: root
+    password: 123456admin
     url: jdbc:mysql:///slsaledb?useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
   http:

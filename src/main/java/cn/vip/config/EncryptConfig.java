@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author hellojsh
+ * 将MD5加密工具放入容器里
+ * @author Taeyeon
  * @create 2019-06-10 13:55
  */
 @Configurable

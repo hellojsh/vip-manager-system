@@ -90,7 +90,7 @@ $(document).ready(function(){
 		 */
 		
 		//config main menu
-		result = result + '<li class="nav-header hidden-tablet" onclick="$(\'#test'+i+'\').toggle(500);" style="cursor:pointer;">'+json[i].mainMenu.functionName+'</li>';
+		result = result + '<li class="nav-header hidden-tablet" onclick="$(\'#test'+i+'\').toggle(500);" style="cursor:pointer;">'+json[i].mainMenu.functionname+'</li>';
 		//config sub menus
 		result = result + "<li><ul class=\"nav nav-tabs nav-stacked\" id=\"test"+i+"\">";
 		
@@ -113,7 +113,7 @@ $(document).ready(function(){
 			default:
 				pic = "icon-picture";break;
 			}
-			result = result + "<li><a class=\"ajax-link\" style=\"cursor:pointer;\" href=\""+json[i].subMenus[j].funcUrl +"\"><i class="+pic+"></i><span class=\"hidden-tablet\">"+json[i].subMenus[j].functionName + "</span></a></li>";
+			result = result + "<li><a class=\"ajax-link\" style=\"cursor:pointer;\" href=\""+json[i].subMenus[j].funcurl +"\"><i class="+pic+"></i><span class=\"hidden-tablet\">"+json[i].subMenus[j].functionname + "</span></a></li>";
 		}
 		result = result +"</ul></li>";
 	}

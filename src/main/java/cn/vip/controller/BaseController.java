@@ -40,6 +40,22 @@ public class BaseController {
         return currentUser;
     }
 
+    //用户注销
+    public boolean loginOut() {
+        boolean flag = false;
+
+        if (null == this.currentUser) {
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            HttpSession session = request.getSession(false);
+
+            if (session != null) {
+                session.removeAttribute(Constants.LOGIN_USER);
+                flag = true;
+            }
+        }
+        return flag;
+    }
+
     public void setCurrentUser(AuUser currentUser) {
         this.currentUser = currentUser;
     }

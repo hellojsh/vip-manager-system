@@ -5,6 +5,42 @@ import java.util.Date;
 public class AuUser {
     private Long id;
 
+    @Override
+    public String toString() {
+        return "AuUser{" +
+                "id=" + id +
+                ", logincode='" + logincode + '\'' +
+                ", password='" + password + '\'' +
+                ", password2='" + password2 + '\'' +
+                ", username='" + username + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday=" + birthday +
+                ", cardtype='" + cardtype + '\'' +
+                ", cardtypename='" + cardtypename + '\'' +
+                ", idcard='" + idcard + '\'' +
+                ", country='" + country + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", useraddress='" + useraddress + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", createtime=" + createtime +
+                ", referid=" + referid +
+                ", refercode='" + refercode + '\'' +
+                ", roleid=" + roleid +
+                ", rolename='" + rolename + '\'' +
+                ", usertype='" + usertype + '\'' +
+                ", usertypename='" + usertypename + '\'' +
+                ", isstart=" + isstart +
+                ", lastupdatetime=" + lastupdatetime +
+                ", lastlogintime=" + lastlogintime +
+                ", bankaccount='" + bankaccount + '\'' +
+                ", bankname='" + bankname + '\'' +
+                ", accountholder='" + accountholder + '\'' +
+                ", idcardpicpath='" + idcardpicpath + '\'' +
+                ", bankpicpath='" + bankpicpath + '\'' +
+                '}';
+    }
+
     private String logincode;
 
     private String password;

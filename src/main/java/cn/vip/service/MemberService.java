@@ -9,5 +9,9 @@ import java.util.List;
  * @create 2019-06-10 16:11
  */
 public interface MemberService {
-    public List<AuUser> getAuUserList();
+    List<AuUser> getAuUserList();
+
+    AuUser getAuUserById(Long id);
+
+    void updateAuUser(AuUser auUser);
 }

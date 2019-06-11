@@ -50,4 +50,15 @@ public class DataDictionary {
     public void setValueName(String valueName) {
         this.valueName = valueName == null ? null : valueName.trim();
     }
+
+    @Override
+    public String toString() {
+        return "DataDictionary{" +
+                "id=" + id +
+                ", typeCode='" + typeCode + '\'' +
+                ", typeName='" + typeName + '\'' +
+                ", valueId=" + valueId +
+                ", valueName='" + valueName + '\'' +
+                '}';
+    }
 }

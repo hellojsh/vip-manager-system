@@ -340,10 +340,10 @@
 <%@include file="/WEB-INF/pages/common/foot.jsp"%>
 <script type="text/javascript">
     var cartTypeListJson =	[<c:forEach  items="${cardTypeList}" var="cardType"> 
-							{"valueId":"${cardType.valueId}","valueName":"${cardType.valueName}"},
+							{"id":${cardType.id},"valueId":"${cardType.valueId}","valueName":"${cardType.valueName}"},
 							</c:forEach>{"valueId":"over","valueName":"over"}];
     var userTypeListJson =	[<c:forEach  items="${userTypeList}" var="userType"> 
-							{"valueId":"${userType.valueId}","valueName":"${userType.valueName}"},
+							{"id":${userType.id},"valueId":"${userType.valueId}","valueName":"${userType.valueName}"},
 							</c:forEach>{"valueId":"over","valueName":"over"}];
 </script>
 <script type="text/javascript" src="/statics/localjs/memberlist.js"></script> 

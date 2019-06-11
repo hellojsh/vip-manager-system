@@ -5,6 +5,7 @@ import cn.vip.pojo.AuUser;
 import cn.vip.pojo.AuUserExample;
 import cn.vip.service.MemberService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -30,5 +31,25 @@ public class MemberServiceImpl implements MemberService {
         criteria.andUserTypeIsNotNull();
         criteria.andUserTypeNotEqualTo("");
         return auUserMapper.selectByExample(example);
+    }
+
+    /**
+     * 根据主键查询会员信息
+     * @param id
+     * @return
+     */
+    @Override
+    public AuUser getAuUserById(Long id) {
+        return auUserMapper.selectByPrimaryKey(id);
+    }
+
+    /**
+     * 更新用户信息
+     * @param auUser
+     */
+    @Transactional
+    @Override
+    public void updateAuUser(AuUser auUser) {
+
     }
 }

@@ -2,7 +2,7 @@ package cn.vip.service.bgmanagement.impl;
 
 import cn.vip.mapper.AuUserMapper;
 import cn.vip.pojo.AuUserExample;
-import cn.vip.service.bgmanagement.BgUser;
+import cn.vip.service.bgmanagement.BackendUser;
 import cn.vip.utils.PageSupport;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  * @create 2019/6/10
  */
 @Service
-public class BgUserImpl implements BgUser {
+public class BackendUserImpl implements BackendUser {
     @Resource
     private AuUserMapper auUserMapper;
 

@@ -10,7 +10,7 @@ import cn.vip.utils.PageSupport;
  * 后台用户管理service类
  * @create 2019/6/10
  */
-public interface BgUser {
+public interface BackendUser {
     /**
      * 获取全部的用户
      *

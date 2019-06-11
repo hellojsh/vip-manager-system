@@ -22,4 +22,10 @@ public interface InfomationService {
      * @return
      */
     List<Information> findAllInfomationByPage(Integer pageNo,Integer pageSize);
+
+    /**
+     * 查询总记录数
+     * @return
+     */
+    int findCount();
 }

@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.vip.mapper.UserAccountLog201404Mapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.UserAccountLog201404" >
-    <id column="accountLogId" property="accountlogid" jdbcType="BIGINT" />
-    <result column="userId" property="userid" jdbcType="BIGINT" />
-    <result column="actionTime" property="actiontime" jdbcType="DATE" />
-    <result column="actionDesc" property="actiondesc" jdbcType="VARCHAR" />
-    <result column="actionType" property="actiontype" jdbcType="DECIMAL" />
-    <result column="baseIn" property="basein" jdbcType="DECIMAL" />
-    <result column="baseOut" property="baseout" jdbcType="DECIMAL" />
-    <result column="baseBalance" property="basebalance" jdbcType="DECIMAL" />
-    <result column="repeatIn" property="repeatin" jdbcType="DECIMAL" />
-    <result column="repeatOut" property="repeatout" jdbcType="DECIMAL" />
-    <result column="repeatBalance" property="repeatbalance" jdbcType="DECIMAL" />
+    <id column="account_log_id" property="accountLogId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="action_time" property="actionTime" jdbcType="DATE" />
+    <result column="action_desc" property="actionDesc" jdbcType="VARCHAR" />
+    <result column="action_type" property="actionType" jdbcType="DECIMAL" />
+    <result column="base_in" property="baseIn" jdbcType="DECIMAL" />
+    <result column="base_out" property="baseOut" jdbcType="DECIMAL" />
+    <result column="base_balance" property="baseBalance" jdbcType="DECIMAL" />
+    <result column="repeat_in" property="repeatIn" jdbcType="DECIMAL" />
+    <result column="repeat_out" property="repeatOut" jdbcType="DECIMAL" />
+    <result column="repeat_balance" property="repeatBalance" jdbcType="DECIMAL" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -73,8 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    accountLogId, userId, actionTime, actionDesc, actionType, baseIn, baseOut, baseBalance, 
-    repeatIn, repeatOut, repeatBalance
+    account_log_id, user_id, action_time, action_desc, action_type, base_in, base_out, 
+    base_balance, repeat_in, repeat_out, repeat_balance
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.UserAccountLog201404Example" >
     select
@@ -94,11 +94,11 @@
     select 
     <include refid="Base_Column_List" />
     from user_account_log_201404
-    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+    where account_log_id = #{accountLogId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from user_account_log_201404
-    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+    where account_log_id = #{accountLogId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="cn.vip.pojo.UserAccountLog201404Example" >
     delete from user_account_log_201404
@@ -107,85 +107,85 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.UserAccountLog201404" >
-    insert into user_account_log_201404 (accountLogId, userId, actionTime, 
-      actionDesc, actionType, baseIn, 
-      baseOut, baseBalance, repeatIn, 
-      repeatOut, repeatBalance)
-    values (#{accountlogid,jdbcType=BIGINT}, #{userid,jdbcType=BIGINT}, #{actiontime,jdbcType=DATE}, 
-      #{actiondesc,jdbcType=VARCHAR}, #{actiontype,jdbcType=DECIMAL}, #{basein,jdbcType=DECIMAL}, 
-      #{baseout,jdbcType=DECIMAL}, #{basebalance,jdbcType=DECIMAL}, #{repeatin,jdbcType=DECIMAL}, 
-      #{repeatout,jdbcType=DECIMAL}, #{repeatbalance,jdbcType=DECIMAL})
+    insert into user_account_log_201404 (account_log_id, user_id, action_time, 
+      action_desc, action_type, base_in, 
+      base_out, base_balance, repeat_in, 
+      repeat_out, repeat_balance)
+    values (#{accountLogId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{actionTime,jdbcType=DATE}, 
+      #{actionDesc,jdbcType=VARCHAR}, #{actionType,jdbcType=DECIMAL}, #{baseIn,jdbcType=DECIMAL}, 
+      #{baseOut,jdbcType=DECIMAL}, #{baseBalance,jdbcType=DECIMAL}, #{repeatIn,jdbcType=DECIMAL}, 
+      #{repeatOut,jdbcType=DECIMAL}, #{repeatBalance,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.UserAccountLog201404" >
     insert into user_account_log_201404
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="accountlogid != null" >
-        accountLogId,
+      <if test="accountLogId != null" >
+        account_log_id,
       </if>
-      <if test="userid != null" >
-        userId,
+      <if test="userId != null" >
+        user_id,
       </if>
-      <if test="actiontime != null" >
-        actionTime,
+      <if test="actionTime != null" >
+        action_time,
       </if>
-      <if test="actiondesc != null" >
-        actionDesc,
+      <if test="actionDesc != null" >
+        action_desc,
       </if>
-      <if test="actiontype != null" >
-        actionType,
+      <if test="actionType != null" >
+        action_type,
       </if>
-      <if test="basein != null" >
-        baseIn,
+      <if test="baseIn != null" >
+        base_in,
       </if>
-      <if test="baseout != null" >
-        baseOut,
+      <if test="baseOut != null" >
+        base_out,
       </if>
-      <if test="basebalance != null" >
-        baseBalance,
+      <if test="baseBalance != null" >
+        base_balance,
       </if>
-      <if test="repeatin != null" >
-        repeatIn,
+      <if test="repeatIn != null" >
+        repeat_in,
       </if>
-      <if test="repeatout != null" >
-        repeatOut,
+      <if test="repeatOut != null" >
+        repeat_out,
       </if>
-      <if test="repeatbalance != null" >
-        repeatBalance,
+      <if test="repeatBalance != null" >
+        repeat_balance,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="accountlogid != null" >
-        #{accountlogid,jdbcType=BIGINT},
+      <if test="accountLogId != null" >
+        #{accountLogId,jdbcType=BIGINT},
       </if>
-      <if test="userid != null" >
-        #{userid,jdbcType=BIGINT},
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
       </if>
-      <if test="actiontime != null" >
-        #{actiontime,jdbcType=DATE},
+      <if test="actionTime != null" >
+        #{actionTime,jdbcType=DATE},
       </if>
-      <if test="actiondesc != null" >
-        #{actiondesc,jdbcType=VARCHAR},
+      <if test="actionDesc != null" >
+        #{actionDesc,jdbcType=VARCHAR},
       </if>
-      <if test="actiontype != null" >
-        #{actiontype,jdbcType=DECIMAL},
+      <if test="actionType != null" >
+        #{actionType,jdbcType=DECIMAL},
       </if>
-      <if test="basein != null" >
-        #{basein,jdbcType=DECIMAL},
+      <if test="baseIn != null" >
+        #{baseIn,jdbcType=DECIMAL},
       </if>
-      <if test="baseout != null" >
-        #{baseout,jdbcType=DECIMAL},
+      <if test="baseOut != null" >
+        #{baseOut,jdbcType=DECIMAL},
       </if>
-      <if test="basebalance != null" >
-        #{basebalance,jdbcType=DECIMAL},
+      <if test="baseBalance != null" >
+        #{baseBalance,jdbcType=DECIMAL},
       </if>
-      <if test="repeatin != null" >
-        #{repeatin,jdbcType=DECIMAL},
+      <if test="repeatIn != null" >
+        #{repeatIn,jdbcType=DECIMAL},
       </if>
-      <if test="repeatout != null" >
-        #{repeatout,jdbcType=DECIMAL},
+      <if test="repeatOut != null" >
+        #{repeatOut,jdbcType=DECIMAL},
       </if>
-      <if test="repeatbalance != null" >
-        #{repeatbalance,jdbcType=DECIMAL},
+      <if test="repeatBalance != null" >
+        #{repeatBalance,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -198,38 +198,38 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update user_account_log_201404
     <set >
-      <if test="record.accountlogid != null" >
-        accountLogId = #{record.accountlogid,jdbcType=BIGINT},
+      <if test="record.accountLogId != null" >
+        account_log_id = #{record.accountLogId,jdbcType=BIGINT},
       </if>
-      <if test="record.userid != null" >
-        userId = #{record.userid,jdbcType=BIGINT},
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
       </if>
-      <if test="record.actiontime != null" >
-        actionTime = #{record.actiontime,jdbcType=DATE},
+      <if test="record.actionTime != null" >
+        action_time = #{record.actionTime,jdbcType=DATE},
       </if>
-      <if test="record.actiondesc != null" >
-        actionDesc = #{record.actiondesc,jdbcType=VARCHAR},
+      <if test="record.actionDesc != null" >
+        action_desc = #{record.actionDesc,jdbcType=VARCHAR},
       </if>
-      <if test="record.actiontype != null" >
-        actionType = #{record.actiontype,jdbcType=DECIMAL},
+      <if test="record.actionType != null" >
+        action_type = #{record.actionType,jdbcType=DECIMAL},
       </if>
-      <if test="record.basein != null" >
-        baseIn = #{record.basein,jdbcType=DECIMAL},
+      <if test="record.baseIn != null" >
+        base_in = #{record.baseIn,jdbcType=DECIMAL},
       </if>
-      <if test="record.baseout != null" >
-        baseOut = #{record.baseout,jdbcType=DECIMAL},
+      <if test="record.baseOut != null" >
+        base_out = #{record.baseOut,jdbcType=DECIMAL},
       </if>
-      <if test="record.basebalance != null" >
-        baseBalance = #{record.basebalance,jdbcType=DECIMAL},
+      <if test="record.baseBalance != null" >
+        base_balance = #{record.baseBalance,jdbcType=DECIMAL},
       </if>
-      <if test="record.repeatin != null" >
-        repeatIn = #{record.repeatin,jdbcType=DECIMAL},
+      <if test="record.repeatIn != null" >
+        repeat_in = #{record.repeatIn,jdbcType=DECIMAL},
       </if>
-      <if test="record.repeatout != null" >
-        repeatOut = #{record.repeatout,jdbcType=DECIMAL},
+      <if test="record.repeatOut != null" >
+        repeat_out = #{record.repeatOut,jdbcType=DECIMAL},
       </if>
-      <if test="record.repeatbalance != null" >
-        repeatBalance = #{record.repeatbalance,jdbcType=DECIMAL},
+      <if test="record.repeatBalance != null" >
+        repeat_balance = #{record.repeatBalance,jdbcType=DECIMAL},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -238,17 +238,17 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update user_account_log_201404
-    set accountLogId = #{record.accountlogid,jdbcType=BIGINT},
-      userId = #{record.userid,jdbcType=BIGINT},
-      actionTime = #{record.actiontime,jdbcType=DATE},
-      actionDesc = #{record.actiondesc,jdbcType=VARCHAR},
-      actionType = #{record.actiontype,jdbcType=DECIMAL},
-      baseIn = #{record.basein,jdbcType=DECIMAL},
-      baseOut = #{record.baseout,jdbcType=DECIMAL},
-      baseBalance = #{record.basebalance,jdbcType=DECIMAL},
-      repeatIn = #{record.repeatin,jdbcType=DECIMAL},
-      repeatOut = #{record.repeatout,jdbcType=DECIMAL},
-      repeatBalance = #{record.repeatbalance,jdbcType=DECIMAL}
+    set account_log_id = #{record.accountLogId,jdbcType=BIGINT},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      action_time = #{record.actionTime,jdbcType=DATE},
+      action_desc = #{record.actionDesc,jdbcType=VARCHAR},
+      action_type = #{record.actionType,jdbcType=DECIMAL},
+      base_in = #{record.baseIn,jdbcType=DECIMAL},
+      base_out = #{record.baseOut,jdbcType=DECIMAL},
+      base_balance = #{record.baseBalance,jdbcType=DECIMAL},
+      repeat_in = #{record.repeatIn,jdbcType=DECIMAL},
+      repeat_out = #{record.repeatOut,jdbcType=DECIMAL},
+      repeat_balance = #{record.repeatBalance,jdbcType=DECIMAL}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,51 +256,51 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.UserAccountLog201404" >
     update user_account_log_201404
     <set >
-      <if test="userid != null" >
-        userId = #{userid,jdbcType=BIGINT},
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="actiontime != null" >
-        actionTime = #{actiontime,jdbcType=DATE},
+      <if test="actionTime != null" >
+        action_time = #{actionTime,jdbcType=DATE},
       </if>
-      <if test="actiondesc != null" >
-        actionDesc = #{actiondesc,jdbcType=VARCHAR},
+      <if test="actionDesc != null" >
+        action_desc = #{actionDesc,jdbcType=VARCHAR},
       </if>
-      <if test="actiontype != null" >
-        actionType = #{actiontype,jdbcType=DECIMAL},
+      <if test="actionType != null" >
+        action_type = #{actionType,jdbcType=DECIMAL},
       </if>
-      <if test="basein != null" >
-        baseIn = #{basein,jdbcType=DECIMAL},
+      <if test="baseIn != null" >
+        base_in = #{baseIn,jdbcType=DECIMAL},
       </if>
-      <if test="baseout != null" >
-        baseOut = #{baseout,jdbcType=DECIMAL},
+      <if test="baseOut != null" >
+        base_out = #{baseOut,jdbcType=DECIMAL},
       </if>
-      <if test="basebalance != null" >
-        baseBalance = #{basebalance,jdbcType=DECIMAL},
+      <if test="baseBalance != null" >
+        base_balance = #{baseBalance,jdbcType=DECIMAL},
       </if>
-      <if test="repeatin != null" >
-        repeatIn = #{repeatin,jdbcType=DECIMAL},
+      <if test="repeatIn != null" >
+        repeat_in = #{repeatIn,jdbcType=DECIMAL},
       </if>
-      <if test="repeatout != null" >
-        repeatOut = #{repeatout,jdbcType=DECIMAL},
+      <if test="repeatOut != null" >
+        repeat_out = #{repeatOut,jdbcType=DECIMAL},
       </if>
-      <if test="repeatbalance != null" >
-        repeatBalance = #{repeatbalance,jdbcType=DECIMAL},
+      <if test="repeatBalance != null" >
+        repeat_balance = #{repeatBalance,jdbcType=DECIMAL},
       </if>
     </set>
-    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+    where account_log_id = #{accountLogId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.UserAccountLog201404" >
     update user_account_log_201404
-    set userId = #{userid,jdbcType=BIGINT},
-      actionTime = #{actiontime,jdbcType=DATE},
-      actionDesc = #{actiondesc,jdbcType=VARCHAR},
-      actionType = #{actiontype,jdbcType=DECIMAL},
-      baseIn = #{basein,jdbcType=DECIMAL},
-      baseOut = #{baseout,jdbcType=DECIMAL},
-      baseBalance = #{basebalance,jdbcType=DECIMAL},
-      repeatIn = #{repeatin,jdbcType=DECIMAL},
-      repeatOut = #{repeatout,jdbcType=DECIMAL},
-      repeatBalance = #{repeatbalance,jdbcType=DECIMAL}
-    where accountLogId = #{accountlogid,jdbcType=BIGINT}
+    set user_id = #{userId,jdbcType=BIGINT},
+      action_time = #{actionTime,jdbcType=DATE},
+      action_desc = #{actionDesc,jdbcType=VARCHAR},
+      action_type = #{actionType,jdbcType=DECIMAL},
+      base_in = #{baseIn,jdbcType=DECIMAL},
+      base_out = #{baseOut,jdbcType=DECIMAL},
+      base_balance = #{baseBalance,jdbcType=DECIMAL},
+      repeat_in = #{repeatIn,jdbcType=DECIMAL},
+      repeat_out = #{repeatOut,jdbcType=DECIMAL},
+      repeat_balance = #{repeatBalance,jdbcType=DECIMAL}
+    where account_log_id = #{accountLogId,jdbcType=BIGINT}
   </update>
 </mapper>

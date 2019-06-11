@@ -3,13 +3,13 @@ package cn.vip.pojo;
 public class DataDictionary {
     private Long id;
 
-    private String typecode;
+    private String typeCode;
 
-    private String typename;
+    private String typeName;
 
-    private Integer valueid;
+    private Integer valueId;
 
-    private String valuename;
+    private String valueName;
 
     public Long getId() {
         return id;
@@ -19,35 +19,35 @@ public class DataDictionary {
         this.id = id;
     }
 
-    public String getTypecode() {
-        return typecode;
+    public String getTypeCode() {
+        return typeCode;
     }
 
-    public void setTypecode(String typecode) {
-        this.typecode = typecode == null ? null : typecode.trim();
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode == null ? null : typeCode.trim();
     }
 
-    public String getTypename() {
-        return typename;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setTypename(String typename) {
-        this.typename = typename == null ? null : typename.trim();
+    public void setTypeName(String typeName) {
+        this.typeName = typeName == null ? null : typeName.trim();
     }
 
-    public Integer getValueid() {
-        return valueid;
+    public Integer getValueId() {
+        return valueId;
     }
 
-    public void setValueid(Integer valueid) {
-        this.valueid = valueid;
+    public void setValueId(Integer valueId) {
+        this.valueId = valueId;
     }
 
-    public String getValuename() {
-        return valuename;
+    public String getValueName() {
+        return valueName;
     }
 
-    public void setValuename(String valuename) {
-        this.valuename = valuename == null ? null : valuename.trim();
+    public void setValueName(String valueName) {
+        this.valueName = valueName == null ? null : valueName.trim();
     }
 }

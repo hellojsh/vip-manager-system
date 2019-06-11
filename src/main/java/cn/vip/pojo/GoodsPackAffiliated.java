@@ -3,11 +3,11 @@ package cn.vip.pojo;
 public class GoodsPackAffiliated {
     private Long id;
 
-    private Long goodspackid;
+    private Long goodsPackId;
 
-    private Long goodsinfoid;
+    private Long goodsInfoId;
 
-    private Integer goodsnum;
+    private Integer goodsNum;
 
     public Long getId() {
         return id;
@@ -17,27 +17,27 @@ public class GoodsPackAffiliated {
         this.id = id;
     }
 
-    public Long getGoodspackid() {
-        return goodspackid;
+    public Long getGoodsPackId() {
+        return goodsPackId;
     }
 
-    public void setGoodspackid(Long goodspackid) {
-        this.goodspackid = goodspackid;
+    public void setGoodsPackId(Long goodsPackId) {
+        this.goodsPackId = goodsPackId;
     }
 
-    public Long getGoodsinfoid() {
-        return goodsinfoid;
+    public Long getGoodsInfoId() {
+        return goodsInfoId;
     }
 
-    public void setGoodsinfoid(Long goodsinfoid) {
-        this.goodsinfoid = goodsinfoid;
+    public void setGoodsInfoId(Long goodsInfoId) {
+        this.goodsInfoId = goodsInfoId;
     }
 
-    public Integer getGoodsnum() {
-        return goodsnum;
+    public Integer getGoodsNum() {
+        return goodsNum;
     }
 
-    public void setGoodsnum(Integer goodsnum) {
-        this.goodsnum = goodsnum;
+    public void setGoodsNum(Integer goodsNum) {
+        this.goodsNum = goodsNum;
     }
 }

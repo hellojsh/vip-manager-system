@@ -3,9 +3,9 @@
 <mapper namespace="cn.vip.mapper.GoodsPackAffiliatedMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.GoodsPackAffiliated" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="goodsPackId" property="goodspackid" jdbcType="BIGINT" />
-    <result column="goodsInfoId" property="goodsinfoid" jdbcType="BIGINT" />
-    <result column="goodsNum" property="goodsnum" jdbcType="INTEGER" />
+    <result column="goods_pack_id" property="goodsPackId" jdbcType="BIGINT" />
+    <result column="goods_info_id" property="goodsInfoId" jdbcType="BIGINT" />
+    <result column="goods_num" property="goodsNum" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, goodsPackId, goodsInfoId, goodsNum
+    id, goods_pack_id, goods_info_id, goods_num
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.GoodsPackAffiliatedExample" >
     select
@@ -99,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.GoodsPackAffiliated" >
-    insert into goods_pack_affiliated (id, goodsPackId, goodsInfoId, 
-      goodsNum)
-    values (#{id,jdbcType=BIGINT}, #{goodspackid,jdbcType=BIGINT}, #{goodsinfoid,jdbcType=BIGINT}, 
-      #{goodsnum,jdbcType=INTEGER})
+    insert into goods_pack_affiliated (id, goods_pack_id, goods_info_id, 
+      goods_num)
+    values (#{id,jdbcType=BIGINT}, #{goodsPackId,jdbcType=BIGINT}, #{goodsInfoId,jdbcType=BIGINT}, 
+      #{goodsNum,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.GoodsPackAffiliated" >
     insert into goods_pack_affiliated
@@ -110,28 +110,28 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="goodspackid != null" >
-        goodsPackId,
+      <if test="goodsPackId != null" >
+        goods_pack_id,
       </if>
-      <if test="goodsinfoid != null" >
-        goodsInfoId,
+      <if test="goodsInfoId != null" >
+        goods_info_id,
       </if>
-      <if test="goodsnum != null" >
-        goodsNum,
+      <if test="goodsNum != null" >
+        goods_num,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="goodspackid != null" >
-        #{goodspackid,jdbcType=BIGINT},
+      <if test="goodsPackId != null" >
+        #{goodsPackId,jdbcType=BIGINT},
       </if>
-      <if test="goodsinfoid != null" >
-        #{goodsinfoid,jdbcType=BIGINT},
+      <if test="goodsInfoId != null" >
+        #{goodsInfoId,jdbcType=BIGINT},
       </if>
-      <if test="goodsnum != null" >
-        #{goodsnum,jdbcType=INTEGER},
+      <if test="goodsNum != null" >
+        #{goodsNum,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -147,14 +147,14 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.goodspackid != null" >
-        goodsPackId = #{record.goodspackid,jdbcType=BIGINT},
+      <if test="record.goodsPackId != null" >
+        goods_pack_id = #{record.goodsPackId,jdbcType=BIGINT},
       </if>
-      <if test="record.goodsinfoid != null" >
-        goodsInfoId = #{record.goodsinfoid,jdbcType=BIGINT},
+      <if test="record.goodsInfoId != null" >
+        goods_info_id = #{record.goodsInfoId,jdbcType=BIGINT},
       </if>
-      <if test="record.goodsnum != null" >
-        goodsNum = #{record.goodsnum,jdbcType=INTEGER},
+      <if test="record.goodsNum != null" >
+        goods_num = #{record.goodsNum,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -164,9 +164,9 @@
   <update id="updateByExample" parameterType="map" >
     update goods_pack_affiliated
     set id = #{record.id,jdbcType=BIGINT},
-      goodsPackId = #{record.goodspackid,jdbcType=BIGINT},
-      goodsInfoId = #{record.goodsinfoid,jdbcType=BIGINT},
-      goodsNum = #{record.goodsnum,jdbcType=INTEGER}
+      goods_pack_id = #{record.goodsPackId,jdbcType=BIGINT},
+      goods_info_id = #{record.goodsInfoId,jdbcType=BIGINT},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -174,23 +174,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.GoodsPackAffiliated" >
     update goods_pack_affiliated
     <set >
-      <if test="goodspackid != null" >
-        goodsPackId = #{goodspackid,jdbcType=BIGINT},
+      <if test="goodsPackId != null" >
+        goods_pack_id = #{goodsPackId,jdbcType=BIGINT},
       </if>
-      <if test="goodsinfoid != null" >
-        goodsInfoId = #{goodsinfoid,jdbcType=BIGINT},
+      <if test="goodsInfoId != null" >
+        goods_info_id = #{goodsInfoId,jdbcType=BIGINT},
       </if>
-      <if test="goodsnum != null" >
-        goodsNum = #{goodsnum,jdbcType=INTEGER},
+      <if test="goodsNum != null" >
+        goods_num = #{goodsNum,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.GoodsPackAffiliated" >
     update goods_pack_affiliated
-    set goodsPackId = #{goodspackid,jdbcType=BIGINT},
-      goodsInfoId = #{goodsinfoid,jdbcType=BIGINT},
-      goodsNum = #{goodsnum,jdbcType=INTEGER}
+    set goods_pack_id = #{goodsPackId,jdbcType=BIGINT},
+      goods_info_id = #{goodsInfoId,jdbcType=BIGINT},
+      goods_num = #{goodsNum,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

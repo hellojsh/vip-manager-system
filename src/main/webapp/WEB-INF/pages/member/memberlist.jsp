@@ -14,7 +14,7 @@
 					</div>
 					
 					<div class="box-content">
-						<form action="/member/memberlist" method="post">
+						<form action="/member/memberlist.html" method="post">
 							<div class="searcharea">
 							会员账号:
 							<input type="text" name="s_loginCode" value="${s_loginCode}" />

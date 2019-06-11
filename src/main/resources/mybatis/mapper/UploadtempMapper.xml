@@ -3,8 +3,8 @@
 <mapper namespace="cn.vip.mapper.UploadtempMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.Uploadtemp" >
     <result column="uploader" property="uploader" jdbcType="VARCHAR" />
-    <result column="uploadType" property="uploadtype" jdbcType="VARCHAR" />
-    <result column="uploadFilePath" property="uploadfilepath" jdbcType="VARCHAR" />
+    <result column="upload_type" property="uploadType" jdbcType="VARCHAR" />
+    <result column="upload_file_path" property="uploadFilePath" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    uploader, uploadType, uploadFilePath
+    uploader, upload_type, upload_file_path
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.UploadtempExample" >
     select
@@ -88,9 +88,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.Uploadtemp" >
-    insert into uploadtemp (uploader, uploadType, uploadFilePath
+    insert into uploadtemp (uploader, upload_type, upload_file_path
       )
-    values (#{uploader,jdbcType=VARCHAR}, #{uploadtype,jdbcType=VARCHAR}, #{uploadfilepath,jdbcType=VARCHAR}
+    values (#{uploader,jdbcType=VARCHAR}, #{uploadType,jdbcType=VARCHAR}, #{uploadFilePath,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.Uploadtemp" >
@@ -99,22 +99,22 @@
       <if test="uploader != null" >
         uploader,
       </if>
-      <if test="uploadtype != null" >
-        uploadType,
+      <if test="uploadType != null" >
+        upload_type,
       </if>
-      <if test="uploadfilepath != null" >
-        uploadFilePath,
+      <if test="uploadFilePath != null" >
+        upload_file_path,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="uploader != null" >
         #{uploader,jdbcType=VARCHAR},
       </if>
-      <if test="uploadtype != null" >
-        #{uploadtype,jdbcType=VARCHAR},
+      <if test="uploadType != null" >
+        #{uploadType,jdbcType=VARCHAR},
       </if>
-      <if test="uploadfilepath != null" >
-        #{uploadfilepath,jdbcType=VARCHAR},
+      <if test="uploadFilePath != null" >
+        #{uploadFilePath,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -130,11 +130,11 @@
       <if test="record.uploader != null" >
         uploader = #{record.uploader,jdbcType=VARCHAR},
       </if>
-      <if test="record.uploadtype != null" >
-        uploadType = #{record.uploadtype,jdbcType=VARCHAR},
+      <if test="record.uploadType != null" >
+        upload_type = #{record.uploadType,jdbcType=VARCHAR},
       </if>
-      <if test="record.uploadfilepath != null" >
-        uploadFilePath = #{record.uploadfilepath,jdbcType=VARCHAR},
+      <if test="record.uploadFilePath != null" >
+        upload_file_path = #{record.uploadFilePath,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -144,8 +144,8 @@
   <update id="updateByExample" parameterType="map" >
     update uploadtemp
     set uploader = #{record.uploader,jdbcType=VARCHAR},
-      uploadType = #{record.uploadtype,jdbcType=VARCHAR},
-      uploadFilePath = #{record.uploadfilepath,jdbcType=VARCHAR}
+      upload_type = #{record.uploadType,jdbcType=VARCHAR},
+      upload_file_path = #{record.uploadFilePath,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

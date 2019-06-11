@@ -27,8 +27,8 @@ public class MemberServiceImpl implements MemberService {
     public List<AuUser> getAuUserList() {
         AuUserExample example = new AuUserExample();
         AuUserExample.Criteria criteria = example.createCriteria();
-        criteria.andUsertypeIsNotNull();
-        criteria.andUsertypeNotEqualTo("");
+        criteria.andUserTypeIsNotNull();
+        criteria.andUserTypeNotEqualTo("");
         return auUserMapper.selectByExample(example);
     }
 }

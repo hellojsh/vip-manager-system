@@ -174,143 +174,143 @@ public class UploadtempExample {
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeIsNull() {
-            addCriterion("uploadType is null");
+        public Criteria andUploadTypeIsNull() {
+            addCriterion("upload_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeIsNotNull() {
-            addCriterion("uploadType is not null");
+        public Criteria andUploadTypeIsNotNull() {
+            addCriterion("upload_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeEqualTo(String value) {
-            addCriterion("uploadType =", value, "uploadtype");
+        public Criteria andUploadTypeEqualTo(String value) {
+            addCriterion("upload_type =", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeNotEqualTo(String value) {
-            addCriterion("uploadType <>", value, "uploadtype");
+        public Criteria andUploadTypeNotEqualTo(String value) {
+            addCriterion("upload_type <>", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeGreaterThan(String value) {
-            addCriterion("uploadType >", value, "uploadtype");
+        public Criteria andUploadTypeGreaterThan(String value) {
+            addCriterion("upload_type >", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeGreaterThanOrEqualTo(String value) {
-            addCriterion("uploadType >=", value, "uploadtype");
+        public Criteria andUploadTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("upload_type >=", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeLessThan(String value) {
-            addCriterion("uploadType <", value, "uploadtype");
+        public Criteria andUploadTypeLessThan(String value) {
+            addCriterion("upload_type <", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeLessThanOrEqualTo(String value) {
-            addCriterion("uploadType <=", value, "uploadtype");
+        public Criteria andUploadTypeLessThanOrEqualTo(String value) {
+            addCriterion("upload_type <=", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeLike(String value) {
-            addCriterion("uploadType like", value, "uploadtype");
+        public Criteria andUploadTypeLike(String value) {
+            addCriterion("upload_type like", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeNotLike(String value) {
-            addCriterion("uploadType not like", value, "uploadtype");
+        public Criteria andUploadTypeNotLike(String value) {
+            addCriterion("upload_type not like", value, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeIn(List<String> values) {
-            addCriterion("uploadType in", values, "uploadtype");
+        public Criteria andUploadTypeIn(List<String> values) {
+            addCriterion("upload_type in", values, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeNotIn(List<String> values) {
-            addCriterion("uploadType not in", values, "uploadtype");
+        public Criteria andUploadTypeNotIn(List<String> values) {
+            addCriterion("upload_type not in", values, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeBetween(String value1, String value2) {
-            addCriterion("uploadType between", value1, value2, "uploadtype");
+        public Criteria andUploadTypeBetween(String value1, String value2) {
+            addCriterion("upload_type between", value1, value2, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadtypeNotBetween(String value1, String value2) {
-            addCriterion("uploadType not between", value1, value2, "uploadtype");
+        public Criteria andUploadTypeNotBetween(String value1, String value2) {
+            addCriterion("upload_type not between", value1, value2, "uploadType");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathIsNull() {
-            addCriterion("uploadFilePath is null");
+        public Criteria andUploadFilePathIsNull() {
+            addCriterion("upload_file_path is null");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathIsNotNull() {
-            addCriterion("uploadFilePath is not null");
+        public Criteria andUploadFilePathIsNotNull() {
+            addCriterion("upload_file_path is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathEqualTo(String value) {
-            addCriterion("uploadFilePath =", value, "uploadfilepath");
+        public Criteria andUploadFilePathEqualTo(String value) {
+            addCriterion("upload_file_path =", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathNotEqualTo(String value) {
-            addCriterion("uploadFilePath <>", value, "uploadfilepath");
+        public Criteria andUploadFilePathNotEqualTo(String value) {
+            addCriterion("upload_file_path <>", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathGreaterThan(String value) {
-            addCriterion("uploadFilePath >", value, "uploadfilepath");
+        public Criteria andUploadFilePathGreaterThan(String value) {
+            addCriterion("upload_file_path >", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathGreaterThanOrEqualTo(String value) {
-            addCriterion("uploadFilePath >=", value, "uploadfilepath");
+        public Criteria andUploadFilePathGreaterThanOrEqualTo(String value) {
+            addCriterion("upload_file_path >=", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathLessThan(String value) {
-            addCriterion("uploadFilePath <", value, "uploadfilepath");
+        public Criteria andUploadFilePathLessThan(String value) {
+            addCriterion("upload_file_path <", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathLessThanOrEqualTo(String value) {
-            addCriterion("uploadFilePath <=", value, "uploadfilepath");
+        public Criteria andUploadFilePathLessThanOrEqualTo(String value) {
+            addCriterion("upload_file_path <=", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathLike(String value) {
-            addCriterion("uploadFilePath like", value, "uploadfilepath");
+        public Criteria andUploadFilePathLike(String value) {
+            addCriterion("upload_file_path like", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathNotLike(String value) {
-            addCriterion("uploadFilePath not like", value, "uploadfilepath");
+        public Criteria andUploadFilePathNotLike(String value) {
+            addCriterion("upload_file_path not like", value, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathIn(List<String> values) {
-            addCriterion("uploadFilePath in", values, "uploadfilepath");
+        public Criteria andUploadFilePathIn(List<String> values) {
+            addCriterion("upload_file_path in", values, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathNotIn(List<String> values) {
-            addCriterion("uploadFilePath not in", values, "uploadfilepath");
+        public Criteria andUploadFilePathNotIn(List<String> values) {
+            addCriterion("upload_file_path not in", values, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathBetween(String value1, String value2) {
-            addCriterion("uploadFilePath between", value1, value2, "uploadfilepath");
+        public Criteria andUploadFilePathBetween(String value1, String value2) {
+            addCriterion("upload_file_path between", value1, value2, "uploadFilePath");
             return (Criteria) this;
         }
 
-        public Criteria andUploadfilepathNotBetween(String value1, String value2) {
-            addCriterion("uploadFilePath not between", value1, value2, "uploadfilepath");
+        public Criteria andUploadFilePathNotBetween(String value1, String value2) {
+            addCriterion("upload_file_path not between", value1, value2, "uploadFilePath");
             return (Criteria) this;
         }
     }

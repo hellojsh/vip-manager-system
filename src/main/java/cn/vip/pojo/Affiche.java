@@ -11,11 +11,11 @@ public class Affiche {
 
     private String publisher;
 
-    private Date publishtime;
+    private Date publishTime;
 
-    private Date starttime;
+    private Date startTime;
 
-    private Date endtime;
+    private Date endTime;
 
     private String content;
 
@@ -51,28 +51,28 @@ public class Affiche {
         this.publisher = publisher == null ? null : publisher.trim();
     }
 
-    public Date getPublishtime() {
-        return publishtime;
+    public Date getPublishTime() {
+        return publishTime;
     }
 
-    public void setPublishtime(Date publishtime) {
-        this.publishtime = publishtime;
+    public void setPublishTime(Date publishTime) {
+        this.publishTime = publishTime;
     }
 
-    public Date getStarttime() {
-        return starttime;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setStarttime(Date starttime) {
-        this.starttime = starttime;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public String getContent() {

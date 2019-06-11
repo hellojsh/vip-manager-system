@@ -5,13 +5,13 @@ import java.util.Date;
 public class Reply {
     private Long id;
 
-    private Long messageid;
+    private Long messageId;
 
-    private String createdby;
+    private String createdBy;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String replycontent;
+    private String replyContent;
 
     public Long getId() {
         return id;
@@ -21,35 +21,35 @@ public class Reply {
         this.id = id;
     }
 
-    public Long getMessageid() {
-        return messageid;
+    public Long getMessageId() {
+        return messageId;
     }
 
-    public void setMessageid(Long messageid) {
-        this.messageid = messageid;
+    public void setMessageId(Long messageId) {
+        this.messageId = messageId;
     }
 
-    public String getCreatedby() {
-        return createdby;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby == null ? null : createdby.trim();
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getReplycontent() {
-        return replycontent;
+    public String getReplyContent() {
+        return replyContent;
     }
 
-    public void setReplycontent(String replycontent) {
-        this.replycontent = replycontent == null ? null : replycontent.trim();
+    public void setReplyContent(String replyContent) {
+        this.replyContent = replyContent == null ? null : replyContent.trim();
     }
 }

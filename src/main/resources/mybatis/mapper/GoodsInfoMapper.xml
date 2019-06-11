@@ -3,19 +3,19 @@
 <mapper namespace="cn.vip.mapper.GoodsInfoMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.GoodsInfo" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="goodsSN" property="goodssn" jdbcType="VARCHAR" />
-    <result column="goodsName" property="goodsname" jdbcType="VARCHAR" />
-    <result column="marketPrice" property="marketprice" jdbcType="DOUBLE" />
-    <result column="realPrice" property="realprice" jdbcType="DOUBLE" />
+    <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="market_price" property="marketPrice" jdbcType="DOUBLE" />
+    <result column="real_price" property="realPrice" jdbcType="DOUBLE" />
     <result column="state" property="state" jdbcType="INTEGER" />
     <result column="num" property="num" jdbcType="INTEGER" />
     <result column="unit" property="unit" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="lastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
-    <result column="createdBy" property="createdby" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.GoodsInfoWithBLOBs" extends="BaseResultMap" >
-    <result column="goodsFormat" property="goodsformat" jdbcType="LONGVARCHAR" />
+    <result column="goods_format" property="goodsFormat" jdbcType="LONGVARCHAR" />
     <result column="note" property="note" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -77,11 +77,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, goodsSN, goodsName, marketPrice, realPrice, state, num, unit, createTime, lastUpdateTime, 
-    createdBy
+    id, goods_sn, goods_name, market_price, real_price, state, num, unit, create_time, 
+    last_update_time, created_by
   </sql>
   <sql id="Blob_Column_List" >
-    goodsFormat, note
+    goods_format, note
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="cn.vip.pojo.GoodsInfoExample" >
     select
@@ -132,15 +132,15 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.GoodsInfoWithBLOBs" >
-    insert into goods_info (id, goodsSN, goodsName, 
-      marketPrice, realPrice, state, 
-      num, unit, createTime, 
-      lastUpdateTime, createdBy, goodsFormat, 
+    insert into goods_info (id, goods_sn, goods_name, 
+      market_price, real_price, state, 
+      num, unit, create_time, 
+      last_update_time, created_by, goods_format, 
       note)
-    values (#{id,jdbcType=BIGINT}, #{goodssn,jdbcType=VARCHAR}, #{goodsname,jdbcType=VARCHAR}, 
-      #{marketprice,jdbcType=DOUBLE}, #{realprice,jdbcType=DOUBLE}, #{state,jdbcType=INTEGER}, 
-      #{num,jdbcType=INTEGER}, #{unit,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{lastupdatetime,jdbcType=TIMESTAMP}, #{createdby,jdbcType=VARCHAR}, #{goodsformat,jdbcType=LONGVARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{goodsSn,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{marketPrice,jdbcType=DOUBLE}, #{realPrice,jdbcType=DOUBLE}, #{state,jdbcType=INTEGER}, 
+      #{num,jdbcType=INTEGER}, #{unit,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}, #{goodsFormat,jdbcType=LONGVARCHAR}, 
       #{note,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.GoodsInfoWithBLOBs" >
@@ -149,17 +149,17 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="goodssn != null" >
-        goodsSN,
+      <if test="goodsSn != null" >
+        goods_sn,
       </if>
-      <if test="goodsname != null" >
-        goodsName,
+      <if test="goodsName != null" >
+        goods_name,
       </if>
-      <if test="marketprice != null" >
-        marketPrice,
+      <if test="marketPrice != null" >
+        market_price,
       </if>
-      <if test="realprice != null" >
-        realPrice,
+      <if test="realPrice != null" >
+        real_price,
       </if>
       <if test="state != null" >
         state,
@@ -170,17 +170,17 @@
       <if test="unit != null" >
         unit,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="lastupdatetime != null" >
-        lastUpdateTime,
+      <if test="lastUpdateTime != null" >
+        last_update_time,
       </if>
-      <if test="createdby != null" >
-        createdBy,
+      <if test="createdBy != null" >
+        created_by,
       </if>
-      <if test="goodsformat != null" >
-        goodsFormat,
+      <if test="goodsFormat != null" >
+        goods_format,
       </if>
       <if test="note != null" >
         note,
@@ -190,17 +190,17 @@
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="goodssn != null" >
-        #{goodssn,jdbcType=VARCHAR},
+      <if test="goodsSn != null" >
+        #{goodsSn,jdbcType=VARCHAR},
       </if>
-      <if test="goodsname != null" >
-        #{goodsname,jdbcType=VARCHAR},
+      <if test="goodsName != null" >
+        #{goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="marketprice != null" >
-        #{marketprice,jdbcType=DOUBLE},
+      <if test="marketPrice != null" >
+        #{marketPrice,jdbcType=DOUBLE},
       </if>
-      <if test="realprice != null" >
-        #{realprice,jdbcType=DOUBLE},
+      <if test="realPrice != null" >
+        #{realPrice,jdbcType=DOUBLE},
       </if>
       <if test="state != null" >
         #{state,jdbcType=INTEGER},
@@ -211,17 +211,17 @@
       <if test="unit != null" >
         #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lastupdatetime != null" >
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createdby != null" >
-        #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="goodsformat != null" >
-        #{goodsformat,jdbcType=LONGVARCHAR},
+      <if test="goodsFormat != null" >
+        #{goodsFormat,jdbcType=LONGVARCHAR},
       </if>
       <if test="note != null" >
         #{note,jdbcType=LONGVARCHAR},
@@ -240,17 +240,17 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.goodssn != null" >
-        goodsSN = #{record.goodssn,jdbcType=VARCHAR},
+      <if test="record.goodsSn != null" >
+        goods_sn = #{record.goodsSn,jdbcType=VARCHAR},
       </if>
-      <if test="record.goodsname != null" >
-        goodsName = #{record.goodsname,jdbcType=VARCHAR},
+      <if test="record.goodsName != null" >
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="record.marketprice != null" >
-        marketPrice = #{record.marketprice,jdbcType=DOUBLE},
+      <if test="record.marketPrice != null" >
+        market_price = #{record.marketPrice,jdbcType=DOUBLE},
       </if>
-      <if test="record.realprice != null" >
-        realPrice = #{record.realprice,jdbcType=DOUBLE},
+      <if test="record.realPrice != null" >
+        real_price = #{record.realPrice,jdbcType=DOUBLE},
       </if>
       <if test="record.state != null" >
         state = #{record.state,jdbcType=INTEGER},
@@ -261,17 +261,17 @@
       <if test="record.unit != null" >
         unit = #{record.unit,jdbcType=VARCHAR},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.lastupdatetime != null" >
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null" >
+        last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createdby != null" >
-        createdBy = #{record.createdby,jdbcType=VARCHAR},
+      <if test="record.createdBy != null" >
+        created_by = #{record.createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="record.goodsformat != null" >
-        goodsFormat = #{record.goodsformat,jdbcType=LONGVARCHAR},
+      <if test="record.goodsFormat != null" >
+        goods_format = #{record.goodsFormat,jdbcType=LONGVARCHAR},
       </if>
       <if test="record.note != null" >
         note = #{record.note,jdbcType=LONGVARCHAR},
@@ -284,17 +284,17 @@
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update goods_info
     set id = #{record.id,jdbcType=BIGINT},
-      goodsSN = #{record.goodssn,jdbcType=VARCHAR},
-      goodsName = #{record.goodsname,jdbcType=VARCHAR},
-      marketPrice = #{record.marketprice,jdbcType=DOUBLE},
-      realPrice = #{record.realprice,jdbcType=DOUBLE},
+      goods_sn = #{record.goodsSn,jdbcType=VARCHAR},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      market_price = #{record.marketPrice,jdbcType=DOUBLE},
+      real_price = #{record.realPrice,jdbcType=DOUBLE},
       state = #{record.state,jdbcType=INTEGER},
       num = #{record.num,jdbcType=INTEGER},
       unit = #{record.unit,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createdBy = #{record.createdby,jdbcType=VARCHAR},
-      goodsFormat = #{record.goodsformat,jdbcType=LONGVARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      created_by = #{record.createdBy,jdbcType=VARCHAR},
+      goods_format = #{record.goodsFormat,jdbcType=LONGVARCHAR},
       note = #{record.note,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -303,16 +303,16 @@
   <update id="updateByExample" parameterType="map" >
     update goods_info
     set id = #{record.id,jdbcType=BIGINT},
-      goodsSN = #{record.goodssn,jdbcType=VARCHAR},
-      goodsName = #{record.goodsname,jdbcType=VARCHAR},
-      marketPrice = #{record.marketprice,jdbcType=DOUBLE},
-      realPrice = #{record.realprice,jdbcType=DOUBLE},
+      goods_sn = #{record.goodsSn,jdbcType=VARCHAR},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      market_price = #{record.marketPrice,jdbcType=DOUBLE},
+      real_price = #{record.realPrice,jdbcType=DOUBLE},
       state = #{record.state,jdbcType=INTEGER},
       num = #{record.num,jdbcType=INTEGER},
       unit = #{record.unit,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createdBy = #{record.createdby,jdbcType=VARCHAR}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      created_by = #{record.createdBy,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -320,17 +320,17 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.GoodsInfoWithBLOBs" >
     update goods_info
     <set >
-      <if test="goodssn != null" >
-        goodsSN = #{goodssn,jdbcType=VARCHAR},
+      <if test="goodsSn != null" >
+        goods_sn = #{goodsSn,jdbcType=VARCHAR},
       </if>
-      <if test="goodsname != null" >
-        goodsName = #{goodsname,jdbcType=VARCHAR},
+      <if test="goodsName != null" >
+        goods_name = #{goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="marketprice != null" >
-        marketPrice = #{marketprice,jdbcType=DOUBLE},
+      <if test="marketPrice != null" >
+        market_price = #{marketPrice,jdbcType=DOUBLE},
       </if>
-      <if test="realprice != null" >
-        realPrice = #{realprice,jdbcType=DOUBLE},
+      <if test="realPrice != null" >
+        real_price = #{realPrice,jdbcType=DOUBLE},
       </if>
       <if test="state != null" >
         state = #{state,jdbcType=INTEGER},
@@ -341,17 +341,17 @@
       <if test="unit != null" >
         unit = #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lastupdatetime != null" >
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null" >
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createdby != null" >
-        createdBy = #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="goodsformat != null" >
-        goodsFormat = #{goodsformat,jdbcType=LONGVARCHAR},
+      <if test="goodsFormat != null" >
+        goods_format = #{goodsFormat,jdbcType=LONGVARCHAR},
       </if>
       <if test="note != null" >
         note = #{note,jdbcType=LONGVARCHAR},
@@ -361,32 +361,32 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.vip.pojo.GoodsInfoWithBLOBs" >
     update goods_info
-    set goodsSN = #{goodssn,jdbcType=VARCHAR},
-      goodsName = #{goodsname,jdbcType=VARCHAR},
-      marketPrice = #{marketprice,jdbcType=DOUBLE},
-      realPrice = #{realprice,jdbcType=DOUBLE},
+    set goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      market_price = #{marketPrice,jdbcType=DOUBLE},
+      real_price = #{realPrice,jdbcType=DOUBLE},
       state = #{state,jdbcType=INTEGER},
       num = #{num,jdbcType=INTEGER},
       unit = #{unit,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createdBy = #{createdby,jdbcType=VARCHAR},
-      goodsFormat = #{goodsformat,jdbcType=LONGVARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      goods_format = #{goodsFormat,jdbcType=LONGVARCHAR},
       note = #{note,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.GoodsInfo" >
     update goods_info
-    set goodsSN = #{goodssn,jdbcType=VARCHAR},
-      goodsName = #{goodsname,jdbcType=VARCHAR},
-      marketPrice = #{marketprice,jdbcType=DOUBLE},
-      realPrice = #{realprice,jdbcType=DOUBLE},
+    set goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      market_price = #{marketPrice,jdbcType=DOUBLE},
+      real_price = #{realPrice,jdbcType=DOUBLE},
       state = #{state,jdbcType=INTEGER},
       num = #{num,jdbcType=INTEGER},
       unit = #{unit,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createdBy = #{createdby,jdbcType=VARCHAR}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

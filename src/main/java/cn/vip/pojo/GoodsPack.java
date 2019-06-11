@@ -5,25 +5,25 @@ import java.util.Date;
 public class GoodsPack {
     private Long id;
 
-    private String goodspackname;
+    private String goodsPackName;
 
-    private String goodspackcode;
+    private String goodsPackCode;
 
-    private Integer typeid;
+    private Integer typeId;
 
-    private String typename;
+    private String typeName;
 
-    private Double totalprice;
+    private Double totalPrice;
 
     private Integer state;
 
     private Integer num;
 
-    private String createdby;
+    private String createdBy;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
     private String note;
 
@@ -35,44 +35,44 @@ public class GoodsPack {
         this.id = id;
     }
 
-    public String getGoodspackname() {
-        return goodspackname;
+    public String getGoodsPackName() {
+        return goodsPackName;
     }
 
-    public void setGoodspackname(String goodspackname) {
-        this.goodspackname = goodspackname == null ? null : goodspackname.trim();
+    public void setGoodsPackName(String goodsPackName) {
+        this.goodsPackName = goodsPackName == null ? null : goodsPackName.trim();
     }
 
-    public String getGoodspackcode() {
-        return goodspackcode;
+    public String getGoodsPackCode() {
+        return goodsPackCode;
     }
 
-    public void setGoodspackcode(String goodspackcode) {
-        this.goodspackcode = goodspackcode == null ? null : goodspackcode.trim();
+    public void setGoodsPackCode(String goodsPackCode) {
+        this.goodsPackCode = goodsPackCode == null ? null : goodsPackCode.trim();
     }
 
-    public Integer getTypeid() {
-        return typeid;
+    public Integer getTypeId() {
+        return typeId;
     }
 
-    public void setTypeid(Integer typeid) {
-        this.typeid = typeid;
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
     }
 
-    public String getTypename() {
-        return typename;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setTypename(String typename) {
-        this.typename = typename == null ? null : typename.trim();
+    public void setTypeName(String typeName) {
+        this.typeName = typeName == null ? null : typeName.trim();
     }
 
-    public Double getTotalprice() {
-        return totalprice;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotalprice(Double totalprice) {
-        this.totalprice = totalprice;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public Integer getState() {
@@ -91,28 +91,28 @@ public class GoodsPack {
         this.num = num;
     }
 
-    public String getCreatedby() {
-        return createdby;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby == null ? null : createdby.trim();
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
     public String getNote() {

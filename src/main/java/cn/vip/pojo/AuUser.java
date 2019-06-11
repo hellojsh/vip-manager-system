@@ -5,59 +5,23 @@ import java.util.Date;
 public class AuUser {
     private Long id;
 
-    @Override
-    public String toString() {
-        return "AuUser{" +
-                "id=" + id +
-                ", logincode='" + logincode + '\'' +
-                ", password='" + password + '\'' +
-                ", password2='" + password2 + '\'' +
-                ", username='" + username + '\'' +
-                ", sex='" + sex + '\'' +
-                ", birthday=" + birthday +
-                ", cardtype='" + cardtype + '\'' +
-                ", cardtypename='" + cardtypename + '\'' +
-                ", idcard='" + idcard + '\'' +
-                ", country='" + country + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", email='" + email + '\'' +
-                ", useraddress='" + useraddress + '\'' +
-                ", postcode='" + postcode + '\'' +
-                ", createtime=" + createtime +
-                ", referid=" + referid +
-                ", refercode='" + refercode + '\'' +
-                ", roleid=" + roleid +
-                ", rolename='" + rolename + '\'' +
-                ", usertype='" + usertype + '\'' +
-                ", usertypename='" + usertypename + '\'' +
-                ", isstart=" + isstart +
-                ", lastupdatetime=" + lastupdatetime +
-                ", lastlogintime=" + lastlogintime +
-                ", bankaccount='" + bankaccount + '\'' +
-                ", bankname='" + bankname + '\'' +
-                ", accountholder='" + accountholder + '\'' +
-                ", idcardpicpath='" + idcardpicpath + '\'' +
-                ", bankpicpath='" + bankpicpath + '\'' +
-                '}';
-    }
-
-    private String logincode;
+    private String loginCode;
 
     private String password;
 
     private String password2;
 
-    private String username;
+    private String userName;
 
     private String sex;
 
     private Date birthday;
 
-    private String cardtype;
+    private String cardType;
 
-    private String cardtypename;
+    private String cardTypeName;
 
-    private String idcard;
+    private String idCard;
 
     private String country;
 
@@ -65,39 +29,39 @@ public class AuUser {
 
     private String email;
 
-    private String useraddress;
+    private String userAddress;
 
-    private String postcode;
+    private String postCode;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Long referid;
+    private Long referId;
 
-    private String refercode;
+    private String referCode;
 
-    private Long roleid;
+    private Long roleId;
 
-    private String rolename;
+    private String roleName;
 
-    private String usertype;
+    private String userType;
 
-    private String usertypename;
+    private String userTypeName;
 
-    private Integer isstart;
+    private Integer isStart;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date lastlogintime;
+    private Date lastLoginTime;
 
-    private String bankaccount;
+    private String bankAccount;
 
-    private String bankname;
+    private String bankName;
 
-    private String accountholder;
+    private String accountHolder;
 
-    private String idcardpicpath;
+    private String idCardPicPath;
 
-    private String bankpicpath;
+    private String bankPicPath;
 
     public Long getId() {
         return id;
@@ -107,12 +71,12 @@ public class AuUser {
         this.id = id;
     }
 
-    public String getLogincode() {
-        return logincode;
+    public String getLoginCode() {
+        return loginCode;
     }
 
-    public void setLogincode(String logincode) {
-        this.logincode = logincode == null ? null : logincode.trim();
+    public void setLoginCode(String loginCode) {
+        this.loginCode = loginCode == null ? null : loginCode.trim();
     }
 
     public String getPassword() {
@@ -131,12 +95,12 @@ public class AuUser {
         this.password2 = password2 == null ? null : password2.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getSex() {
@@ -155,28 +119,28 @@ public class AuUser {
         this.birthday = birthday;
     }
 
-    public String getCardtype() {
-        return cardtype;
+    public String getCardType() {
+        return cardType;
     }
 
-    public void setCardtype(String cardtype) {
-        this.cardtype = cardtype == null ? null : cardtype.trim();
+    public void setCardType(String cardType) {
+        this.cardType = cardType == null ? null : cardType.trim();
     }
 
-    public String getCardtypename() {
-        return cardtypename;
+    public String getCardTypeName() {
+        return cardTypeName;
     }
 
-    public void setCardtypename(String cardtypename) {
-        this.cardtypename = cardtypename == null ? null : cardtypename.trim();
+    public void setCardTypeName(String cardTypeName) {
+        this.cardTypeName = cardTypeName == null ? null : cardTypeName.trim();
     }
 
-    public String getIdcard() {
-        return idcard;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setIdcard(String idcard) {
-        this.idcard = idcard == null ? null : idcard.trim();
+    public void setIdCard(String idCard) {
+        this.idCard = idCard == null ? null : idCard.trim();
     }
 
     public String getCountry() {
@@ -203,139 +167,139 @@ public class AuUser {
         this.email = email == null ? null : email.trim();
     }
 
-    public String getUseraddress() {
-        return useraddress;
+    public String getUserAddress() {
+        return userAddress;
     }
 
-    public void setUseraddress(String useraddress) {
-        this.useraddress = useraddress == null ? null : useraddress.trim();
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress == null ? null : userAddress.trim();
     }
 
-    public String getPostcode() {
-        return postcode;
+    public String getPostCode() {
+        return postCode;
     }
 
-    public void setPostcode(String postcode) {
-        this.postcode = postcode == null ? null : postcode.trim();
+    public void setPostCode(String postCode) {
+        this.postCode = postCode == null ? null : postCode.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Long getReferid() {
-        return referid;
+    public Long getReferId() {
+        return referId;
     }
 
-    public void setReferid(Long referid) {
-        this.referid = referid;
+    public void setReferId(Long referId) {
+        this.referId = referId;
     }
 
-    public String getRefercode() {
-        return refercode;
+    public String getReferCode() {
+        return referCode;
     }
 
-    public void setRefercode(String refercode) {
-        this.refercode = refercode == null ? null : refercode.trim();
+    public void setReferCode(String referCode) {
+        this.referCode = referCode == null ? null : referCode.trim();
     }
 
-    public Long getRoleid() {
-        return roleid;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
-    public String getRolename() {
-        return rolename;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRolename(String rolename) {
-        this.rolename = rolename == null ? null : rolename.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 
-    public String getUsertype() {
-        return usertype;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setUsertype(String usertype) {
-        this.usertype = usertype == null ? null : usertype.trim();
+    public void setUserType(String userType) {
+        this.userType = userType == null ? null : userType.trim();
     }
 
-    public String getUsertypename() {
-        return usertypename;
+    public String getUserTypeName() {
+        return userTypeName;
     }
 
-    public void setUsertypename(String usertypename) {
-        this.usertypename = usertypename == null ? null : usertypename.trim();
+    public void setUserTypeName(String userTypeName) {
+        this.userTypeName = userTypeName == null ? null : userTypeName.trim();
     }
 
-    public Integer getIsstart() {
-        return isstart;
+    public Integer getIsStart() {
+        return isStart;
     }
 
-    public void setIsstart(Integer isstart) {
-        this.isstart = isstart;
+    public void setIsStart(Integer isStart) {
+        this.isStart = isStart;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getLastlogintime() {
-        return lastlogintime;
+    public Date getLastLoginTime() {
+        return lastLoginTime;
     }
 
-    public void setLastlogintime(Date lastlogintime) {
-        this.lastlogintime = lastlogintime;
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
     }
 
-    public String getBankaccount() {
-        return bankaccount;
+    public String getBankAccount() {
+        return bankAccount;
     }
 
-    public void setBankaccount(String bankaccount) {
-        this.bankaccount = bankaccount == null ? null : bankaccount.trim();
+    public void setBankAccount(String bankAccount) {
+        this.bankAccount = bankAccount == null ? null : bankAccount.trim();
     }
 
-    public String getBankname() {
-        return bankname;
+    public String getBankName() {
+        return bankName;
     }
 
-    public void setBankname(String bankname) {
-        this.bankname = bankname == null ? null : bankname.trim();
+    public void setBankName(String bankName) {
+        this.bankName = bankName == null ? null : bankName.trim();
     }
 
-    public String getAccountholder() {
-        return accountholder;
+    public String getAccountHolder() {
+        return accountHolder;
     }
 
-    public void setAccountholder(String accountholder) {
-        this.accountholder = accountholder == null ? null : accountholder.trim();
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder == null ? null : accountHolder.trim();
     }
 
-    public String getIdcardpicpath() {
-        return idcardpicpath;
+    public String getIdCardPicPath() {
+        return idCardPicPath;
     }
 
-    public void setIdcardpicpath(String idcardpicpath) {
-        this.idcardpicpath = idcardpicpath == null ? null : idcardpicpath.trim();
+    public void setIdCardPicPath(String idCardPicPath) {
+        this.idCardPicPath = idCardPicPath == null ? null : idCardPicPath.trim();
     }
 
-    public String getBankpicpath() {
-        return bankpicpath;
+    public String getBankPicPath() {
+        return bankPicPath;
     }
 
-    public void setBankpicpath(String bankpicpath) {
-        this.bankpicpath = bankpicpath == null ? null : bankpicpath.trim();
+    public void setBankPicPath(String bankPicPath) {
+        this.bankPicPath = bankPicPath == null ? null : bankPicPath.trim();
     }
 }

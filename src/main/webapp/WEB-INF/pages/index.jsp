@@ -65,7 +65,7 @@
 					<div class="form-horizontal" >
 						<fieldset>
 							<div class="input-prepend" title="登录账号" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="logincode" id="logincode" type="text" value="" />
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="loginCode" id="logincode" type="text" value="" />
 							</div>
 							<div class="clearfix"></div>
 

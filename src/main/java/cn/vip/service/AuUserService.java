@@ -8,8 +8,26 @@ import cn.vip.pojo.AuUser;
 public interface AuUserService {
     /**
      * 用户登陆
+     *
      * @param logincode
      * @return
      */
     AuUser loginDo(String logincode);
+
+    /**
+     * 根据id查询用户信息
+     *
+     * @param id
+     * @return
+     */
+    AuUser findUserById(Long id);
+
+    /**
+     * 根据id修改密码
+     *
+     * @param id
+     * @param password
+     * @return
+     */
+    boolean updatePasswordById(Long id, String password, String password2);
 }

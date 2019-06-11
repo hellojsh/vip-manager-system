@@ -5,15 +5,15 @@ import java.util.Date;
 public class AuAuthority {
     private Long id;
 
-    private Long roleid;
+    private Long roleId;
 
-    private Long functionid;
+    private Long functionId;
 
-    private Long usertypeid;
+    private Long userTypeId;
 
-    private Date creationtime;
+    private Date creationTime;
 
-    private String createdby;
+    private String createdBy;
 
     public Long getId() {
         return id;
@@ -23,43 +23,43 @@ public class AuAuthority {
         this.id = id;
     }
 
-    public Long getRoleid() {
-        return roleid;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
-    public Long getFunctionid() {
-        return functionid;
+    public Long getFunctionId() {
+        return functionId;
     }
 
-    public void setFunctionid(Long functionid) {
-        this.functionid = functionid;
+    public void setFunctionId(Long functionId) {
+        this.functionId = functionId;
     }
 
-    public Long getUsertypeid() {
-        return usertypeid;
+    public Long getUserTypeId() {
+        return userTypeId;
     }
 
-    public void setUsertypeid(Long usertypeid) {
-        this.usertypeid = usertypeid;
+    public void setUserTypeId(Long userTypeId) {
+        this.userTypeId = userTypeId;
     }
 
-    public Date getCreationtime() {
-        return creationtime;
+    public Date getCreationTime() {
+        return creationTime;
     }
 
-    public void setCreationtime(Date creationtime) {
-        this.creationtime = creationtime;
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
     }
 
-    public String getCreatedby() {
-        return createdby;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby == null ? null : createdby.trim();
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 }

@@ -3,9 +3,7 @@ package cn.vip.mapper;
 import cn.vip.pojo.AuAuthority;
 import cn.vip.pojo.AuFunction;
 import cn.vip.pojo.AuFunctionExample;
-
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface AuFunctionMapper {

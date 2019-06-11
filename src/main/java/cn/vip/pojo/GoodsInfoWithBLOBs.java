@@ -1,16 +1,16 @@
 package cn.vip.pojo;
 
 public class GoodsInfoWithBLOBs extends GoodsInfo {
-    private String goodsformat;
+    private String goodsFormat;
 
     private String note;
 
-    public String getGoodsformat() {
-        return goodsformat;
+    public String getGoodsFormat() {
+        return goodsFormat;
     }
 
-    public void setGoodsformat(String goodsformat) {
-        this.goodsformat = goodsformat == null ? null : goodsformat.trim();
+    public void setGoodsFormat(String goodsFormat) {
+        this.goodsFormat = goodsFormat == null ? null : goodsFormat.trim();
     }
 
     public String getNote() {

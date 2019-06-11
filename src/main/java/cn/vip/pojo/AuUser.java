@@ -1,5 +1,7 @@
 package cn.vip.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class AuUser {
@@ -14,7 +16,7 @@ public class AuUser {
     private String userName;
 
     private String sex;
-
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date birthday;
 
     private String cardType;

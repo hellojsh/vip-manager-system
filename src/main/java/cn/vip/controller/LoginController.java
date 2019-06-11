@@ -20,13 +20,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @Controller
-public class LoginController{
+public class LoginController extends BaseController {
 
     @Resource
     private AuFunctionService auFunctionService;
@@ -65,13 +63,12 @@ public class LoginController{
 
 
     @RequestMapping(value = "/main.html")
-    public String main(Model model,HttpSession session) {
-        AuUser auUser = (AuUser) session.getAttribute(Constants.LOGIN_USER);
+    public String main(Model model, HttpSession session) {
+        AuUser auUser = this.getCurrentUser();
 
         List<Menu> mList = null;
 
         if (null != auUser) {
-            System.out.println(auUser.toString());
             model.addAttribute("user", auUser);
 
             //获取菜单列表
@@ -81,6 +78,10 @@ public class LoginController{
                 try {
                     String jsonString = JacksonUtil.bean2Json(mList);
                     model.addAttribute("mList", jsonString);
+
+                    //将用户的列表放入session中
+                    session.setAttribute(Constants.SESSION_BASE_MODEL, jsonString);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -100,6 +101,7 @@ public class LoginController{
         AuAuthority auAuthority = new AuAuthority(); //用户的权限类
         auAuthority.setRoleid(roleId);
 
+        //根据当前用户的权限查找菜单
         try {
             List<AuFunction> mainFunctionList = auFunctionService.getMainFunctionList(auAuthority);
 
@@ -113,7 +115,6 @@ public class LoginController{
                     if (subFunctionList != null) {
                         menu.setSubMenus(subFunctionList);
                     }
-
                     menuList.add(menu);
                 }
 
@@ -129,11 +130,10 @@ public class LoginController{
     //用户登出
     @RequestMapping(value = "/logout.html")
     public String logout(HttpSession session) {
-        AuUser auUser = (AuUser) session.getAttribute(Constants.LOGIN_USER);
-
-        if(auUser !=null){
-            session.removeAttribute(Constants.LOGIN_USER);
-        }
+        session.removeAttribute(Constants.LOGIN_USER);
+        session.invalidate();
+        //设置当前的用户为null
+        this.setCurrentUser(null);
 
         return "index";
     }

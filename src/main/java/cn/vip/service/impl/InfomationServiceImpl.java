@@ -30,4 +30,27 @@ public class InfomationServiceImpl implements InfomationService {
         Information information = informationMapper.selectByPrimaryKey(id);
         return information;
     }
+
+    /**
+     * 分页查询
+     * @return
+     */
+    @Override
+    public List<Information> findAllInfomationByPage(Integer pageNo,Integer pageSize) {
+        pageNo = (pageNo-1)*pageSize;
+        List<Information> information = informationMapper.selectByPage(pageNo, pageSize);
+
+        return information;
+    }
+
+    /**
+     * 查询总记录数
+     * @return
+     */
+    @Override
+    public int findCount() {
+        InformationExample informationExample = new InformationExample();
+        int count = informationMapper.countByExample(informationExample);
+        return count;
+    }
 }

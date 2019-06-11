@@ -33,4 +33,6 @@ public interface InformationMapper {
     int updateByPrimaryKeyWithBLOBs(Information record);
 
     int updateByPrimaryKey(Information record);
+
+    List<Information> selectByPage(@Param("pageNo")Integer pageNo,@Param("pageSize")Integer pageSize);
 }

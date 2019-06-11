@@ -374,4 +374,13 @@
       upload_time = #{uploadTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="Integer" >
+    select
+    id, title, state, publisher, publishTime, typeId, typeName, fileName, filePath, fileSize,
+    uploadTime
+    from information
+    order by publishTime
+    limit #{pageNo},#{pageSize}
+  </select>
 </mapper>

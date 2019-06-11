@@ -69,16 +69,16 @@
 						  <c:if test="${page.items != null}">
 						  <c:forEach items="${page.items}" var="user">
 							<tr>
-								<td class="center">${user.loginCode}</td>
-								<td class="center">${user.roleName}</td>
-								<td class="center">${user.userTypeName}</td>
-								<td class="center">${user.referCode}</td>
+								<td class="center">${user.logincode}</td>
+								<td class="center">${user.rolename}</td>
+								<td class="center">${user.usertypename}</td>
+								<td class="center">${user.refercode}</td>
 								<td class="center">
-								<c:if test="${user.isStart == 2}"><input type="checkbox" disabled="disabled"/></c:if>
-                    			<c:if test="${user.isStart == 1}"><input type="checkbox" checked="true" disabled="disabled"/></c:if>
+								<c:if test="${user.isstart == 2}"><input type="checkbox" disabled="disabled"/></c:if>
+                    			<c:if test="${user.isstart == 1}"><input type="checkbox" checked="true" disabled="disabled"/></c:if>
 								</td>
 								<td class="center">
-								<fmt:formatDate value="${user.createTime}" pattern="yyyy-MM-dd"/>
+								<fmt:formatDate value="${user.createtime}" pattern="yyyy-MM-dd"/>
 								</td>
 								<td class="center">
 									<a class="btn btn-success viewuser" href="#" id="${user.id}">
@@ -89,7 +89,7 @@
 										<i class="icon-edit icon-white"></i>  
 										修改                                            
 									</a>
-									<a class="btn btn-danger deluser" href="#" usertype="${user.userType}" usertypename="${user.userTypeName}" logincode="${user.loginCode}" id="${user.id}" idcardpicpath="${user.idCardPicPath}" bankpicpath="${user.bankPicPath}">
+									<a class="btn btn-danger deluser" href="#" usertype="${user.usertype}" usertypename="${user.usertypename}" logincode="${user.logincode}" id="${user.id}" idcardpicpath="${user.idcardpicpath}" bankpicpath="${user.bankpicpath}">
 										<i class="icon-trash icon-white"></i> 
 										删除
 									</a>
@@ -103,7 +103,7 @@
 					  <ul>
 					  <c:choose>
 					  	<c:when test="${page.page == 1}">
-					  	<li class="active"><a href="javascript:void();" title="首页">首页</a></li>
+					  	<li class="active"><a href="javascript:void(0);" title="首页">首页</a></li>
 					  	</c:when>
 					  	<c:otherwise>
 					  	<li><a href="/backend/userlist.html?currentpage=1&s_loginCode=${s_loginCode}&s_referCode=${s_referCode}&s_roleId=${s_roleId}&s_isStart=${s_isStart}" title="首页">首页</a></li>
@@ -127,7 +127,7 @@
 						<c:if test="${page.pageCount !=null}">
 							<c:choose>
 						  	<c:when test="${page.page == page.pageCount}">
-						  	<li class="active"><a href="javascript:void();" title="尾页">尾页</a></li>
+						  	<li class="active"><a href="javascript:void(0);" title="尾页">尾页</a></li>
 						  	</c:when>
 						  	<c:otherwise>
 						  	<li><a href="/backend/userlist.html?currentpage=${page.pageCount}&s_loginCode=${s_loginCode}&s_referCode=${s_referCode}&s_roleId=${s_roleId}&s_isStart=${s_isStart}" title="尾页">尾页</a></li>
@@ -135,7 +135,7 @@
 						    </c:choose>
 					    </c:if>
 						<c:if test="${page.pageCount == null}">
-						<li class="active"><a href="javascript:void();" title="尾页">尾页</a></li>
+						<li class="active"><a href="javascript:void(0);" title="尾页">尾页</a></li>
 					  	</c:if>
 						
 					  </ul>

@@ -375,19 +375,12 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="selectByPage" resultMap="BaseResultMap" parameterType="cn.vip.pojo.InformationExample" >
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="Integer" >
     select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
+    id, title, state, publisher, publishTime, typeId, typeName, fileName, filePath, fileSize,
+    uploadTime
     from information
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-    limit 0,9
+    order by publishTime
+    limit #{pageNo},#{pageSize}
   </select>
 </mapper>

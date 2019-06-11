@@ -21,5 +21,5 @@ public interface InfomationService {
      * 分页查询咨询列表
      * @return
      */
-    List<Information> findAllInfomationByPage();
+    List<Information> findAllInfomationByPage(Integer pageNo,Integer pageSize);
 }

@@ -34,5 +34,5 @@ public interface InformationMapper {
 
     int updateByPrimaryKey(Information record);
 
-    List<Information> selectByPage(InformationExample example);
+    List<Information> selectByPage(@Param("pageNo")Integer pageNo,@Param("pageSize")Integer pageSize);
 }

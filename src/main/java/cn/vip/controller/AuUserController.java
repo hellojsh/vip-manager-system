@@ -74,6 +74,7 @@ public class AuUserController {
 
     @RequestMapping(value = "/member/savepersonalinfo.html",method = RequestMethod.POST)
     public String updateAuUserByMy(AuUser user,HttpSession session){
+        user.setLastUpdateTime(new Date());//更新最后修改时间
         int i = auUserService.updateAuUserByMy(user);
         if (i<0){
             //修改失败

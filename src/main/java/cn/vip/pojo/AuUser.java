@@ -56,11 +56,11 @@ public class AuUser {
 
     private Integer isStart;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date lastUpdateTime;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date lastLoginTime;
 

@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -145,6 +147,12 @@ public class LoginController extends BaseController {
     //用户登出
     @RequestMapping(value = "/logout.html")
     public String logout(HttpSession session) {
+        AuUser auUser = (AuUser)session.getAttribute(Constants.LOGIN_USER);
+
+        //更新最后登陆时间
+        auUser.setLastLoginTime(new Date());
+        auUserService.updateAuUserByMy(auUser);
+
         session.removeAttribute(Constants.LOGIN_USER);
         session.invalidate();
         //设置当前的用户为null

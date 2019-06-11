@@ -1,19 +1,25 @@
 package cn.vip.controller;
 
 
+import cn.vip.pojo.Affiche;
 import cn.vip.pojo.AuUser;
+import cn.vip.pojo.Information;
+import cn.vip.service.AfficheService;
+import cn.vip.service.InfomationService;
 import cn.vip.utils.Constants;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.beans.PropertyEditorSupport;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Controller的基类
@@ -24,6 +30,13 @@ import java.util.Date;
 public class BaseController {
 
     private AuUser currentUser;
+
+    @Resource
+    private InfomationService infomationService;
+
+    @Resource
+    private AfficheService afficheService;
+
 
     //获取当前session中的用户
     public AuUser getCurrentUser() {
@@ -84,5 +97,47 @@ public class BaseController {
 
         });
     }
+
+    /**
+     * 查询当前公告
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    protected List<Affiche> findAffiche(Integer pageNo, Integer pageSize) {
+        List<Affiche> affiches = null;
+
+        //查询公告
+        affiches = afficheService.findAllAfficheByPage(pageNo, pageSize);
+
+        if (affiches.size() > 0) {
+            return affiches;
+        }
+
+        return affiches;
+    }
+
+    /**
+     * 查询当前资讯
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    protected List<Information> findInfomation(Integer pageNo, Integer pageSize) {
+
+        List<Information> infomations = null;
+
+        //查询资讯
+        infomations = infomationService.findAllInfomationByPage(pageNo, pageSize);
+
+        if (infomations.size() > 0) {
+            return infomations;
+        }
+
+        return infomations;
+    }
+
 
 }

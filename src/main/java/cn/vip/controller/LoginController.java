@@ -1,14 +1,15 @@
 package cn.vip.controller;
 
-import cn.vip.pojo.AuAuthority;
-import cn.vip.pojo.AuFunction;
-import cn.vip.pojo.AuUser;
-import cn.vip.pojo.Menu;
+import cn.vip.pojo.*;
+import cn.vip.service.AfficheService;
 import cn.vip.service.AuFunctionService;
 import cn.vip.service.AuUserService;
+import cn.vip.service.InfomationService;
 import cn.vip.utils.Constants;
 import cn.vip.utils.EncryptUtil;
 import cn.vip.utils.JacksonUtil;
+import cn.vip.utils.PageSupport;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +33,6 @@ public class LoginController extends BaseController {
     @Resource
     private AuUserService auUserService;
 
-
     /**
      * 用户登陆
      *
@@ -47,7 +47,7 @@ public class LoginController extends BaseController {
 
         AuUser loginUser = JacksonUtil.json2Bean(user, AuUser.class);
         String password = EncryptUtil.MD5(loginUser.getPassword());
-        AuUser auUser = auUserService.loginDo(loginUser.getLogincode());
+        AuUser auUser = auUserService.loginDo(loginUser.getLoginCode());
 
         if (auUser != null) {
             if (!password.equals(auUser.getPassword())) {
@@ -72,12 +72,12 @@ public class LoginController extends BaseController {
             model.addAttribute("user", auUser);
 
             //获取菜单列表
-            mList = getFunByCurrentUser(auUser.getRoleid());
+            mList = getFunByCurrentUser(auUser.getRoleId());
 
             if (mList != null) {
                 try {
                     String jsonString = JacksonUtil.bean2Json(mList);
-                    model.addAttribute("mList", jsonString);
+                    //model.addAttribute("mList", jsonString);
 
                     //将用户的列表放入session中
                     session.setAttribute(Constants.SESSION_BASE_MODEL, jsonString);
@@ -86,6 +86,21 @@ public class LoginController extends BaseController {
                     e.printStackTrace();
                 }
             }
+
+            List<Information> informationList = findInfomation(1, 5);
+
+            //将当前的资讯返回给页面
+            if (informationList != null) {
+                model.addAttribute("infoList", informationList);
+            }
+
+            List<Affiche> affiches = findAffiche(1, 5);
+
+            //将当前的公告返回给页面
+            if(affiches != null){
+                model.addAttribute("afficheList",affiches);
+            }
+
         }
         return "main";
     }
@@ -99,7 +114,7 @@ public class LoginController extends BaseController {
     protected List<Menu> getFunByCurrentUser(Long roleId) {
         List<Menu> menuList = new ArrayList<>();
         AuAuthority auAuthority = new AuAuthority(); //用户的权限类
-        auAuthority.setRoleid(roleId);
+        auAuthority.setRoleId(roleId);
 
         //根据当前用户的权限查找菜单
         try {
@@ -137,4 +152,5 @@ public class LoginController extends BaseController {
 
         return "index";
     }
+
 }

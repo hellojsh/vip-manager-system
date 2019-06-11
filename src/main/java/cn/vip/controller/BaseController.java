@@ -28,7 +28,7 @@ public class BaseController {
     //获取当前session中的用户
     public AuUser getCurrentUser() {
         if (null == this.currentUser) {
-            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
             HttpSession session = request.getSession(false);
             if (session != null) {
                 currentUser = (AuUser) session.getAttribute(Constants.LOGIN_USER);

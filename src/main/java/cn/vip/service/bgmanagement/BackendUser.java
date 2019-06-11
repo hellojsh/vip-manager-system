@@ -2,6 +2,8 @@ package cn.vip.service.bgmanagement;
 
 import cn.vip.utils.PageSupport;
 
+import java.util.List;
+
 
 /**
  * @author chai
@@ -11,10 +13,11 @@ import cn.vip.utils.PageSupport;
  * @create 2019/6/10
  */
 public interface BackendUser {
+
     /**
-     * 获取全部的用户
+     * 获取分页数据
      *
      * @return
      */
-    PageSupport bgAllUser();
+    List<Object> bgLimitUser(Integer pageNo);
 }

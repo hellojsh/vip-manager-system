@@ -111,6 +111,17 @@
       order by ${orderByClause}
     </if>
   </select>
+
+  <select id="selectByExampleLimit" resultMap="BaseResultMap" parameterType="cn.vip.pojo.AuUserExample" >
+    select
+    `id`,`loginCode`,`password`,`password2`,`userName`,`sex`,`birthday`,`cardType`,`cardTypeName`,`idCard`,`country`,`mobile`,`email`,`userAddress`,`postCode`,`createTime`,`referId`,`referCode`,`roleId`,`roleName`,`userType`,`userTypeName`,`isStart`,`lastUpdateTime`,`lastLoginTime`,`bankAccount`,`bankName`,`accountHolder`,`idCardPicPath`,`bankPicPath`
+    from au_user
+    order by createTime desc
+    <if test="pageNo != null and pageSize != null">
+      limit #{pageNo},#{pageSize}
+    </if>
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />

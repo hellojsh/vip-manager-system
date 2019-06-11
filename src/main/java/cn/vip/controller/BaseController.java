@@ -28,7 +28,7 @@ public class BaseController {
     //获取当前session中的用户
     public AuUser getCurrentUser() {
         if (null == this.currentUser) {
-            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
             HttpSession session = request.getSession(false);
             if (session != null) {
                 currentUser = (AuUser) session.getAttribute(Constants.LOGIN_USER);
@@ -38,6 +38,22 @@ public class BaseController {
         }
 
         return currentUser;
+    }
+
+    //用户注销
+    public boolean loginOut() {
+        boolean flag = false;
+
+        if (null == this.currentUser) {
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            HttpSession session = request.getSession(false);
+
+            if (session != null) {
+                session.removeAttribute(Constants.LOGIN_USER);
+                flag = true;
+            }
+        }
+        return flag;
     }
 
     public void setCurrentUser(AuUser currentUser) {

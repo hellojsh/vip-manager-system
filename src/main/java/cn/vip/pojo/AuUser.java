@@ -1,5 +1,7 @@
 package cn.vip.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class AuUser {
@@ -15,6 +17,7 @@ public class AuUser {
 
     private String sex;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date birthday;
 
     private String cardType;
@@ -33,6 +36,7 @@ public class AuUser {
 
     private String postCode;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date createTime;
 
     private Long referId;
@@ -49,8 +53,10 @@ public class AuUser {
 
     private Integer isStart;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date lastUpdateTime;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date lastLoginTime;
 
     private String bankAccount;

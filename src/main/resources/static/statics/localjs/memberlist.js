@@ -37,7 +37,7 @@ $('.modifymember').click(function(e){
 					$("#m_cardtype").append("<option value=\"\" selected=\"selected\">--请选择--</option>");
 				for(var i=0;i<cartTypeListJson.length-1;i++){
 					if(cartTypeListJson[i].valueId == cardType){
-						$("#m_cardtype").append("<option value=\""+cardType+"\" selected=\"selected\">"+cardTypeName+"</option>");
+						$("#m_cardtype").append("<option value=\""+cardType+"\" selected=\"selected\">"+cartTypeListJson[i].valueName+"</option>");
 					}else{
 						$("#m_cardtype").append("<option value=\""+cartTypeListJson[i].valueId+"\">"+cartTypeListJson[i].valueName+"</option>");
 					}
@@ -50,8 +50,8 @@ $('.modifymember').click(function(e){
 				if(userType == null || userType == "")
 					$("#m_selectusertype").append("<option value=\"\" selected=\"selected\">--请选择--</option>");
 				for(var i=0;i<userTypeListJson.length-1;i++){
-					if(userTypeListJson[i].id == userType){
-						$("#m_selectusertype").append("<option value=\""+userType+"\" selected=\"selected\">"+userTypeName+"</option>");
+					if(userTypeListJson[i].valueId == userType){
+						$("#m_selectusertype").append("<option value=\""+userType+"\" selected=\"selected\">"+userTypeListJson[i].valueName+"</option>");
 					}else{
 						$("#m_selectusertype").append("<option value=\""+userTypeListJson[i].valueId+"\">"+userTypeListJson[i].valueName+"</option>");
 					}
@@ -139,6 +139,7 @@ $('.viewmember').click(function(e){
 				alert("没有数据！");
 			}else{
 				m = eval('(' + result + ')');
+				console.log(m);
 				$("#v_id").val(m.id);
 				$("#v_logincode").val(m.loginCode);
 				$("#v_username").val(m.userName);

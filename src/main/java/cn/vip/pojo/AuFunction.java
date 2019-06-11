@@ -59,6 +59,18 @@ public class AuFunction {
         return creationTime;
     }
 
+    @Override
+    public String toString() {
+        return "AuFunction{" +
+                "id=" + id +
+                ", functionCode='" + functionCode + '\'' +
+                ", functionName='" + functionName + '\'' +
+                ", funcUrl='" + funcUrl + '\'' +
+                ", parentId=" + parentId +
+                ", creationTime=" + creationTime +
+                '}';
+    }
+
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
     }

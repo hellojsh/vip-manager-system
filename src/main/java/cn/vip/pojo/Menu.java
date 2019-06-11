@@ -28,4 +28,12 @@ public class Menu {
     public void setMainMenu(AuFunction mainMenu) {
         this.mainMenu = mainMenu;
     }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "mainMenu=" + mainMenu +
+                ", subMenus=" + subMenus +
+                '}';
+    }
 }

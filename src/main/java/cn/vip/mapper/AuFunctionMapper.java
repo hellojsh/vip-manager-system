@@ -1,5 +1,6 @@
 package cn.vip.mapper;
 
+import cn.vip.pojo.AuAuthority;
 import cn.vip.pojo.AuFunction;
 import cn.vip.pojo.AuFunctionExample;
 import java.util.List;
@@ -27,4 +28,22 @@ public interface AuFunctionMapper {
     int updateByPrimaryKeySelective(AuFunction record);
 
     int updateByPrimaryKey(AuFunction record);
+
+    /**
+     * 查询主菜单
+     *
+     * @param auAuthority
+     * @return
+     * @throws Exception
+     */
+    List<AuFunction> getMainFunctionList(AuAuthority auAuthority) throws Exception;
+
+    /**
+     * 获取子菜单
+     *
+     * @param auFunction
+     * @return
+     * @throws Exception
+     */
+    List<AuFunction> getSubFunctionList(AuFunction auFunction) throws Exception;
 }

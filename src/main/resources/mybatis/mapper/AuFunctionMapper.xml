@@ -225,4 +225,13 @@
       creation_time = #{creationTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="getMainFunctionList" parameterType="cn.vip.pojo.AuAuthority" resultMap="BaseResultMap">
+      SELECT * FROM au_function WHERE id IN(
+          SELECT function_id FROM au_authority WHERE parent_id = 0 and role_id = #{roleId}
+      )
+  </select>
+
+  <select id="getSubFunctionList" parameterType="cn.vip.pojo.AuFunction" resultMap="BaseResultMap">
+      select * from au_function where parent_id = #{id}
+  </select>
 </mapper>

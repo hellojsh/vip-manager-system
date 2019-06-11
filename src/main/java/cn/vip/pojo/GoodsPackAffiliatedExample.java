@@ -164,183 +164,183 @@ public class GoodsPackAffiliatedExample {
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidIsNull() {
-            addCriterion("goodsPackId is null");
+        public Criteria andGoodsPackIdIsNull() {
+            addCriterion("goods_pack_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidIsNotNull() {
-            addCriterion("goodsPackId is not null");
+        public Criteria andGoodsPackIdIsNotNull() {
+            addCriterion("goods_pack_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidEqualTo(Long value) {
-            addCriterion("goodsPackId =", value, "goodspackid");
+        public Criteria andGoodsPackIdEqualTo(Long value) {
+            addCriterion("goods_pack_id =", value, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidNotEqualTo(Long value) {
-            addCriterion("goodsPackId <>", value, "goodspackid");
+        public Criteria andGoodsPackIdNotEqualTo(Long value) {
+            addCriterion("goods_pack_id <>", value, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidGreaterThan(Long value) {
-            addCriterion("goodsPackId >", value, "goodspackid");
+        public Criteria andGoodsPackIdGreaterThan(Long value) {
+            addCriterion("goods_pack_id >", value, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidGreaterThanOrEqualTo(Long value) {
-            addCriterion("goodsPackId >=", value, "goodspackid");
+        public Criteria andGoodsPackIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("goods_pack_id >=", value, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidLessThan(Long value) {
-            addCriterion("goodsPackId <", value, "goodspackid");
+        public Criteria andGoodsPackIdLessThan(Long value) {
+            addCriterion("goods_pack_id <", value, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidLessThanOrEqualTo(Long value) {
-            addCriterion("goodsPackId <=", value, "goodspackid");
+        public Criteria andGoodsPackIdLessThanOrEqualTo(Long value) {
+            addCriterion("goods_pack_id <=", value, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidIn(List<Long> values) {
-            addCriterion("goodsPackId in", values, "goodspackid");
+        public Criteria andGoodsPackIdIn(List<Long> values) {
+            addCriterion("goods_pack_id in", values, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidNotIn(List<Long> values) {
-            addCriterion("goodsPackId not in", values, "goodspackid");
+        public Criteria andGoodsPackIdNotIn(List<Long> values) {
+            addCriterion("goods_pack_id not in", values, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidBetween(Long value1, Long value2) {
-            addCriterion("goodsPackId between", value1, value2, "goodspackid");
+        public Criteria andGoodsPackIdBetween(Long value1, Long value2) {
+            addCriterion("goods_pack_id between", value1, value2, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodspackidNotBetween(Long value1, Long value2) {
-            addCriterion("goodsPackId not between", value1, value2, "goodspackid");
+        public Criteria andGoodsPackIdNotBetween(Long value1, Long value2) {
+            addCriterion("goods_pack_id not between", value1, value2, "goodsPackId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidIsNull() {
-            addCriterion("goodsInfoId is null");
+        public Criteria andGoodsInfoIdIsNull() {
+            addCriterion("goods_info_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidIsNotNull() {
-            addCriterion("goodsInfoId is not null");
+        public Criteria andGoodsInfoIdIsNotNull() {
+            addCriterion("goods_info_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidEqualTo(Long value) {
-            addCriterion("goodsInfoId =", value, "goodsinfoid");
+        public Criteria andGoodsInfoIdEqualTo(Long value) {
+            addCriterion("goods_info_id =", value, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidNotEqualTo(Long value) {
-            addCriterion("goodsInfoId <>", value, "goodsinfoid");
+        public Criteria andGoodsInfoIdNotEqualTo(Long value) {
+            addCriterion("goods_info_id <>", value, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidGreaterThan(Long value) {
-            addCriterion("goodsInfoId >", value, "goodsinfoid");
+        public Criteria andGoodsInfoIdGreaterThan(Long value) {
+            addCriterion("goods_info_id >", value, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidGreaterThanOrEqualTo(Long value) {
-            addCriterion("goodsInfoId >=", value, "goodsinfoid");
+        public Criteria andGoodsInfoIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("goods_info_id >=", value, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidLessThan(Long value) {
-            addCriterion("goodsInfoId <", value, "goodsinfoid");
+        public Criteria andGoodsInfoIdLessThan(Long value) {
+            addCriterion("goods_info_id <", value, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidLessThanOrEqualTo(Long value) {
-            addCriterion("goodsInfoId <=", value, "goodsinfoid");
+        public Criteria andGoodsInfoIdLessThanOrEqualTo(Long value) {
+            addCriterion("goods_info_id <=", value, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidIn(List<Long> values) {
-            addCriterion("goodsInfoId in", values, "goodsinfoid");
+        public Criteria andGoodsInfoIdIn(List<Long> values) {
+            addCriterion("goods_info_id in", values, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidNotIn(List<Long> values) {
-            addCriterion("goodsInfoId not in", values, "goodsinfoid");
+        public Criteria andGoodsInfoIdNotIn(List<Long> values) {
+            addCriterion("goods_info_id not in", values, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidBetween(Long value1, Long value2) {
-            addCriterion("goodsInfoId between", value1, value2, "goodsinfoid");
+        public Criteria andGoodsInfoIdBetween(Long value1, Long value2) {
+            addCriterion("goods_info_id between", value1, value2, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsinfoidNotBetween(Long value1, Long value2) {
-            addCriterion("goodsInfoId not between", value1, value2, "goodsinfoid");
+        public Criteria andGoodsInfoIdNotBetween(Long value1, Long value2) {
+            addCriterion("goods_info_id not between", value1, value2, "goodsInfoId");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumIsNull() {
-            addCriterion("goodsNum is null");
+        public Criteria andGoodsNumIsNull() {
+            addCriterion("goods_num is null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumIsNotNull() {
-            addCriterion("goodsNum is not null");
+        public Criteria andGoodsNumIsNotNull() {
+            addCriterion("goods_num is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumEqualTo(Integer value) {
-            addCriterion("goodsNum =", value, "goodsnum");
+        public Criteria andGoodsNumEqualTo(Integer value) {
+            addCriterion("goods_num =", value, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumNotEqualTo(Integer value) {
-            addCriterion("goodsNum <>", value, "goodsnum");
+        public Criteria andGoodsNumNotEqualTo(Integer value) {
+            addCriterion("goods_num <>", value, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumGreaterThan(Integer value) {
-            addCriterion("goodsNum >", value, "goodsnum");
+        public Criteria andGoodsNumGreaterThan(Integer value) {
+            addCriterion("goods_num >", value, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumGreaterThanOrEqualTo(Integer value) {
-            addCriterion("goodsNum >=", value, "goodsnum");
+        public Criteria andGoodsNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("goods_num >=", value, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumLessThan(Integer value) {
-            addCriterion("goodsNum <", value, "goodsnum");
+        public Criteria andGoodsNumLessThan(Integer value) {
+            addCriterion("goods_num <", value, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumLessThanOrEqualTo(Integer value) {
-            addCriterion("goodsNum <=", value, "goodsnum");
+        public Criteria andGoodsNumLessThanOrEqualTo(Integer value) {
+            addCriterion("goods_num <=", value, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumIn(List<Integer> values) {
-            addCriterion("goodsNum in", values, "goodsnum");
+        public Criteria andGoodsNumIn(List<Integer> values) {
+            addCriterion("goods_num in", values, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumNotIn(List<Integer> values) {
-            addCriterion("goodsNum not in", values, "goodsnum");
+        public Criteria andGoodsNumNotIn(List<Integer> values) {
+            addCriterion("goods_num not in", values, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumBetween(Integer value1, Integer value2) {
-            addCriterion("goodsNum between", value1, value2, "goodsnum");
+        public Criteria andGoodsNumBetween(Integer value1, Integer value2) {
+            addCriterion("goods_num between", value1, value2, "goodsNum");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsnumNotBetween(Integer value1, Integer value2) {
-            addCriterion("goodsNum not between", value1, value2, "goodsnum");
+        public Criteria andGoodsNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("goods_num not between", value1, value2, "goodsNum");
             return (Criteria) this;
         }
     }

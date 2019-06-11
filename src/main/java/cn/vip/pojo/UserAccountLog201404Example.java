@@ -133,673 +133,673 @@ public class UserAccountLog201404Example {
             addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
-        public Criteria andAccountlogidIsNull() {
-            addCriterion("accountLogId is null");
+        public Criteria andAccountLogIdIsNull() {
+            addCriterion("account_log_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidIsNotNull() {
-            addCriterion("accountLogId is not null");
+        public Criteria andAccountLogIdIsNotNull() {
+            addCriterion("account_log_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidEqualTo(Long value) {
-            addCriterion("accountLogId =", value, "accountlogid");
+        public Criteria andAccountLogIdEqualTo(Long value) {
+            addCriterion("account_log_id =", value, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidNotEqualTo(Long value) {
-            addCriterion("accountLogId <>", value, "accountlogid");
+        public Criteria andAccountLogIdNotEqualTo(Long value) {
+            addCriterion("account_log_id <>", value, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidGreaterThan(Long value) {
-            addCriterion("accountLogId >", value, "accountlogid");
+        public Criteria andAccountLogIdGreaterThan(Long value) {
+            addCriterion("account_log_id >", value, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidGreaterThanOrEqualTo(Long value) {
-            addCriterion("accountLogId >=", value, "accountlogid");
+        public Criteria andAccountLogIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("account_log_id >=", value, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidLessThan(Long value) {
-            addCriterion("accountLogId <", value, "accountlogid");
+        public Criteria andAccountLogIdLessThan(Long value) {
+            addCriterion("account_log_id <", value, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidLessThanOrEqualTo(Long value) {
-            addCriterion("accountLogId <=", value, "accountlogid");
+        public Criteria andAccountLogIdLessThanOrEqualTo(Long value) {
+            addCriterion("account_log_id <=", value, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidIn(List<Long> values) {
-            addCriterion("accountLogId in", values, "accountlogid");
+        public Criteria andAccountLogIdIn(List<Long> values) {
+            addCriterion("account_log_id in", values, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidNotIn(List<Long> values) {
-            addCriterion("accountLogId not in", values, "accountlogid");
+        public Criteria andAccountLogIdNotIn(List<Long> values) {
+            addCriterion("account_log_id not in", values, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidBetween(Long value1, Long value2) {
-            addCriterion("accountLogId between", value1, value2, "accountlogid");
+        public Criteria andAccountLogIdBetween(Long value1, Long value2) {
+            addCriterion("account_log_id between", value1, value2, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andAccountlogidNotBetween(Long value1, Long value2) {
-            addCriterion("accountLogId not between", value1, value2, "accountlogid");
+        public Criteria andAccountLogIdNotBetween(Long value1, Long value2) {
+            addCriterion("account_log_id not between", value1, value2, "accountLogId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIsNull() {
-            addCriterion("userId is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("user_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIsNotNull() {
-            addCriterion("userId is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("user_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUseridEqualTo(Long value) {
-            addCriterion("userId =", value, "userid");
+        public Criteria andUserIdEqualTo(Long value) {
+            addCriterion("user_id =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotEqualTo(Long value) {
-            addCriterion("userId <>", value, "userid");
+        public Criteria andUserIdNotEqualTo(Long value) {
+            addCriterion("user_id <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridGreaterThan(Long value) {
-            addCriterion("userId >", value, "userid");
+        public Criteria andUserIdGreaterThan(Long value) {
+            addCriterion("user_id >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridGreaterThanOrEqualTo(Long value) {
-            addCriterion("userId >=", value, "userid");
+        public Criteria andUserIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("user_id >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridLessThan(Long value) {
-            addCriterion("userId <", value, "userid");
+        public Criteria andUserIdLessThan(Long value) {
+            addCriterion("user_id <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridLessThanOrEqualTo(Long value) {
-            addCriterion("userId <=", value, "userid");
+        public Criteria andUserIdLessThanOrEqualTo(Long value) {
+            addCriterion("user_id <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIn(List<Long> values) {
-            addCriterion("userId in", values, "userid");
+        public Criteria andUserIdIn(List<Long> values) {
+            addCriterion("user_id in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotIn(List<Long> values) {
-            addCriterion("userId not in", values, "userid");
+        public Criteria andUserIdNotIn(List<Long> values) {
+            addCriterion("user_id not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridBetween(Long value1, Long value2) {
-            addCriterion("userId between", value1, value2, "userid");
+        public Criteria andUserIdBetween(Long value1, Long value2) {
+            addCriterion("user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotBetween(Long value1, Long value2) {
-            addCriterion("userId not between", value1, value2, "userid");
+        public Criteria andUserIdNotBetween(Long value1, Long value2) {
+            addCriterion("user_id not between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeIsNull() {
-            addCriterion("actionTime is null");
+        public Criteria andActionTimeIsNull() {
+            addCriterion("action_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeIsNotNull() {
-            addCriterion("actionTime is not null");
+        public Criteria andActionTimeIsNotNull() {
+            addCriterion("action_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeEqualTo(Date value) {
-            addCriterionForJDBCDate("actionTime =", value, "actiontime");
+        public Criteria andActionTimeEqualTo(Date value) {
+            addCriterionForJDBCDate("action_time =", value, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeNotEqualTo(Date value) {
-            addCriterionForJDBCDate("actionTime <>", value, "actiontime");
+        public Criteria andActionTimeNotEqualTo(Date value) {
+            addCriterionForJDBCDate("action_time <>", value, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeGreaterThan(Date value) {
-            addCriterionForJDBCDate("actionTime >", value, "actiontime");
+        public Criteria andActionTimeGreaterThan(Date value) {
+            addCriterionForJDBCDate("action_time >", value, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("actionTime >=", value, "actiontime");
+        public Criteria andActionTimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("action_time >=", value, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeLessThan(Date value) {
-            addCriterionForJDBCDate("actionTime <", value, "actiontime");
+        public Criteria andActionTimeLessThan(Date value) {
+            addCriterionForJDBCDate("action_time <", value, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("actionTime <=", value, "actiontime");
+        public Criteria andActionTimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("action_time <=", value, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeIn(List<Date> values) {
-            addCriterionForJDBCDate("actionTime in", values, "actiontime");
+        public Criteria andActionTimeIn(List<Date> values) {
+            addCriterionForJDBCDate("action_time in", values, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeNotIn(List<Date> values) {
-            addCriterionForJDBCDate("actionTime not in", values, "actiontime");
+        public Criteria andActionTimeNotIn(List<Date> values) {
+            addCriterionForJDBCDate("action_time not in", values, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("actionTime between", value1, value2, "actiontime");
+        public Criteria andActionTimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("action_time between", value1, value2, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiontimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("actionTime not between", value1, value2, "actiontime");
+        public Criteria andActionTimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("action_time not between", value1, value2, "actionTime");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescIsNull() {
-            addCriterion("actionDesc is null");
+        public Criteria andActionDescIsNull() {
+            addCriterion("action_desc is null");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescIsNotNull() {
-            addCriterion("actionDesc is not null");
+        public Criteria andActionDescIsNotNull() {
+            addCriterion("action_desc is not null");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescEqualTo(String value) {
-            addCriterion("actionDesc =", value, "actiondesc");
+        public Criteria andActionDescEqualTo(String value) {
+            addCriterion("action_desc =", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescNotEqualTo(String value) {
-            addCriterion("actionDesc <>", value, "actiondesc");
+        public Criteria andActionDescNotEqualTo(String value) {
+            addCriterion("action_desc <>", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescGreaterThan(String value) {
-            addCriterion("actionDesc >", value, "actiondesc");
+        public Criteria andActionDescGreaterThan(String value) {
+            addCriterion("action_desc >", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescGreaterThanOrEqualTo(String value) {
-            addCriterion("actionDesc >=", value, "actiondesc");
+        public Criteria andActionDescGreaterThanOrEqualTo(String value) {
+            addCriterion("action_desc >=", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescLessThan(String value) {
-            addCriterion("actionDesc <", value, "actiondesc");
+        public Criteria andActionDescLessThan(String value) {
+            addCriterion("action_desc <", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescLessThanOrEqualTo(String value) {
-            addCriterion("actionDesc <=", value, "actiondesc");
+        public Criteria andActionDescLessThanOrEqualTo(String value) {
+            addCriterion("action_desc <=", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescLike(String value) {
-            addCriterion("actionDesc like", value, "actiondesc");
+        public Criteria andActionDescLike(String value) {
+            addCriterion("action_desc like", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescNotLike(String value) {
-            addCriterion("actionDesc not like", value, "actiondesc");
+        public Criteria andActionDescNotLike(String value) {
+            addCriterion("action_desc not like", value, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescIn(List<String> values) {
-            addCriterion("actionDesc in", values, "actiondesc");
+        public Criteria andActionDescIn(List<String> values) {
+            addCriterion("action_desc in", values, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescNotIn(List<String> values) {
-            addCriterion("actionDesc not in", values, "actiondesc");
+        public Criteria andActionDescNotIn(List<String> values) {
+            addCriterion("action_desc not in", values, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescBetween(String value1, String value2) {
-            addCriterion("actionDesc between", value1, value2, "actiondesc");
+        public Criteria andActionDescBetween(String value1, String value2) {
+            addCriterion("action_desc between", value1, value2, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiondescNotBetween(String value1, String value2) {
-            addCriterion("actionDesc not between", value1, value2, "actiondesc");
+        public Criteria andActionDescNotBetween(String value1, String value2) {
+            addCriterion("action_desc not between", value1, value2, "actionDesc");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeIsNull() {
-            addCriterion("actionType is null");
+        public Criteria andActionTypeIsNull() {
+            addCriterion("action_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeIsNotNull() {
-            addCriterion("actionType is not null");
+        public Criteria andActionTypeIsNotNull() {
+            addCriterion("action_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeEqualTo(Integer value) {
-            addCriterion("actionType =", value, "actiontype");
+        public Criteria andActionTypeEqualTo(Integer value) {
+            addCriterion("action_type =", value, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeNotEqualTo(Integer value) {
-            addCriterion("actionType <>", value, "actiontype");
+        public Criteria andActionTypeNotEqualTo(Integer value) {
+            addCriterion("action_type <>", value, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeGreaterThan(Integer value) {
-            addCriterion("actionType >", value, "actiontype");
+        public Criteria andActionTypeGreaterThan(Integer value) {
+            addCriterion("action_type >", value, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("actionType >=", value, "actiontype");
+        public Criteria andActionTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("action_type >=", value, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeLessThan(Integer value) {
-            addCriterion("actionType <", value, "actiontype");
+        public Criteria andActionTypeLessThan(Integer value) {
+            addCriterion("action_type <", value, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeLessThanOrEqualTo(Integer value) {
-            addCriterion("actionType <=", value, "actiontype");
+        public Criteria andActionTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("action_type <=", value, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeIn(List<Integer> values) {
-            addCriterion("actionType in", values, "actiontype");
+        public Criteria andActionTypeIn(List<Integer> values) {
+            addCriterion("action_type in", values, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeNotIn(List<Integer> values) {
-            addCriterion("actionType not in", values, "actiontype");
+        public Criteria andActionTypeNotIn(List<Integer> values) {
+            addCriterion("action_type not in", values, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeBetween(Integer value1, Integer value2) {
-            addCriterion("actionType between", value1, value2, "actiontype");
+        public Criteria andActionTypeBetween(Integer value1, Integer value2) {
+            addCriterion("action_type between", value1, value2, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andActiontypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("actionType not between", value1, value2, "actiontype");
+        public Criteria andActionTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("action_type not between", value1, value2, "actionType");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinIsNull() {
-            addCriterion("baseIn is null");
+        public Criteria andBaseInIsNull() {
+            addCriterion("base_in is null");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinIsNotNull() {
-            addCriterion("baseIn is not null");
+        public Criteria andBaseInIsNotNull() {
+            addCriterion("base_in is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinEqualTo(BigDecimal value) {
-            addCriterion("baseIn =", value, "basein");
+        public Criteria andBaseInEqualTo(BigDecimal value) {
+            addCriterion("base_in =", value, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinNotEqualTo(BigDecimal value) {
-            addCriterion("baseIn <>", value, "basein");
+        public Criteria andBaseInNotEqualTo(BigDecimal value) {
+            addCriterion("base_in <>", value, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinGreaterThan(BigDecimal value) {
-            addCriterion("baseIn >", value, "basein");
+        public Criteria andBaseInGreaterThan(BigDecimal value) {
+            addCriterion("base_in >", value, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("baseIn >=", value, "basein");
+        public Criteria andBaseInGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("base_in >=", value, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinLessThan(BigDecimal value) {
-            addCriterion("baseIn <", value, "basein");
+        public Criteria andBaseInLessThan(BigDecimal value) {
+            addCriterion("base_in <", value, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("baseIn <=", value, "basein");
+        public Criteria andBaseInLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("base_in <=", value, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinIn(List<BigDecimal> values) {
-            addCriterion("baseIn in", values, "basein");
+        public Criteria andBaseInIn(List<BigDecimal> values) {
+            addCriterion("base_in in", values, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinNotIn(List<BigDecimal> values) {
-            addCriterion("baseIn not in", values, "basein");
+        public Criteria andBaseInNotIn(List<BigDecimal> values) {
+            addCriterion("base_in not in", values, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("baseIn between", value1, value2, "basein");
+        public Criteria andBaseInBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("base_in between", value1, value2, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseinNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("baseIn not between", value1, value2, "basein");
+        public Criteria andBaseInNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("base_in not between", value1, value2, "baseIn");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutIsNull() {
-            addCriterion("baseOut is null");
+        public Criteria andBaseOutIsNull() {
+            addCriterion("base_out is null");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutIsNotNull() {
-            addCriterion("baseOut is not null");
+        public Criteria andBaseOutIsNotNull() {
+            addCriterion("base_out is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutEqualTo(BigDecimal value) {
-            addCriterion("baseOut =", value, "baseout");
+        public Criteria andBaseOutEqualTo(BigDecimal value) {
+            addCriterion("base_out =", value, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutNotEqualTo(BigDecimal value) {
-            addCriterion("baseOut <>", value, "baseout");
+        public Criteria andBaseOutNotEqualTo(BigDecimal value) {
+            addCriterion("base_out <>", value, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutGreaterThan(BigDecimal value) {
-            addCriterion("baseOut >", value, "baseout");
+        public Criteria andBaseOutGreaterThan(BigDecimal value) {
+            addCriterion("base_out >", value, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("baseOut >=", value, "baseout");
+        public Criteria andBaseOutGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("base_out >=", value, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutLessThan(BigDecimal value) {
-            addCriterion("baseOut <", value, "baseout");
+        public Criteria andBaseOutLessThan(BigDecimal value) {
+            addCriterion("base_out <", value, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("baseOut <=", value, "baseout");
+        public Criteria andBaseOutLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("base_out <=", value, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutIn(List<BigDecimal> values) {
-            addCriterion("baseOut in", values, "baseout");
+        public Criteria andBaseOutIn(List<BigDecimal> values) {
+            addCriterion("base_out in", values, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutNotIn(List<BigDecimal> values) {
-            addCriterion("baseOut not in", values, "baseout");
+        public Criteria andBaseOutNotIn(List<BigDecimal> values) {
+            addCriterion("base_out not in", values, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("baseOut between", value1, value2, "baseout");
+        public Criteria andBaseOutBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("base_out between", value1, value2, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBaseoutNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("baseOut not between", value1, value2, "baseout");
+        public Criteria andBaseOutNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("base_out not between", value1, value2, "baseOut");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceIsNull() {
-            addCriterion("baseBalance is null");
+        public Criteria andBaseBalanceIsNull() {
+            addCriterion("base_balance is null");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceIsNotNull() {
-            addCriterion("baseBalance is not null");
+        public Criteria andBaseBalanceIsNotNull() {
+            addCriterion("base_balance is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceEqualTo(BigDecimal value) {
-            addCriterion("baseBalance =", value, "basebalance");
+        public Criteria andBaseBalanceEqualTo(BigDecimal value) {
+            addCriterion("base_balance =", value, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceNotEqualTo(BigDecimal value) {
-            addCriterion("baseBalance <>", value, "basebalance");
+        public Criteria andBaseBalanceNotEqualTo(BigDecimal value) {
+            addCriterion("base_balance <>", value, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceGreaterThan(BigDecimal value) {
-            addCriterion("baseBalance >", value, "basebalance");
+        public Criteria andBaseBalanceGreaterThan(BigDecimal value) {
+            addCriterion("base_balance >", value, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("baseBalance >=", value, "basebalance");
+        public Criteria andBaseBalanceGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("base_balance >=", value, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceLessThan(BigDecimal value) {
-            addCriterion("baseBalance <", value, "basebalance");
+        public Criteria andBaseBalanceLessThan(BigDecimal value) {
+            addCriterion("base_balance <", value, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("baseBalance <=", value, "basebalance");
+        public Criteria andBaseBalanceLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("base_balance <=", value, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceIn(List<BigDecimal> values) {
-            addCriterion("baseBalance in", values, "basebalance");
+        public Criteria andBaseBalanceIn(List<BigDecimal> values) {
+            addCriterion("base_balance in", values, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceNotIn(List<BigDecimal> values) {
-            addCriterion("baseBalance not in", values, "basebalance");
+        public Criteria andBaseBalanceNotIn(List<BigDecimal> values) {
+            addCriterion("base_balance not in", values, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("baseBalance between", value1, value2, "basebalance");
+        public Criteria andBaseBalanceBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("base_balance between", value1, value2, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andBasebalanceNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("baseBalance not between", value1, value2, "basebalance");
+        public Criteria andBaseBalanceNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("base_balance not between", value1, value2, "baseBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinIsNull() {
-            addCriterion("repeatIn is null");
+        public Criteria andRepeatInIsNull() {
+            addCriterion("repeat_in is null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinIsNotNull() {
-            addCriterion("repeatIn is not null");
+        public Criteria andRepeatInIsNotNull() {
+            addCriterion("repeat_in is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinEqualTo(BigDecimal value) {
-            addCriterion("repeatIn =", value, "repeatin");
+        public Criteria andRepeatInEqualTo(BigDecimal value) {
+            addCriterion("repeat_in =", value, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinNotEqualTo(BigDecimal value) {
-            addCriterion("repeatIn <>", value, "repeatin");
+        public Criteria andRepeatInNotEqualTo(BigDecimal value) {
+            addCriterion("repeat_in <>", value, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinGreaterThan(BigDecimal value) {
-            addCriterion("repeatIn >", value, "repeatin");
+        public Criteria andRepeatInGreaterThan(BigDecimal value) {
+            addCriterion("repeat_in >", value, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("repeatIn >=", value, "repeatin");
+        public Criteria andRepeatInGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("repeat_in >=", value, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinLessThan(BigDecimal value) {
-            addCriterion("repeatIn <", value, "repeatin");
+        public Criteria andRepeatInLessThan(BigDecimal value) {
+            addCriterion("repeat_in <", value, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("repeatIn <=", value, "repeatin");
+        public Criteria andRepeatInLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("repeat_in <=", value, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinIn(List<BigDecimal> values) {
-            addCriterion("repeatIn in", values, "repeatin");
+        public Criteria andRepeatInIn(List<BigDecimal> values) {
+            addCriterion("repeat_in in", values, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinNotIn(List<BigDecimal> values) {
-            addCriterion("repeatIn not in", values, "repeatin");
+        public Criteria andRepeatInNotIn(List<BigDecimal> values) {
+            addCriterion("repeat_in not in", values, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("repeatIn between", value1, value2, "repeatin");
+        public Criteria andRepeatInBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("repeat_in between", value1, value2, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatinNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("repeatIn not between", value1, value2, "repeatin");
+        public Criteria andRepeatInNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("repeat_in not between", value1, value2, "repeatIn");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutIsNull() {
-            addCriterion("repeatOut is null");
+        public Criteria andRepeatOutIsNull() {
+            addCriterion("repeat_out is null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutIsNotNull() {
-            addCriterion("repeatOut is not null");
+        public Criteria andRepeatOutIsNotNull() {
+            addCriterion("repeat_out is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutEqualTo(BigDecimal value) {
-            addCriterion("repeatOut =", value, "repeatout");
+        public Criteria andRepeatOutEqualTo(BigDecimal value) {
+            addCriterion("repeat_out =", value, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutNotEqualTo(BigDecimal value) {
-            addCriterion("repeatOut <>", value, "repeatout");
+        public Criteria andRepeatOutNotEqualTo(BigDecimal value) {
+            addCriterion("repeat_out <>", value, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutGreaterThan(BigDecimal value) {
-            addCriterion("repeatOut >", value, "repeatout");
+        public Criteria andRepeatOutGreaterThan(BigDecimal value) {
+            addCriterion("repeat_out >", value, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("repeatOut >=", value, "repeatout");
+        public Criteria andRepeatOutGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("repeat_out >=", value, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutLessThan(BigDecimal value) {
-            addCriterion("repeatOut <", value, "repeatout");
+        public Criteria andRepeatOutLessThan(BigDecimal value) {
+            addCriterion("repeat_out <", value, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("repeatOut <=", value, "repeatout");
+        public Criteria andRepeatOutLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("repeat_out <=", value, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutIn(List<BigDecimal> values) {
-            addCriterion("repeatOut in", values, "repeatout");
+        public Criteria andRepeatOutIn(List<BigDecimal> values) {
+            addCriterion("repeat_out in", values, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutNotIn(List<BigDecimal> values) {
-            addCriterion("repeatOut not in", values, "repeatout");
+        public Criteria andRepeatOutNotIn(List<BigDecimal> values) {
+            addCriterion("repeat_out not in", values, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("repeatOut between", value1, value2, "repeatout");
+        public Criteria andRepeatOutBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("repeat_out between", value1, value2, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatoutNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("repeatOut not between", value1, value2, "repeatout");
+        public Criteria andRepeatOutNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("repeat_out not between", value1, value2, "repeatOut");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceIsNull() {
-            addCriterion("repeatBalance is null");
+        public Criteria andRepeatBalanceIsNull() {
+            addCriterion("repeat_balance is null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceIsNotNull() {
-            addCriterion("repeatBalance is not null");
+        public Criteria andRepeatBalanceIsNotNull() {
+            addCriterion("repeat_balance is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceEqualTo(BigDecimal value) {
-            addCriterion("repeatBalance =", value, "repeatbalance");
+        public Criteria andRepeatBalanceEqualTo(BigDecimal value) {
+            addCriterion("repeat_balance =", value, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceNotEqualTo(BigDecimal value) {
-            addCriterion("repeatBalance <>", value, "repeatbalance");
+        public Criteria andRepeatBalanceNotEqualTo(BigDecimal value) {
+            addCriterion("repeat_balance <>", value, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceGreaterThan(BigDecimal value) {
-            addCriterion("repeatBalance >", value, "repeatbalance");
+        public Criteria andRepeatBalanceGreaterThan(BigDecimal value) {
+            addCriterion("repeat_balance >", value, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("repeatBalance >=", value, "repeatbalance");
+        public Criteria andRepeatBalanceGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("repeat_balance >=", value, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceLessThan(BigDecimal value) {
-            addCriterion("repeatBalance <", value, "repeatbalance");
+        public Criteria andRepeatBalanceLessThan(BigDecimal value) {
+            addCriterion("repeat_balance <", value, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("repeatBalance <=", value, "repeatbalance");
+        public Criteria andRepeatBalanceLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("repeat_balance <=", value, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceIn(List<BigDecimal> values) {
-            addCriterion("repeatBalance in", values, "repeatbalance");
+        public Criteria andRepeatBalanceIn(List<BigDecimal> values) {
+            addCriterion("repeat_balance in", values, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceNotIn(List<BigDecimal> values) {
-            addCriterion("repeatBalance not in", values, "repeatbalance");
+        public Criteria andRepeatBalanceNotIn(List<BigDecimal> values) {
+            addCriterion("repeat_balance not in", values, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("repeatBalance between", value1, value2, "repeatbalance");
+        public Criteria andRepeatBalanceBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("repeat_balance between", value1, value2, "repeatBalance");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatbalanceNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("repeatBalance not between", value1, value2, "repeatbalance");
+        public Criteria andRepeatBalanceNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("repeat_balance not between", value1, value2, "repeatBalance");
             return (Criteria) this;
         }
     }

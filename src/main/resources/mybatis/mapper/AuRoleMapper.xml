@@ -3,11 +3,11 @@
 <mapper namespace="cn.vip.mapper.AuRoleMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.AuRole" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="roleCode" property="rolecode" jdbcType="VARCHAR" />
-    <result column="roleName" property="rolename" jdbcType="VARCHAR" />
-    <result column="createDate" property="createdate" jdbcType="DATE" />
-    <result column="isStart" property="isstart" jdbcType="INTEGER" />
-    <result column="createdBy" property="createdby" jdbcType="VARCHAR" />
+    <result column="role_code" property="roleCode" jdbcType="VARCHAR" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="is_start" property="isStart" jdbcType="INTEGER" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, roleCode, roleName, createDate, isStart, createdBy
+    id, role_code, role_name, create_date, is_start, created_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.AuRoleExample" >
     select
@@ -101,11 +101,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.AuRole" >
-    insert into au_role (id, roleCode, roleName, 
-      createDate, isStart, createdBy
+    insert into au_role (id, role_code, role_name, 
+      create_date, is_start, created_by
       )
-    values (#{id,jdbcType=BIGINT}, #{rolecode,jdbcType=VARCHAR}, #{rolename,jdbcType=VARCHAR}, 
-      #{createdate,jdbcType=DATE}, #{isstart,jdbcType=INTEGER}, #{createdby,jdbcType=VARCHAR}
+    values (#{id,jdbcType=BIGINT}, #{roleCode,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=DATE}, #{isStart,jdbcType=INTEGER}, #{createdBy,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.AuRole" >
@@ -114,40 +114,40 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="rolecode != null" >
-        roleCode,
+      <if test="roleCode != null" >
+        role_code,
       </if>
-      <if test="rolename != null" >
-        roleName,
+      <if test="roleName != null" >
+        role_name,
       </if>
-      <if test="createdate != null" >
-        createDate,
+      <if test="createDate != null" >
+        create_date,
       </if>
-      <if test="isstart != null" >
-        isStart,
+      <if test="isStart != null" >
+        is_start,
       </if>
-      <if test="createdby != null" >
-        createdBy,
+      <if test="createdBy != null" >
+        created_by,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="rolecode != null" >
-        #{rolecode,jdbcType=VARCHAR},
+      <if test="roleCode != null" >
+        #{roleCode,jdbcType=VARCHAR},
       </if>
-      <if test="rolename != null" >
-        #{rolename,jdbcType=VARCHAR},
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
       </if>
-      <if test="createdate != null" >
-        #{createdate,jdbcType=DATE},
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
       </if>
-      <if test="isstart != null" >
-        #{isstart,jdbcType=INTEGER},
+      <if test="isStart != null" >
+        #{isStart,jdbcType=INTEGER},
       </if>
-      <if test="createdby != null" >
-        #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -163,20 +163,20 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.rolecode != null" >
-        roleCode = #{record.rolecode,jdbcType=VARCHAR},
+      <if test="record.roleCode != null" >
+        role_code = #{record.roleCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.rolename != null" >
-        roleName = #{record.rolename,jdbcType=VARCHAR},
+      <if test="record.roleName != null" >
+        role_name = #{record.roleName,jdbcType=VARCHAR},
       </if>
-      <if test="record.createdate != null" >
-        createDate = #{record.createdate,jdbcType=DATE},
+      <if test="record.createDate != null" >
+        create_date = #{record.createDate,jdbcType=DATE},
       </if>
-      <if test="record.isstart != null" >
-        isStart = #{record.isstart,jdbcType=INTEGER},
+      <if test="record.isStart != null" >
+        is_start = #{record.isStart,jdbcType=INTEGER},
       </if>
-      <if test="record.createdby != null" >
-        createdBy = #{record.createdby,jdbcType=VARCHAR},
+      <if test="record.createdBy != null" >
+        created_by = #{record.createdBy,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -186,11 +186,11 @@
   <update id="updateByExample" parameterType="map" >
     update au_role
     set id = #{record.id,jdbcType=BIGINT},
-      roleCode = #{record.rolecode,jdbcType=VARCHAR},
-      roleName = #{record.rolename,jdbcType=VARCHAR},
-      createDate = #{record.createdate,jdbcType=DATE},
-      isStart = #{record.isstart,jdbcType=INTEGER},
-      createdBy = #{record.createdby,jdbcType=VARCHAR}
+      role_code = #{record.roleCode,jdbcType=VARCHAR},
+      role_name = #{record.roleName,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=DATE},
+      is_start = #{record.isStart,jdbcType=INTEGER},
+      created_by = #{record.createdBy,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -198,31 +198,31 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.AuRole" >
     update au_role
     <set >
-      <if test="rolecode != null" >
-        roleCode = #{rolecode,jdbcType=VARCHAR},
+      <if test="roleCode != null" >
+        role_code = #{roleCode,jdbcType=VARCHAR},
       </if>
-      <if test="rolename != null" >
-        roleName = #{rolename,jdbcType=VARCHAR},
+      <if test="roleName != null" >
+        role_name = #{roleName,jdbcType=VARCHAR},
       </if>
-      <if test="createdate != null" >
-        createDate = #{createdate,jdbcType=DATE},
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
       </if>
-      <if test="isstart != null" >
-        isStart = #{isstart,jdbcType=INTEGER},
+      <if test="isStart != null" >
+        is_start = #{isStart,jdbcType=INTEGER},
       </if>
-      <if test="createdby != null" >
-        createdBy = #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.AuRole" >
     update au_role
-    set roleCode = #{rolecode,jdbcType=VARCHAR},
-      roleName = #{rolename,jdbcType=VARCHAR},
-      createDate = #{createdate,jdbcType=DATE},
-      isStart = #{isstart,jdbcType=INTEGER},
-      createdBy = #{createdby,jdbcType=VARCHAR}
+    set role_code = #{roleCode,jdbcType=VARCHAR},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      is_start = #{isStart,jdbcType=INTEGER},
+      created_by = #{createdBy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

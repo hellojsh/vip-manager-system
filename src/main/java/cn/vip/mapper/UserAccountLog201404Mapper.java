@@ -10,7 +10,7 @@ public interface UserAccountLog201404Mapper {
 
     int deleteByExample(UserAccountLog201404Example example);
 
-    int deleteByPrimaryKey(Long accountlogid);
+    int deleteByPrimaryKey(Long accountLogId);
 
     int insert(UserAccountLog201404 record);
 
@@ -18,7 +18,7 @@ public interface UserAccountLog201404Mapper {
 
     List<UserAccountLog201404> selectByExample(UserAccountLog201404Example example);
 
-    UserAccountLog201404 selectByPrimaryKey(Long accountlogid);
+    UserAccountLog201404 selectByPrimaryKey(Long accountLogId);
 
     int updateByExampleSelective(@Param("record") UserAccountLog201404 record, @Param("example") UserAccountLog201404Example example);
 

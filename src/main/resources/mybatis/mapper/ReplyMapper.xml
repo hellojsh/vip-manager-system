@@ -3,12 +3,12 @@
 <mapper namespace="cn.vip.mapper.ReplyMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.Reply" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="messageId" property="messageid" jdbcType="BIGINT" />
-    <result column="createdBy" property="createdby" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="message_id" property="messageId" jdbcType="BIGINT" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.Reply" extends="BaseResultMap" >
-    <result column="replyContent" property="replycontent" jdbcType="LONGVARCHAR" />
+    <result column="reply_content" property="replyContent" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,10 +69,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, messageId, createdBy, createTime
+    id, message_id, created_by, create_time
   </sql>
   <sql id="Blob_Column_List" >
-    replyContent
+    reply_content
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="cn.vip.pojo.ReplyExample" >
     select
@@ -123,10 +123,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.Reply" >
-    insert into reply (id, messageId, createdBy, 
-      createTime, replyContent)
-    values (#{id,jdbcType=BIGINT}, #{messageid,jdbcType=BIGINT}, #{createdby,jdbcType=VARCHAR}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{replycontent,jdbcType=LONGVARCHAR})
+    insert into reply (id, message_id, created_by, 
+      create_time, reply_content)
+    values (#{id,jdbcType=BIGINT}, #{messageId,jdbcType=BIGINT}, #{createdBy,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{replyContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.Reply" >
     insert into reply
@@ -134,34 +134,34 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="messageid != null" >
-        messageId,
+      <if test="messageId != null" >
+        message_id,
       </if>
-      <if test="createdby != null" >
-        createdBy,
+      <if test="createdBy != null" >
+        created_by,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="replycontent != null" >
-        replyContent,
+      <if test="replyContent != null" >
+        reply_content,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="messageid != null" >
-        #{messageid,jdbcType=BIGINT},
+      <if test="messageId != null" >
+        #{messageId,jdbcType=BIGINT},
       </if>
-      <if test="createdby != null" >
-        #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="replycontent != null" >
-        #{replycontent,jdbcType=LONGVARCHAR},
+      <if test="replyContent != null" >
+        #{replyContent,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -177,17 +177,17 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.messageid != null" >
-        messageId = #{record.messageid,jdbcType=BIGINT},
+      <if test="record.messageId != null" >
+        message_id = #{record.messageId,jdbcType=BIGINT},
       </if>
-      <if test="record.createdby != null" >
-        createdBy = #{record.createdby,jdbcType=VARCHAR},
+      <if test="record.createdBy != null" >
+        created_by = #{record.createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.replycontent != null" >
-        replyContent = #{record.replycontent,jdbcType=LONGVARCHAR},
+      <if test="record.replyContent != null" >
+        reply_content = #{record.replyContent,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -197,10 +197,10 @@
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update reply
     set id = #{record.id,jdbcType=BIGINT},
-      messageId = #{record.messageid,jdbcType=BIGINT},
-      createdBy = #{record.createdby,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      replyContent = #{record.replycontent,jdbcType=LONGVARCHAR}
+      message_id = #{record.messageId,jdbcType=BIGINT},
+      created_by = #{record.createdBy,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      reply_content = #{record.replyContent,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -208,9 +208,9 @@
   <update id="updateByExample" parameterType="map" >
     update reply
     set id = #{record.id,jdbcType=BIGINT},
-      messageId = #{record.messageid,jdbcType=BIGINT},
-      createdBy = #{record.createdby,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP}
+      message_id = #{record.messageId,jdbcType=BIGINT},
+      created_by = #{record.createdBy,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -218,34 +218,34 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.Reply" >
     update reply
     <set >
-      <if test="messageid != null" >
-        messageId = #{messageid,jdbcType=BIGINT},
+      <if test="messageId != null" >
+        message_id = #{messageId,jdbcType=BIGINT},
       </if>
-      <if test="createdby != null" >
-        createdBy = #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="replycontent != null" >
-        replyContent = #{replycontent,jdbcType=LONGVARCHAR},
+      <if test="replyContent != null" >
+        reply_content = #{replyContent,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.vip.pojo.Reply" >
     update reply
-    set messageId = #{messageid,jdbcType=BIGINT},
-      createdBy = #{createdby,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      replyContent = #{replycontent,jdbcType=LONGVARCHAR}
+    set message_id = #{messageId,jdbcType=BIGINT},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      reply_content = #{replyContent,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.Reply" >
     update reply
-    set messageId = #{messageid,jdbcType=BIGINT},
-      createdBy = #{createdby,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP}
+    set message_id = #{messageId,jdbcType=BIGINT},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

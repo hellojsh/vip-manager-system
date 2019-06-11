@@ -3,35 +3,35 @@
 <mapper namespace="cn.vip.mapper.AuUserMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.AuUser" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="loginCode" property="logincode" jdbcType="VARCHAR" />
+    <result column="login_code" property="loginCode" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="password2" property="password2" jdbcType="VARCHAR" />
-    <result column="userName" property="username" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
     <result column="birthday" property="birthday" jdbcType="DATE" />
-    <result column="cardType" property="cardtype" jdbcType="VARCHAR" />
-    <result column="cardTypeName" property="cardtypename" jdbcType="VARCHAR" />
-    <result column="idCard" property="idcard" jdbcType="VARCHAR" />
+    <result column="card_type" property="cardType" jdbcType="VARCHAR" />
+    <result column="card_type_name" property="cardTypeName" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
     <result column="country" property="country" jdbcType="VARCHAR" />
     <result column="mobile" property="mobile" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="userAddress" property="useraddress" jdbcType="VARCHAR" />
-    <result column="postCode" property="postcode" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="referId" property="referid" jdbcType="BIGINT" />
-    <result column="referCode" property="refercode" jdbcType="VARCHAR" />
-    <result column="roleId" property="roleid" jdbcType="BIGINT" />
-    <result column="roleName" property="rolename" jdbcType="VARCHAR" />
-    <result column="userType" property="usertype" jdbcType="VARCHAR" />
-    <result column="userTypeName" property="usertypename" jdbcType="VARCHAR" />
-    <result column="isStart" property="isstart" jdbcType="INTEGER" />
-    <result column="lastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
-    <result column="lastLoginTime" property="lastlogintime" jdbcType="TIMESTAMP" />
-    <result column="bankAccount" property="bankaccount" jdbcType="VARCHAR" />
-    <result column="bankName" property="bankname" jdbcType="VARCHAR" />
-    <result column="accountHolder" property="accountholder" jdbcType="VARCHAR" />
-    <result column="idCardPicPath" property="idcardpicpath" jdbcType="VARCHAR" />
-    <result column="bankPicPath" property="bankpicpath" jdbcType="VARCHAR" />
+    <result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+    <result column="post_code" property="postCode" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="refer_id" property="referId" jdbcType="BIGINT" />
+    <result column="refer_code" property="referCode" jdbcType="VARCHAR" />
+    <result column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+    <result column="user_type_name" property="userTypeName" jdbcType="VARCHAR" />
+    <result column="is_start" property="isStart" jdbcType="INTEGER" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="bank_account" property="bankAccount" jdbcType="VARCHAR" />
+    <result column="bank_name" property="bankName" jdbcType="VARCHAR" />
+    <result column="account_holder" property="accountHolder" jdbcType="VARCHAR" />
+    <result column="id_card_pic_path" property="idCardPicPath" jdbcType="VARCHAR" />
+    <result column="bank_pic_path" property="bankPicPath" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -92,10 +92,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, loginCode, password, password2, userName, sex, birthday, cardType, cardTypeName, 
-    idCard, country, mobile, email, userAddress, postCode, createTime, referId, referCode, 
-    roleId, roleName, userType, userTypeName, isStart, lastUpdateTime, lastLoginTime, 
-    bankAccount, bankName, accountHolder, idCardPicPath, bankPicPath
+    id, login_code, password, password2, user_name, sex, birthday, card_type, card_type_name, 
+    id_card, country, mobile, email, user_address, post_code, create_time, refer_id, 
+    refer_code, role_id, role_name, user_type, user_type_name, is_start, last_update_time, 
+    last_login_time, bank_account, bank_name, account_holder, id_card_pic_path, bank_pic_path
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.AuUserExample" >
     select
@@ -128,27 +128,27 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.AuUser" >
-    insert into au_user (id, loginCode, password, 
-      password2, userName, sex, 
-      birthday, cardType, cardTypeName, 
-      idCard, country, mobile, 
-      email, userAddress, postCode, 
-      createTime, referId, referCode, 
-      roleId, roleName, userType, 
-      userTypeName, isStart, lastUpdateTime, 
-      lastLoginTime, bankAccount, bankName, 
-      accountHolder, idCardPicPath, bankPicPath
+    insert into au_user (id, login_code, password, 
+      password2, user_name, sex, 
+      birthday, card_type, card_type_name, 
+      id_card, country, mobile, 
+      email, user_address, post_code, 
+      create_time, refer_id, refer_code, 
+      role_id, role_name, user_type, 
+      user_type_name, is_start, last_update_time, 
+      last_login_time, bank_account, bank_name, 
+      account_holder, id_card_pic_path, bank_pic_path
       )
-    values (#{id,jdbcType=BIGINT}, #{logincode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{password2,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
-      #{birthday,jdbcType=DATE}, #{cardtype,jdbcType=VARCHAR}, #{cardtypename,jdbcType=VARCHAR}, 
-      #{idcard,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{useraddress,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{referid,jdbcType=BIGINT}, #{refercode,jdbcType=VARCHAR}, 
-      #{roleid,jdbcType=BIGINT}, #{rolename,jdbcType=VARCHAR}, #{usertype,jdbcType=VARCHAR}, 
-      #{usertypename,jdbcType=VARCHAR}, #{isstart,jdbcType=INTEGER}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
-      #{lastlogintime,jdbcType=TIMESTAMP}, #{bankaccount,jdbcType=VARCHAR}, #{bankname,jdbcType=VARCHAR}, 
-      #{accountholder,jdbcType=VARCHAR}, #{idcardpicpath,jdbcType=VARCHAR}, #{bankpicpath,jdbcType=VARCHAR}
+    values (#{id,jdbcType=BIGINT}, #{loginCode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{password2,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=DATE}, #{cardType,jdbcType=VARCHAR}, #{cardTypeName,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{userAddress,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{referId,jdbcType=BIGINT}, #{referCode,jdbcType=VARCHAR}, 
+      #{roleId,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, 
+      #{userTypeName,jdbcType=VARCHAR}, #{isStart,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{bankAccount,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, 
+      #{accountHolder,jdbcType=VARCHAR}, #{idCardPicPath,jdbcType=VARCHAR}, #{bankPicPath,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.AuUser" >
@@ -157,8 +157,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="logincode != null" >
-        loginCode,
+      <if test="loginCode != null" >
+        login_code,
       </if>
       <if test="password != null" >
         password,
@@ -166,8 +166,8 @@
       <if test="password2 != null" >
         password2,
       </if>
-      <if test="username != null" >
-        userName,
+      <if test="userName != null" >
+        user_name,
       </if>
       <if test="sex != null" >
         sex,
@@ -175,14 +175,14 @@
       <if test="birthday != null" >
         birthday,
       </if>
-      <if test="cardtype != null" >
-        cardType,
+      <if test="cardType != null" >
+        card_type,
       </if>
-      <if test="cardtypename != null" >
-        cardTypeName,
+      <if test="cardTypeName != null" >
+        card_type_name,
       </if>
-      <if test="idcard != null" >
-        idCard,
+      <if test="idCard != null" >
+        id_card,
       </if>
       <if test="country != null" >
         country,
@@ -193,64 +193,64 @@
       <if test="email != null" >
         email,
       </if>
-      <if test="useraddress != null" >
-        userAddress,
+      <if test="userAddress != null" >
+        user_address,
       </if>
-      <if test="postcode != null" >
-        postCode,
+      <if test="postCode != null" >
+        post_code,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="referid != null" >
-        referId,
+      <if test="referId != null" >
+        refer_id,
       </if>
-      <if test="refercode != null" >
-        referCode,
+      <if test="referCode != null" >
+        refer_code,
       </if>
-      <if test="roleid != null" >
-        roleId,
+      <if test="roleId != null" >
+        role_id,
       </if>
-      <if test="rolename != null" >
-        roleName,
+      <if test="roleName != null" >
+        role_name,
       </if>
-      <if test="usertype != null" >
-        userType,
+      <if test="userType != null" >
+        user_type,
       </if>
-      <if test="usertypename != null" >
-        userTypeName,
+      <if test="userTypeName != null" >
+        user_type_name,
       </if>
-      <if test="isstart != null" >
-        isStart,
+      <if test="isStart != null" >
+        is_start,
       </if>
-      <if test="lastupdatetime != null" >
-        lastUpdateTime,
+      <if test="lastUpdateTime != null" >
+        last_update_time,
       </if>
-      <if test="lastlogintime != null" >
-        lastLoginTime,
+      <if test="lastLoginTime != null" >
+        last_login_time,
       </if>
-      <if test="bankaccount != null" >
-        bankAccount,
+      <if test="bankAccount != null" >
+        bank_account,
       </if>
-      <if test="bankname != null" >
-        bankName,
+      <if test="bankName != null" >
+        bank_name,
       </if>
-      <if test="accountholder != null" >
-        accountHolder,
+      <if test="accountHolder != null" >
+        account_holder,
       </if>
-      <if test="idcardpicpath != null" >
-        idCardPicPath,
+      <if test="idCardPicPath != null" >
+        id_card_pic_path,
       </if>
-      <if test="bankpicpath != null" >
-        bankPicPath,
+      <if test="bankPicPath != null" >
+        bank_pic_path,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="logincode != null" >
-        #{logincode,jdbcType=VARCHAR},
+      <if test="loginCode != null" >
+        #{loginCode,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
@@ -258,8 +258,8 @@
       <if test="password2 != null" >
         #{password2,jdbcType=VARCHAR},
       </if>
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
         #{sex,jdbcType=VARCHAR},
@@ -267,14 +267,14 @@
       <if test="birthday != null" >
         #{birthday,jdbcType=DATE},
       </if>
-      <if test="cardtype != null" >
-        #{cardtype,jdbcType=VARCHAR},
+      <if test="cardType != null" >
+        #{cardType,jdbcType=VARCHAR},
       </if>
-      <if test="cardtypename != null" >
-        #{cardtypename,jdbcType=VARCHAR},
+      <if test="cardTypeName != null" >
+        #{cardTypeName,jdbcType=VARCHAR},
       </if>
-      <if test="idcard != null" >
-        #{idcard,jdbcType=VARCHAR},
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
       </if>
       <if test="country != null" >
         #{country,jdbcType=VARCHAR},
@@ -285,56 +285,56 @@
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="useraddress != null" >
-        #{useraddress,jdbcType=VARCHAR},
+      <if test="userAddress != null" >
+        #{userAddress,jdbcType=VARCHAR},
       </if>
-      <if test="postcode != null" >
-        #{postcode,jdbcType=VARCHAR},
+      <if test="postCode != null" >
+        #{postCode,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="referid != null" >
-        #{referid,jdbcType=BIGINT},
+      <if test="referId != null" >
+        #{referId,jdbcType=BIGINT},
       </if>
-      <if test="refercode != null" >
-        #{refercode,jdbcType=VARCHAR},
+      <if test="referCode != null" >
+        #{referCode,jdbcType=VARCHAR},
       </if>
-      <if test="roleid != null" >
-        #{roleid,jdbcType=BIGINT},
+      <if test="roleId != null" >
+        #{roleId,jdbcType=BIGINT},
       </if>
-      <if test="rolename != null" >
-        #{rolename,jdbcType=VARCHAR},
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
       </if>
-      <if test="usertype != null" >
-        #{usertype,jdbcType=VARCHAR},
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
       </if>
-      <if test="usertypename != null" >
-        #{usertypename,jdbcType=VARCHAR},
+      <if test="userTypeName != null" >
+        #{userTypeName,jdbcType=VARCHAR},
       </if>
-      <if test="isstart != null" >
-        #{isstart,jdbcType=INTEGER},
+      <if test="isStart != null" >
+        #{isStart,jdbcType=INTEGER},
       </if>
-      <if test="lastupdatetime != null" >
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lastlogintime != null" >
-        #{lastlogintime,jdbcType=TIMESTAMP},
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="bankaccount != null" >
-        #{bankaccount,jdbcType=VARCHAR},
+      <if test="bankAccount != null" >
+        #{bankAccount,jdbcType=VARCHAR},
       </if>
-      <if test="bankname != null" >
-        #{bankname,jdbcType=VARCHAR},
+      <if test="bankName != null" >
+        #{bankName,jdbcType=VARCHAR},
       </if>
-      <if test="accountholder != null" >
-        #{accountholder,jdbcType=VARCHAR},
+      <if test="accountHolder != null" >
+        #{accountHolder,jdbcType=VARCHAR},
       </if>
-      <if test="idcardpicpath != null" >
-        #{idcardpicpath,jdbcType=VARCHAR},
+      <if test="idCardPicPath != null" >
+        #{idCardPicPath,jdbcType=VARCHAR},
       </if>
-      <if test="bankpicpath != null" >
-        #{bankpicpath,jdbcType=VARCHAR},
+      <if test="bankPicPath != null" >
+        #{bankPicPath,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -350,8 +350,8 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.logincode != null" >
-        loginCode = #{record.logincode,jdbcType=VARCHAR},
+      <if test="record.loginCode != null" >
+        login_code = #{record.loginCode,jdbcType=VARCHAR},
       </if>
       <if test="record.password != null" >
         password = #{record.password,jdbcType=VARCHAR},
@@ -359,8 +359,8 @@
       <if test="record.password2 != null" >
         password2 = #{record.password2,jdbcType=VARCHAR},
       </if>
-      <if test="record.username != null" >
-        userName = #{record.username,jdbcType=VARCHAR},
+      <if test="record.userName != null" >
+        user_name = #{record.userName,jdbcType=VARCHAR},
       </if>
       <if test="record.sex != null" >
         sex = #{record.sex,jdbcType=VARCHAR},
@@ -368,14 +368,14 @@
       <if test="record.birthday != null" >
         birthday = #{record.birthday,jdbcType=DATE},
       </if>
-      <if test="record.cardtype != null" >
-        cardType = #{record.cardtype,jdbcType=VARCHAR},
+      <if test="record.cardType != null" >
+        card_type = #{record.cardType,jdbcType=VARCHAR},
       </if>
-      <if test="record.cardtypename != null" >
-        cardTypeName = #{record.cardtypename,jdbcType=VARCHAR},
+      <if test="record.cardTypeName != null" >
+        card_type_name = #{record.cardTypeName,jdbcType=VARCHAR},
       </if>
-      <if test="record.idcard != null" >
-        idCard = #{record.idcard,jdbcType=VARCHAR},
+      <if test="record.idCard != null" >
+        id_card = #{record.idCard,jdbcType=VARCHAR},
       </if>
       <if test="record.country != null" >
         country = #{record.country,jdbcType=VARCHAR},
@@ -386,56 +386,56 @@
       <if test="record.email != null" >
         email = #{record.email,jdbcType=VARCHAR},
       </if>
-      <if test="record.useraddress != null" >
-        userAddress = #{record.useraddress,jdbcType=VARCHAR},
+      <if test="record.userAddress != null" >
+        user_address = #{record.userAddress,jdbcType=VARCHAR},
       </if>
-      <if test="record.postcode != null" >
-        postCode = #{record.postcode,jdbcType=VARCHAR},
+      <if test="record.postCode != null" >
+        post_code = #{record.postCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.referid != null" >
-        referId = #{record.referid,jdbcType=BIGINT},
+      <if test="record.referId != null" >
+        refer_id = #{record.referId,jdbcType=BIGINT},
       </if>
-      <if test="record.refercode != null" >
-        referCode = #{record.refercode,jdbcType=VARCHAR},
+      <if test="record.referCode != null" >
+        refer_code = #{record.referCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.roleid != null" >
-        roleId = #{record.roleid,jdbcType=BIGINT},
+      <if test="record.roleId != null" >
+        role_id = #{record.roleId,jdbcType=BIGINT},
       </if>
-      <if test="record.rolename != null" >
-        roleName = #{record.rolename,jdbcType=VARCHAR},
+      <if test="record.roleName != null" >
+        role_name = #{record.roleName,jdbcType=VARCHAR},
       </if>
-      <if test="record.usertype != null" >
-        userType = #{record.usertype,jdbcType=VARCHAR},
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=VARCHAR},
       </if>
-      <if test="record.usertypename != null" >
-        userTypeName = #{record.usertypename,jdbcType=VARCHAR},
+      <if test="record.userTypeName != null" >
+        user_type_name = #{record.userTypeName,jdbcType=VARCHAR},
       </if>
-      <if test="record.isstart != null" >
-        isStart = #{record.isstart,jdbcType=INTEGER},
+      <if test="record.isStart != null" >
+        is_start = #{record.isStart,jdbcType=INTEGER},
       </if>
-      <if test="record.lastupdatetime != null" >
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null" >
+        last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.lastlogintime != null" >
-        lastLoginTime = #{record.lastlogintime,jdbcType=TIMESTAMP},
+      <if test="record.lastLoginTime != null" >
+        last_login_time = #{record.lastLoginTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.bankaccount != null" >
-        bankAccount = #{record.bankaccount,jdbcType=VARCHAR},
+      <if test="record.bankAccount != null" >
+        bank_account = #{record.bankAccount,jdbcType=VARCHAR},
       </if>
-      <if test="record.bankname != null" >
-        bankName = #{record.bankname,jdbcType=VARCHAR},
+      <if test="record.bankName != null" >
+        bank_name = #{record.bankName,jdbcType=VARCHAR},
       </if>
-      <if test="record.accountholder != null" >
-        accountHolder = #{record.accountholder,jdbcType=VARCHAR},
+      <if test="record.accountHolder != null" >
+        account_holder = #{record.accountHolder,jdbcType=VARCHAR},
       </if>
-      <if test="record.idcardpicpath != null" >
-        idCardPicPath = #{record.idcardpicpath,jdbcType=VARCHAR},
+      <if test="record.idCardPicPath != null" >
+        id_card_pic_path = #{record.idCardPicPath,jdbcType=VARCHAR},
       </if>
-      <if test="record.bankpicpath != null" >
-        bankPicPath = #{record.bankpicpath,jdbcType=VARCHAR},
+      <if test="record.bankPicPath != null" >
+        bank_pic_path = #{record.bankPicPath,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -445,35 +445,35 @@
   <update id="updateByExample" parameterType="map" >
     update au_user
     set id = #{record.id,jdbcType=BIGINT},
-      loginCode = #{record.logincode,jdbcType=VARCHAR},
+      login_code = #{record.loginCode,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       password2 = #{record.password2,jdbcType=VARCHAR},
-      userName = #{record.username,jdbcType=VARCHAR},
+      user_name = #{record.userName,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=VARCHAR},
       birthday = #{record.birthday,jdbcType=DATE},
-      cardType = #{record.cardtype,jdbcType=VARCHAR},
-      cardTypeName = #{record.cardtypename,jdbcType=VARCHAR},
-      idCard = #{record.idcard,jdbcType=VARCHAR},
+      card_type = #{record.cardType,jdbcType=VARCHAR},
+      card_type_name = #{record.cardTypeName,jdbcType=VARCHAR},
+      id_card = #{record.idCard,jdbcType=VARCHAR},
       country = #{record.country,jdbcType=VARCHAR},
       mobile = #{record.mobile,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
-      userAddress = #{record.useraddress,jdbcType=VARCHAR},
-      postCode = #{record.postcode,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      referId = #{record.referid,jdbcType=BIGINT},
-      referCode = #{record.refercode,jdbcType=VARCHAR},
-      roleId = #{record.roleid,jdbcType=BIGINT},
-      roleName = #{record.rolename,jdbcType=VARCHAR},
-      userType = #{record.usertype,jdbcType=VARCHAR},
-      userTypeName = #{record.usertypename,jdbcType=VARCHAR},
-      isStart = #{record.isstart,jdbcType=INTEGER},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      lastLoginTime = #{record.lastlogintime,jdbcType=TIMESTAMP},
-      bankAccount = #{record.bankaccount,jdbcType=VARCHAR},
-      bankName = #{record.bankname,jdbcType=VARCHAR},
-      accountHolder = #{record.accountholder,jdbcType=VARCHAR},
-      idCardPicPath = #{record.idcardpicpath,jdbcType=VARCHAR},
-      bankPicPath = #{record.bankpicpath,jdbcType=VARCHAR}
+      user_address = #{record.userAddress,jdbcType=VARCHAR},
+      post_code = #{record.postCode,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      refer_id = #{record.referId,jdbcType=BIGINT},
+      refer_code = #{record.referCode,jdbcType=VARCHAR},
+      role_id = #{record.roleId,jdbcType=BIGINT},
+      role_name = #{record.roleName,jdbcType=VARCHAR},
+      user_type = #{record.userType,jdbcType=VARCHAR},
+      user_type_name = #{record.userTypeName,jdbcType=VARCHAR},
+      is_start = #{record.isStart,jdbcType=INTEGER},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      last_login_time = #{record.lastLoginTime,jdbcType=TIMESTAMP},
+      bank_account = #{record.bankAccount,jdbcType=VARCHAR},
+      bank_name = #{record.bankName,jdbcType=VARCHAR},
+      account_holder = #{record.accountHolder,jdbcType=VARCHAR},
+      id_card_pic_path = #{record.idCardPicPath,jdbcType=VARCHAR},
+      bank_pic_path = #{record.bankPicPath,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -481,8 +481,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.AuUser" >
     update au_user
     <set >
-      <if test="logincode != null" >
-        loginCode = #{logincode,jdbcType=VARCHAR},
+      <if test="loginCode != null" >
+        login_code = #{loginCode,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
@@ -490,8 +490,8 @@
       <if test="password2 != null" >
         password2 = #{password2,jdbcType=VARCHAR},
       </if>
-      <if test="username != null" >
-        userName = #{username,jdbcType=VARCHAR},
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
         sex = #{sex,jdbcType=VARCHAR},
@@ -499,14 +499,14 @@
       <if test="birthday != null" >
         birthday = #{birthday,jdbcType=DATE},
       </if>
-      <if test="cardtype != null" >
-        cardType = #{cardtype,jdbcType=VARCHAR},
+      <if test="cardType != null" >
+        card_type = #{cardType,jdbcType=VARCHAR},
       </if>
-      <if test="cardtypename != null" >
-        cardTypeName = #{cardtypename,jdbcType=VARCHAR},
+      <if test="cardTypeName != null" >
+        card_type_name = #{cardTypeName,jdbcType=VARCHAR},
       </if>
-      <if test="idcard != null" >
-        idCard = #{idcard,jdbcType=VARCHAR},
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
       </if>
       <if test="country != null" >
         country = #{country,jdbcType=VARCHAR},
@@ -517,91 +517,91 @@
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="useraddress != null" >
-        userAddress = #{useraddress,jdbcType=VARCHAR},
+      <if test="userAddress != null" >
+        user_address = #{userAddress,jdbcType=VARCHAR},
       </if>
-      <if test="postcode != null" >
-        postCode = #{postcode,jdbcType=VARCHAR},
+      <if test="postCode != null" >
+        post_code = #{postCode,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="referid != null" >
-        referId = #{referid,jdbcType=BIGINT},
+      <if test="referId != null" >
+        refer_id = #{referId,jdbcType=BIGINT},
       </if>
-      <if test="refercode != null" >
-        referCode = #{refercode,jdbcType=VARCHAR},
+      <if test="referCode != null" >
+        refer_code = #{referCode,jdbcType=VARCHAR},
       </if>
-      <if test="roleid != null" >
-        roleId = #{roleid,jdbcType=BIGINT},
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=BIGINT},
       </if>
-      <if test="rolename != null" >
-        roleName = #{rolename,jdbcType=VARCHAR},
+      <if test="roleName != null" >
+        role_name = #{roleName,jdbcType=VARCHAR},
       </if>
-      <if test="usertype != null" >
-        userType = #{usertype,jdbcType=VARCHAR},
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=VARCHAR},
       </if>
-      <if test="usertypename != null" >
-        userTypeName = #{usertypename,jdbcType=VARCHAR},
+      <if test="userTypeName != null" >
+        user_type_name = #{userTypeName,jdbcType=VARCHAR},
       </if>
-      <if test="isstart != null" >
-        isStart = #{isstart,jdbcType=INTEGER},
+      <if test="isStart != null" >
+        is_start = #{isStart,jdbcType=INTEGER},
       </if>
-      <if test="lastupdatetime != null" >
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null" >
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lastlogintime != null" >
-        lastLoginTime = #{lastlogintime,jdbcType=TIMESTAMP},
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="bankaccount != null" >
-        bankAccount = #{bankaccount,jdbcType=VARCHAR},
+      <if test="bankAccount != null" >
+        bank_account = #{bankAccount,jdbcType=VARCHAR},
       </if>
-      <if test="bankname != null" >
-        bankName = #{bankname,jdbcType=VARCHAR},
+      <if test="bankName != null" >
+        bank_name = #{bankName,jdbcType=VARCHAR},
       </if>
-      <if test="accountholder != null" >
-        accountHolder = #{accountholder,jdbcType=VARCHAR},
+      <if test="accountHolder != null" >
+        account_holder = #{accountHolder,jdbcType=VARCHAR},
       </if>
-      <if test="idcardpicpath != null" >
-        idCardPicPath = #{idcardpicpath,jdbcType=VARCHAR},
+      <if test="idCardPicPath != null" >
+        id_card_pic_path = #{idCardPicPath,jdbcType=VARCHAR},
       </if>
-      <if test="bankpicpath != null" >
-        bankPicPath = #{bankpicpath,jdbcType=VARCHAR},
+      <if test="bankPicPath != null" >
+        bank_pic_path = #{bankPicPath,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.AuUser" >
     update au_user
-    set loginCode = #{logincode,jdbcType=VARCHAR},
+    set login_code = #{loginCode,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       password2 = #{password2,jdbcType=VARCHAR},
-      userName = #{username,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=DATE},
-      cardType = #{cardtype,jdbcType=VARCHAR},
-      cardTypeName = #{cardtypename,jdbcType=VARCHAR},
-      idCard = #{idcard,jdbcType=VARCHAR},
+      card_type = #{cardType,jdbcType=VARCHAR},
+      card_type_name = #{cardTypeName,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
       country = #{country,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      userAddress = #{useraddress,jdbcType=VARCHAR},
-      postCode = #{postcode,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      referId = #{referid,jdbcType=BIGINT},
-      referCode = #{refercode,jdbcType=VARCHAR},
-      roleId = #{roleid,jdbcType=BIGINT},
-      roleName = #{rolename,jdbcType=VARCHAR},
-      userType = #{usertype,jdbcType=VARCHAR},
-      userTypeName = #{usertypename,jdbcType=VARCHAR},
-      isStart = #{isstart,jdbcType=INTEGER},
-      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      lastLoginTime = #{lastlogintime,jdbcType=TIMESTAMP},
-      bankAccount = #{bankaccount,jdbcType=VARCHAR},
-      bankName = #{bankname,jdbcType=VARCHAR},
-      accountHolder = #{accountholder,jdbcType=VARCHAR},
-      idCardPicPath = #{idcardpicpath,jdbcType=VARCHAR},
-      bankPicPath = #{bankpicpath,jdbcType=VARCHAR}
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      post_code = #{postCode,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      refer_id = #{referId,jdbcType=BIGINT},
+      refer_code = #{referCode,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=BIGINT},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=VARCHAR},
+      user_type_name = #{userTypeName,jdbcType=VARCHAR},
+      is_start = #{isStart,jdbcType=INTEGER},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      bank_account = #{bankAccount,jdbcType=VARCHAR},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      account_holder = #{accountHolder,jdbcType=VARCHAR},
+      id_card_pic_path = #{idCardPicPath,jdbcType=VARCHAR},
+      bank_pic_path = #{bankPicPath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

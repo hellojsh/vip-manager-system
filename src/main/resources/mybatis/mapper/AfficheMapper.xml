@@ -6,9 +6,9 @@
     <result column="code" property="code" jdbcType="VARCHAR" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="publisher" property="publisher" jdbcType="VARCHAR" />
-    <result column="publishTime" property="publishtime" jdbcType="TIMESTAMP" />
-    <result column="startTime" property="starttime" jdbcType="TIMESTAMP" />
-    <result column="endTime" property="endtime" jdbcType="TIMESTAMP" />
+    <result column="publish_time" property="publishTime" jdbcType="TIMESTAMP" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.Affiche" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, code, title, publisher, publishTime, startTime, endTime
+    id, code, title, publisher, publish_time, start_time, end_time
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -127,11 +127,11 @@
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.Affiche" >
     insert into affiche (id, code, title, 
-      publisher, publishTime, startTime, 
-      endTime, content)
+      publisher, publish_time, start_time, 
+      end_time, content)
     values (#{id,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
-      #{publisher,jdbcType=VARCHAR}, #{publishtime,jdbcType=TIMESTAMP}, #{starttime,jdbcType=TIMESTAMP}, 
-      #{endtime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+      #{publisher,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.Affiche" >
     insert into affiche
@@ -148,14 +148,14 @@
       <if test="publisher != null" >
         publisher,
       </if>
-      <if test="publishtime != null" >
-        publishTime,
+      <if test="publishTime != null" >
+        publish_time,
       </if>
-      <if test="starttime != null" >
-        startTime,
+      <if test="startTime != null" >
+        start_time,
       </if>
-      <if test="endtime != null" >
-        endTime,
+      <if test="endTime != null" >
+        end_time,
       </if>
       <if test="content != null" >
         content,
@@ -174,14 +174,14 @@
       <if test="publisher != null" >
         #{publisher,jdbcType=VARCHAR},
       </if>
-      <if test="publishtime != null" >
-        #{publishtime,jdbcType=TIMESTAMP},
+      <if test="publishTime != null" >
+        #{publishTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="starttime != null" >
-        #{starttime,jdbcType=TIMESTAMP},
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="endtime != null" >
-        #{endtime,jdbcType=TIMESTAMP},
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
         #{content,jdbcType=LONGVARCHAR},
@@ -209,14 +209,14 @@
       <if test="record.publisher != null" >
         publisher = #{record.publisher,jdbcType=VARCHAR},
       </if>
-      <if test="record.publishtime != null" >
-        publishTime = #{record.publishtime,jdbcType=TIMESTAMP},
+      <if test="record.publishTime != null" >
+        publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.starttime != null" >
-        startTime = #{record.starttime,jdbcType=TIMESTAMP},
+      <if test="record.startTime != null" >
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.endtime != null" >
-        endTime = #{record.endtime,jdbcType=TIMESTAMP},
+      <if test="record.endTime != null" >
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.content != null" >
         content = #{record.content,jdbcType=LONGVARCHAR},
@@ -232,9 +232,9 @@
       code = #{record.code,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       publisher = #{record.publisher,jdbcType=VARCHAR},
-      publishTime = #{record.publishtime,jdbcType=TIMESTAMP},
-      startTime = #{record.starttime,jdbcType=TIMESTAMP},
-      endTime = #{record.endtime,jdbcType=TIMESTAMP},
+      publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -246,9 +246,9 @@
       code = #{record.code,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       publisher = #{record.publisher,jdbcType=VARCHAR},
-      publishTime = #{record.publishtime,jdbcType=TIMESTAMP},
-      startTime = #{record.starttime,jdbcType=TIMESTAMP},
-      endTime = #{record.endtime,jdbcType=TIMESTAMP}
+      publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -265,14 +265,14 @@
       <if test="publisher != null" >
         publisher = #{publisher,jdbcType=VARCHAR},
       </if>
-      <if test="publishtime != null" >
-        publishTime = #{publishtime,jdbcType=TIMESTAMP},
+      <if test="publishTime != null" >
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="starttime != null" >
-        startTime = #{starttime,jdbcType=TIMESTAMP},
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="endtime != null" >
-        endTime = #{endtime,jdbcType=TIMESTAMP},
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
         content = #{content,jdbcType=LONGVARCHAR},
@@ -285,9 +285,9 @@
     set code = #{code,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       publisher = #{publisher,jdbcType=VARCHAR},
-      publishTime = #{publishtime,jdbcType=TIMESTAMP},
-      startTime = #{starttime,jdbcType=TIMESTAMP},
-      endTime = #{endtime,jdbcType=TIMESTAMP},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -296,9 +296,9 @@
     set code = #{code,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       publisher = #{publisher,jdbcType=VARCHAR},
-      publishTime = #{publishtime,jdbcType=TIMESTAMP},
-      startTime = #{starttime,jdbcType=TIMESTAMP},
-      endTime = #{endtime,jdbcType=TIMESTAMP}
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -3,11 +3,11 @@
 <mapper namespace="cn.vip.mapper.AuAuthorityMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.AuAuthority" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="roleId" property="roleid" jdbcType="BIGINT" />
-    <result column="functionId" property="functionid" jdbcType="BIGINT" />
-    <result column="userTypeId" property="usertypeid" jdbcType="BIGINT" />
-    <result column="creationTime" property="creationtime" jdbcType="TIMESTAMP" />
-    <result column="createdBy" property="createdby" jdbcType="VARCHAR" />
+    <result column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="function_id" property="functionId" jdbcType="BIGINT" />
+    <result column="user_type_id" property="userTypeId" jdbcType="BIGINT" />
+    <result column="creation_time" property="creationTime" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, roleId, functionId, userTypeId, creationTime, createdBy
+    id, role_id, function_id, user_type_id, creation_time, created_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.vip.pojo.AuAuthorityExample" >
     select
@@ -101,11 +101,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.AuAuthority" >
-    insert into au_authority (id, roleId, functionId, 
-      userTypeId, creationTime, createdBy
+    insert into au_authority (id, role_id, function_id, 
+      user_type_id, creation_time, created_by
       )
-    values (#{id,jdbcType=BIGINT}, #{roleid,jdbcType=BIGINT}, #{functionid,jdbcType=BIGINT}, 
-      #{usertypeid,jdbcType=BIGINT}, #{creationtime,jdbcType=TIMESTAMP}, #{createdby,jdbcType=VARCHAR}
+    values (#{id,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, #{functionId,jdbcType=BIGINT}, 
+      #{userTypeId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.AuAuthority" >
@@ -114,40 +114,40 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="roleid != null" >
-        roleId,
+      <if test="roleId != null" >
+        role_id,
       </if>
-      <if test="functionid != null" >
-        functionId,
+      <if test="functionId != null" >
+        function_id,
       </if>
-      <if test="usertypeid != null" >
-        userTypeId,
+      <if test="userTypeId != null" >
+        user_type_id,
       </if>
-      <if test="creationtime != null" >
-        creationTime,
+      <if test="creationTime != null" >
+        creation_time,
       </if>
-      <if test="createdby != null" >
-        createdBy,
+      <if test="createdBy != null" >
+        created_by,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="roleid != null" >
-        #{roleid,jdbcType=BIGINT},
+      <if test="roleId != null" >
+        #{roleId,jdbcType=BIGINT},
       </if>
-      <if test="functionid != null" >
-        #{functionid,jdbcType=BIGINT},
+      <if test="functionId != null" >
+        #{functionId,jdbcType=BIGINT},
       </if>
-      <if test="usertypeid != null" >
-        #{usertypeid,jdbcType=BIGINT},
+      <if test="userTypeId != null" >
+        #{userTypeId,jdbcType=BIGINT},
       </if>
-      <if test="creationtime != null" >
-        #{creationtime,jdbcType=TIMESTAMP},
+      <if test="creationTime != null" >
+        #{creationTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createdby != null" >
-        #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -163,20 +163,20 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.roleid != null" >
-        roleId = #{record.roleid,jdbcType=BIGINT},
+      <if test="record.roleId != null" >
+        role_id = #{record.roleId,jdbcType=BIGINT},
       </if>
-      <if test="record.functionid != null" >
-        functionId = #{record.functionid,jdbcType=BIGINT},
+      <if test="record.functionId != null" >
+        function_id = #{record.functionId,jdbcType=BIGINT},
       </if>
-      <if test="record.usertypeid != null" >
-        userTypeId = #{record.usertypeid,jdbcType=BIGINT},
+      <if test="record.userTypeId != null" >
+        user_type_id = #{record.userTypeId,jdbcType=BIGINT},
       </if>
-      <if test="record.creationtime != null" >
-        creationTime = #{record.creationtime,jdbcType=TIMESTAMP},
+      <if test="record.creationTime != null" >
+        creation_time = #{record.creationTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createdby != null" >
-        createdBy = #{record.createdby,jdbcType=VARCHAR},
+      <if test="record.createdBy != null" >
+        created_by = #{record.createdBy,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -186,11 +186,11 @@
   <update id="updateByExample" parameterType="map" >
     update au_authority
     set id = #{record.id,jdbcType=BIGINT},
-      roleId = #{record.roleid,jdbcType=BIGINT},
-      functionId = #{record.functionid,jdbcType=BIGINT},
-      userTypeId = #{record.usertypeid,jdbcType=BIGINT},
-      creationTime = #{record.creationtime,jdbcType=TIMESTAMP},
-      createdBy = #{record.createdby,jdbcType=VARCHAR}
+      role_id = #{record.roleId,jdbcType=BIGINT},
+      function_id = #{record.functionId,jdbcType=BIGINT},
+      user_type_id = #{record.userTypeId,jdbcType=BIGINT},
+      creation_time = #{record.creationTime,jdbcType=TIMESTAMP},
+      created_by = #{record.createdBy,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -198,31 +198,31 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.AuAuthority" >
     update au_authority
     <set >
-      <if test="roleid != null" >
-        roleId = #{roleid,jdbcType=BIGINT},
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=BIGINT},
       </if>
-      <if test="functionid != null" >
-        functionId = #{functionid,jdbcType=BIGINT},
+      <if test="functionId != null" >
+        function_id = #{functionId,jdbcType=BIGINT},
       </if>
-      <if test="usertypeid != null" >
-        userTypeId = #{usertypeid,jdbcType=BIGINT},
+      <if test="userTypeId != null" >
+        user_type_id = #{userTypeId,jdbcType=BIGINT},
       </if>
-      <if test="creationtime != null" >
-        creationTime = #{creationtime,jdbcType=TIMESTAMP},
+      <if test="creationTime != null" >
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createdby != null" >
-        createdBy = #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.AuAuthority" >
     update au_authority
-    set roleId = #{roleid,jdbcType=BIGINT},
-      functionId = #{functionid,jdbcType=BIGINT},
-      userTypeId = #{usertypeid,jdbcType=BIGINT},
-      creationTime = #{creationtime,jdbcType=TIMESTAMP},
-      createdBy = #{createdby,jdbcType=VARCHAR}
+    set role_id = #{roleId,jdbcType=BIGINT},
+      function_id = #{functionId,jdbcType=BIGINT},
+      user_type_id = #{userTypeId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -5,13 +5,13 @@ import java.util.Date;
 public class GoodsInfo {
     private Long id;
 
-    private String goodssn;
+    private String goodsSn;
 
-    private String goodsname;
+    private String goodsName;
 
-    private Double marketprice;
+    private Double marketPrice;
 
-    private Double realprice;
+    private Double realPrice;
 
     private Integer state;
 
@@ -19,11 +19,11 @@ public class GoodsInfo {
 
     private String unit;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private String createdby;
+    private String createdBy;
 
     public Long getId() {
         return id;
@@ -33,36 +33,36 @@ public class GoodsInfo {
         this.id = id;
     }
 
-    public String getGoodssn() {
-        return goodssn;
+    public String getGoodsSn() {
+        return goodsSn;
     }
 
-    public void setGoodssn(String goodssn) {
-        this.goodssn = goodssn == null ? null : goodssn.trim();
+    public void setGoodsSn(String goodsSn) {
+        this.goodsSn = goodsSn == null ? null : goodsSn.trim();
     }
 
-    public String getGoodsname() {
-        return goodsname;
+    public String getGoodsName() {
+        return goodsName;
     }
 
-    public void setGoodsname(String goodsname) {
-        this.goodsname = goodsname == null ? null : goodsname.trim();
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName == null ? null : goodsName.trim();
     }
 
-    public Double getMarketprice() {
-        return marketprice;
+    public Double getMarketPrice() {
+        return marketPrice;
     }
 
-    public void setMarketprice(Double marketprice) {
-        this.marketprice = marketprice;
+    public void setMarketPrice(Double marketPrice) {
+        this.marketPrice = marketPrice;
     }
 
-    public Double getRealprice() {
-        return realprice;
+    public Double getRealPrice() {
+        return realPrice;
     }
 
-    public void setRealprice(Double realprice) {
-        this.realprice = realprice;
+    public void setRealPrice(Double realPrice) {
+        this.realPrice = realPrice;
     }
 
     public Integer getState() {
@@ -89,27 +89,27 @@ public class GoodsInfo {
         this.unit = unit == null ? null : unit.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public String getCreatedby() {
-        return createdby;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby == null ? null : createdby.trim();
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 }

@@ -5,15 +5,15 @@ import java.util.Date;
 public class AuRole {
     private Long id;
 
-    private String rolecode;
+    private String roleCode;
 
-    private String rolename;
+    private String roleName;
 
-    private Date createdate;
+    private Date createDate;
 
-    private Integer isstart;
+    private Integer isStart;
 
-    private String createdby;
+    private String createdBy;
 
     public Long getId() {
         return id;
@@ -23,43 +23,43 @@ public class AuRole {
         this.id = id;
     }
 
-    public String getRolecode() {
-        return rolecode;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setRolecode(String rolecode) {
-        this.rolecode = rolecode == null ? null : rolecode.trim();
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode == null ? null : roleCode.trim();
     }
 
-    public String getRolename() {
-        return rolename;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRolename(String rolename) {
-        this.rolename = rolename == null ? null : rolename.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 
-    public Date getCreatedate() {
-        return createdate;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
-    public Integer getIsstart() {
-        return isstart;
+    public Integer getIsStart() {
+        return isStart;
     }
 
-    public void setIsstart(Integer isstart) {
-        this.isstart = isstart;
+    public void setIsStart(Integer isStart) {
+        this.isStart = isStart;
     }
 
-    public String getCreatedby() {
-        return createdby;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby == null ? null : createdby.trim();
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 }

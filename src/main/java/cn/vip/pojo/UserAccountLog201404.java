@@ -4,113 +4,113 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class UserAccountLog201404 {
-    private Long accountlogid;
+    private Long accountLogId;
 
-    private Long userid;
+    private Long userId;
 
-    private Date actiontime;
+    private Date actionTime;
 
-    private String actiondesc;
+    private String actionDesc;
 
-    private Integer actiontype;
+    private Integer actionType;
 
-    private BigDecimal basein;
+    private BigDecimal baseIn;
 
-    private BigDecimal baseout;
+    private BigDecimal baseOut;
 
-    private BigDecimal basebalance;
+    private BigDecimal baseBalance;
 
-    private BigDecimal repeatin;
+    private BigDecimal repeatIn;
 
-    private BigDecimal repeatout;
+    private BigDecimal repeatOut;
 
-    private BigDecimal repeatbalance;
+    private BigDecimal repeatBalance;
 
-    public Long getAccountlogid() {
-        return accountlogid;
+    public Long getAccountLogId() {
+        return accountLogId;
     }
 
-    public void setAccountlogid(Long accountlogid) {
-        this.accountlogid = accountlogid;
+    public void setAccountLogId(Long accountLogId) {
+        this.accountLogId = accountLogId;
     }
 
-    public Long getUserid() {
-        return userid;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public Date getActiontime() {
-        return actiontime;
+    public Date getActionTime() {
+        return actionTime;
     }
 
-    public void setActiontime(Date actiontime) {
-        this.actiontime = actiontime;
+    public void setActionTime(Date actionTime) {
+        this.actionTime = actionTime;
     }
 
-    public String getActiondesc() {
-        return actiondesc;
+    public String getActionDesc() {
+        return actionDesc;
     }
 
-    public void setActiondesc(String actiondesc) {
-        this.actiondesc = actiondesc == null ? null : actiondesc.trim();
+    public void setActionDesc(String actionDesc) {
+        this.actionDesc = actionDesc == null ? null : actionDesc.trim();
     }
 
-    public Integer getActiontype() {
-        return actiontype;
+    public Integer getActionType() {
+        return actionType;
     }
 
-    public void setActiontype(Integer actiontype) {
-        this.actiontype = actiontype;
+    public void setActionType(Integer actionType) {
+        this.actionType = actionType;
     }
 
-    public BigDecimal getBasein() {
-        return basein;
+    public BigDecimal getBaseIn() {
+        return baseIn;
     }
 
-    public void setBasein(BigDecimal basein) {
-        this.basein = basein;
+    public void setBaseIn(BigDecimal baseIn) {
+        this.baseIn = baseIn;
     }
 
-    public BigDecimal getBaseout() {
-        return baseout;
+    public BigDecimal getBaseOut() {
+        return baseOut;
     }
 
-    public void setBaseout(BigDecimal baseout) {
-        this.baseout = baseout;
+    public void setBaseOut(BigDecimal baseOut) {
+        this.baseOut = baseOut;
     }
 
-    public BigDecimal getBasebalance() {
-        return basebalance;
+    public BigDecimal getBaseBalance() {
+        return baseBalance;
     }
 
-    public void setBasebalance(BigDecimal basebalance) {
-        this.basebalance = basebalance;
+    public void setBaseBalance(BigDecimal baseBalance) {
+        this.baseBalance = baseBalance;
     }
 
-    public BigDecimal getRepeatin() {
-        return repeatin;
+    public BigDecimal getRepeatIn() {
+        return repeatIn;
     }
 
-    public void setRepeatin(BigDecimal repeatin) {
-        this.repeatin = repeatin;
+    public void setRepeatIn(BigDecimal repeatIn) {
+        this.repeatIn = repeatIn;
     }
 
-    public BigDecimal getRepeatout() {
-        return repeatout;
+    public BigDecimal getRepeatOut() {
+        return repeatOut;
     }
 
-    public void setRepeatout(BigDecimal repeatout) {
-        this.repeatout = repeatout;
+    public void setRepeatOut(BigDecimal repeatOut) {
+        this.repeatOut = repeatOut;
     }
 
-    public BigDecimal getRepeatbalance() {
-        return repeatbalance;
+    public BigDecimal getRepeatBalance() {
+        return repeatBalance;
     }
 
-    public void setRepeatbalance(BigDecimal repeatbalance) {
-        this.repeatbalance = repeatbalance;
+    public void setRepeatBalance(BigDecimal repeatBalance) {
+        this.repeatBalance = repeatBalance;
     }
 }

@@ -5,17 +5,17 @@ import java.util.Date;
 public class LeaveMessage {
     private Long id;
 
-    private String createdby;
+    private String createdBy;
 
-    private String messagecode;
+    private String messageCode;
 
-    private String messagetitle;
+    private String messageTitle;
 
     private Integer state;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String messagecontent;
+    private String messageContent;
 
     public Long getId() {
         return id;
@@ -25,28 +25,28 @@ public class LeaveMessage {
         this.id = id;
     }
 
-    public String getCreatedby() {
-        return createdby;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby == null ? null : createdby.trim();
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 
-    public String getMessagecode() {
-        return messagecode;
+    public String getMessageCode() {
+        return messageCode;
     }
 
-    public void setMessagecode(String messagecode) {
-        this.messagecode = messagecode == null ? null : messagecode.trim();
+    public void setMessageCode(String messageCode) {
+        this.messageCode = messageCode == null ? null : messageCode.trim();
     }
 
-    public String getMessagetitle() {
-        return messagetitle;
+    public String getMessageTitle() {
+        return messageTitle;
     }
 
-    public void setMessagetitle(String messagetitle) {
-        this.messagetitle = messagetitle == null ? null : messagetitle.trim();
+    public void setMessageTitle(String messageTitle) {
+        this.messageTitle = messageTitle == null ? null : messageTitle.trim();
     }
 
     public Integer getState() {
@@ -57,19 +57,19 @@ public class LeaveMessage {
         this.state = state;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getMessagecontent() {
-        return messagecontent;
+    public String getMessageContent() {
+        return messageContent;
     }
 
-    public void setMessagecontent(String messagecontent) {
-        this.messagecontent = messagecontent == null ? null : messagecontent.trim();
+    public void setMessageContent(String messageContent) {
+        this.messageContent = messageContent == null ? null : messageContent.trim();
     }
 }

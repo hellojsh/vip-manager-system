@@ -3,9 +3,9 @@ package cn.vip.pojo;
 public class Uploadtemp {
     private String uploader;
 
-    private String uploadtype;
+    private String uploadType;
 
-    private String uploadfilepath;
+    private String uploadFilePath;
 
     public String getUploader() {
         return uploader;
@@ -15,19 +15,19 @@ public class Uploadtemp {
         this.uploader = uploader == null ? null : uploader.trim();
     }
 
-    public String getUploadtype() {
-        return uploadtype;
+    public String getUploadType() {
+        return uploadType;
     }
 
-    public void setUploadtype(String uploadtype) {
-        this.uploadtype = uploadtype == null ? null : uploadtype.trim();
+    public void setUploadType(String uploadType) {
+        this.uploadType = uploadType == null ? null : uploadType.trim();
     }
 
-    public String getUploadfilepath() {
-        return uploadfilepath;
+    public String getUploadFilePath() {
+        return uploadFilePath;
     }
 
-    public void setUploadfilepath(String uploadfilepath) {
-        this.uploadfilepath = uploadfilepath == null ? null : uploadfilepath.trim();
+    public void setUploadFilePath(String uploadFilePath) {
+        this.uploadFilePath = uploadFilePath == null ? null : uploadFilePath.trim();
     }
 }

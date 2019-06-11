@@ -3,14 +3,14 @@
 <mapper namespace="cn.vip.mapper.LeaveMessageMapper" >
   <resultMap id="BaseResultMap" type="cn.vip.pojo.LeaveMessage" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="createdBy" property="createdby" jdbcType="VARCHAR" />
-    <result column="messageCode" property="messagecode" jdbcType="VARCHAR" />
-    <result column="messageTitle" property="messagetitle" jdbcType="VARCHAR" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="message_code" property="messageCode" jdbcType="VARCHAR" />
+    <result column="message_title" property="messageTitle" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="INTEGER" />
-    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.LeaveMessage" extends="BaseResultMap" >
-    <result column="messageContent" property="messagecontent" jdbcType="LONGVARCHAR" />
+    <result column="message_content" property="messageContent" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -71,10 +71,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, createdBy, messageCode, messageTitle, state, createTime
+    id, created_by, message_code, message_title, state, create_time
   </sql>
   <sql id="Blob_Column_List" >
-    messageContent
+    message_content
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="cn.vip.pojo.LeaveMessageExample" >
     select
@@ -125,12 +125,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.LeaveMessage" >
-    insert into leave_message (id, createdBy, messageCode, 
-      messageTitle, state, createTime, 
-      messageContent)
-    values (#{id,jdbcType=BIGINT}, #{createdby,jdbcType=VARCHAR}, #{messagecode,jdbcType=VARCHAR}, 
-      #{messagetitle,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{messagecontent,jdbcType=LONGVARCHAR})
+    insert into leave_message (id, created_by, message_code, 
+      message_title, state, create_time, 
+      message_content)
+    values (#{id,jdbcType=BIGINT}, #{createdBy,jdbcType=VARCHAR}, #{messageCode,jdbcType=VARCHAR}, 
+      #{messageTitle,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{messageContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.LeaveMessage" >
     insert into leave_message
@@ -138,46 +138,46 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="createdby != null" >
-        createdBy,
+      <if test="createdBy != null" >
+        created_by,
       </if>
-      <if test="messagecode != null" >
-        messageCode,
+      <if test="messageCode != null" >
+        message_code,
       </if>
-      <if test="messagetitle != null" >
-        messageTitle,
+      <if test="messageTitle != null" >
+        message_title,
       </if>
       <if test="state != null" >
         state,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="messagecontent != null" >
-        messageContent,
+      <if test="messageContent != null" >
+        message_content,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="createdby != null" >
-        #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="messagecode != null" >
-        #{messagecode,jdbcType=VARCHAR},
+      <if test="messageCode != null" >
+        #{messageCode,jdbcType=VARCHAR},
       </if>
-      <if test="messagetitle != null" >
-        #{messagetitle,jdbcType=VARCHAR},
+      <if test="messageTitle != null" >
+        #{messageTitle,jdbcType=VARCHAR},
       </if>
       <if test="state != null" >
         #{state,jdbcType=INTEGER},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="messagecontent != null" >
-        #{messagecontent,jdbcType=LONGVARCHAR},
+      <if test="messageContent != null" >
+        #{messageContent,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -193,23 +193,23 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.createdby != null" >
-        createdBy = #{record.createdby,jdbcType=VARCHAR},
+      <if test="record.createdBy != null" >
+        created_by = #{record.createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="record.messagecode != null" >
-        messageCode = #{record.messagecode,jdbcType=VARCHAR},
+      <if test="record.messageCode != null" >
+        message_code = #{record.messageCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.messagetitle != null" >
-        messageTitle = #{record.messagetitle,jdbcType=VARCHAR},
+      <if test="record.messageTitle != null" >
+        message_title = #{record.messageTitle,jdbcType=VARCHAR},
       </if>
       <if test="record.state != null" >
         state = #{record.state,jdbcType=INTEGER},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.messagecontent != null" >
-        messageContent = #{record.messagecontent,jdbcType=LONGVARCHAR},
+      <if test="record.messageContent != null" >
+        message_content = #{record.messageContent,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -219,12 +219,12 @@
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update leave_message
     set id = #{record.id,jdbcType=BIGINT},
-      createdBy = #{record.createdby,jdbcType=VARCHAR},
-      messageCode = #{record.messagecode,jdbcType=VARCHAR},
-      messageTitle = #{record.messagetitle,jdbcType=VARCHAR},
+      created_by = #{record.createdBy,jdbcType=VARCHAR},
+      message_code = #{record.messageCode,jdbcType=VARCHAR},
+      message_title = #{record.messageTitle,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      messageContent = #{record.messagecontent,jdbcType=LONGVARCHAR}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      message_content = #{record.messageContent,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -232,11 +232,11 @@
   <update id="updateByExample" parameterType="map" >
     update leave_message
     set id = #{record.id,jdbcType=BIGINT},
-      createdBy = #{record.createdby,jdbcType=VARCHAR},
-      messageCode = #{record.messagecode,jdbcType=VARCHAR},
-      messageTitle = #{record.messagetitle,jdbcType=VARCHAR},
+      created_by = #{record.createdBy,jdbcType=VARCHAR},
+      message_code = #{record.messageCode,jdbcType=VARCHAR},
+      message_title = #{record.messageTitle,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -244,44 +244,44 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.vip.pojo.LeaveMessage" >
     update leave_message
     <set >
-      <if test="createdby != null" >
-        createdBy = #{createdby,jdbcType=VARCHAR},
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
       </if>
-      <if test="messagecode != null" >
-        messageCode = #{messagecode,jdbcType=VARCHAR},
+      <if test="messageCode != null" >
+        message_code = #{messageCode,jdbcType=VARCHAR},
       </if>
-      <if test="messagetitle != null" >
-        messageTitle = #{messagetitle,jdbcType=VARCHAR},
+      <if test="messageTitle != null" >
+        message_title = #{messageTitle,jdbcType=VARCHAR},
       </if>
       <if test="state != null" >
         state = #{state,jdbcType=INTEGER},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="messagecontent != null" >
-        messageContent = #{messagecontent,jdbcType=LONGVARCHAR},
+      <if test="messageContent != null" >
+        message_content = #{messageContent,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.vip.pojo.LeaveMessage" >
     update leave_message
-    set createdBy = #{createdby,jdbcType=VARCHAR},
-      messageCode = #{messagecode,jdbcType=VARCHAR},
-      messageTitle = #{messagetitle,jdbcType=VARCHAR},
+    set created_by = #{createdBy,jdbcType=VARCHAR},
+      message_code = #{messageCode,jdbcType=VARCHAR},
+      message_title = #{messageTitle,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      messageContent = #{messagecontent,jdbcType=LONGVARCHAR}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      message_content = #{messageContent,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.vip.pojo.LeaveMessage" >
     update leave_message
-    set createdBy = #{createdby,jdbcType=VARCHAR},
-      messageCode = #{messagecode,jdbcType=VARCHAR},
-      messageTitle = #{messagetitle,jdbcType=VARCHAR},
+    set created_by = #{createdBy,jdbcType=VARCHAR},
+      message_code = #{messageCode,jdbcType=VARCHAR},
+      message_title = #{messageTitle,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
-      createTime = #{createtime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

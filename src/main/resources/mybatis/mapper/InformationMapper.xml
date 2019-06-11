@@ -6,13 +6,13 @@
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="INTEGER" />
     <result column="publisher" property="publisher" jdbcType="VARCHAR" />
-    <result column="publishTime" property="publishtime" jdbcType="TIMESTAMP" />
-    <result column="typeId" property="typeid" jdbcType="INTEGER" />
-    <result column="typeName" property="typename" jdbcType="VARCHAR" />
-    <result column="fileName" property="filename" jdbcType="VARCHAR" />
-    <result column="filePath" property="filepath" jdbcType="VARCHAR" />
-    <result column="fileSize" property="filesize" jdbcType="DOUBLE" />
-    <result column="uploadTime" property="uploadtime" jdbcType="TIMESTAMP" />
+    <result column="publish_time" property="publishTime" jdbcType="TIMESTAMP" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="type_name" property="typeName" jdbcType="VARCHAR" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+    <result column="file_size" property="fileSize" jdbcType="DOUBLE" />
+    <result column="upload_time" property="uploadTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.Information" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
@@ -76,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, state, publisher, publishTime, typeId, typeName, fileName, filePath, fileSize, 
-    uploadTime
+    id, title, state, publisher, publish_time, type_id, type_name, file_name, file_path, 
+    file_size, upload_time
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -132,14 +132,14 @@
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.Information" >
     insert into information (id, title, state, 
-      publisher, publishTime, typeId, 
-      typeName, fileName, filePath, 
-      fileSize, uploadTime, content
+      publisher, publish_time, type_id, 
+      type_name, file_name, file_path, 
+      file_size, upload_time, content
       )
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
-      #{publisher,jdbcType=VARCHAR}, #{publishtime,jdbcType=TIMESTAMP}, #{typeid,jdbcType=INTEGER}, 
-      #{typename,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, #{filepath,jdbcType=VARCHAR}, 
-      #{filesize,jdbcType=DOUBLE}, #{uploadtime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
+      #{publisher,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=INTEGER}, 
+      #{typeName,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}, 
+      #{fileSize,jdbcType=DOUBLE}, #{uploadTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.vip.pojo.Information" >
@@ -157,26 +157,26 @@
       <if test="publisher != null" >
         publisher,
       </if>
-      <if test="publishtime != null" >
-        publishTime,
+      <if test="publishTime != null" >
+        publish_time,
       </if>
-      <if test="typeid != null" >
-        typeId,
+      <if test="typeId != null" >
+        type_id,
       </if>
-      <if test="typename != null" >
-        typeName,
+      <if test="typeName != null" >
+        type_name,
       </if>
-      <if test="filename != null" >
-        fileName,
+      <if test="fileName != null" >
+        file_name,
       </if>
-      <if test="filepath != null" >
-        filePath,
+      <if test="filePath != null" >
+        file_path,
       </if>
-      <if test="filesize != null" >
-        fileSize,
+      <if test="fileSize != null" >
+        file_size,
       </if>
-      <if test="uploadtime != null" >
-        uploadTime,
+      <if test="uploadTime != null" >
+        upload_time,
       </if>
       <if test="content != null" >
         content,
@@ -195,26 +195,26 @@
       <if test="publisher != null" >
         #{publisher,jdbcType=VARCHAR},
       </if>
-      <if test="publishtime != null" >
-        #{publishtime,jdbcType=TIMESTAMP},
+      <if test="publishTime != null" >
+        #{publishTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="typeid != null" >
-        #{typeid,jdbcType=INTEGER},
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
       </if>
-      <if test="typename != null" >
-        #{typename,jdbcType=VARCHAR},
+      <if test="typeName != null" >
+        #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="filename != null" >
-        #{filename,jdbcType=VARCHAR},
+      <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
       </if>
-      <if test="filepath != null" >
-        #{filepath,jdbcType=VARCHAR},
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
       </if>
-      <if test="filesize != null" >
-        #{filesize,jdbcType=DOUBLE},
+      <if test="fileSize != null" >
+        #{fileSize,jdbcType=DOUBLE},
       </if>
-      <if test="uploadtime != null" >
-        #{uploadtime,jdbcType=TIMESTAMP},
+      <if test="uploadTime != null" >
+        #{uploadTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
         #{content,jdbcType=LONGVARCHAR},
@@ -242,26 +242,26 @@
       <if test="record.publisher != null" >
         publisher = #{record.publisher,jdbcType=VARCHAR},
       </if>
-      <if test="record.publishtime != null" >
-        publishTime = #{record.publishtime,jdbcType=TIMESTAMP},
+      <if test="record.publishTime != null" >
+        publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.typeid != null" >
-        typeId = #{record.typeid,jdbcType=INTEGER},
+      <if test="record.typeId != null" >
+        type_id = #{record.typeId,jdbcType=INTEGER},
       </if>
-      <if test="record.typename != null" >
-        typeName = #{record.typename,jdbcType=VARCHAR},
+      <if test="record.typeName != null" >
+        type_name = #{record.typeName,jdbcType=VARCHAR},
       </if>
-      <if test="record.filename != null" >
-        fileName = #{record.filename,jdbcType=VARCHAR},
+      <if test="record.fileName != null" >
+        file_name = #{record.fileName,jdbcType=VARCHAR},
       </if>
-      <if test="record.filepath != null" >
-        filePath = #{record.filepath,jdbcType=VARCHAR},
+      <if test="record.filePath != null" >
+        file_path = #{record.filePath,jdbcType=VARCHAR},
       </if>
-      <if test="record.filesize != null" >
-        fileSize = #{record.filesize,jdbcType=DOUBLE},
+      <if test="record.fileSize != null" >
+        file_size = #{record.fileSize,jdbcType=DOUBLE},
       </if>
-      <if test="record.uploadtime != null" >
-        uploadTime = #{record.uploadtime,jdbcType=TIMESTAMP},
+      <if test="record.uploadTime != null" >
+        upload_time = #{record.uploadTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.content != null" >
         content = #{record.content,jdbcType=LONGVARCHAR},
@@ -277,13 +277,13 @@
       title = #{record.title,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
       publisher = #{record.publisher,jdbcType=VARCHAR},
-      publishTime = #{record.publishtime,jdbcType=TIMESTAMP},
-      typeId = #{record.typeid,jdbcType=INTEGER},
-      typeName = #{record.typename,jdbcType=VARCHAR},
-      fileName = #{record.filename,jdbcType=VARCHAR},
-      filePath = #{record.filepath,jdbcType=VARCHAR},
-      fileSize = #{record.filesize,jdbcType=DOUBLE},
-      uploadTime = #{record.uploadtime,jdbcType=TIMESTAMP},
+      publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
+      type_id = #{record.typeId,jdbcType=INTEGER},
+      type_name = #{record.typeName,jdbcType=VARCHAR},
+      file_name = #{record.fileName,jdbcType=VARCHAR},
+      file_path = #{record.filePath,jdbcType=VARCHAR},
+      file_size = #{record.fileSize,jdbcType=DOUBLE},
+      upload_time = #{record.uploadTime,jdbcType=TIMESTAMP},
       content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -295,13 +295,13 @@
       title = #{record.title,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
       publisher = #{record.publisher,jdbcType=VARCHAR},
-      publishTime = #{record.publishtime,jdbcType=TIMESTAMP},
-      typeId = #{record.typeid,jdbcType=INTEGER},
-      typeName = #{record.typename,jdbcType=VARCHAR},
-      fileName = #{record.filename,jdbcType=VARCHAR},
-      filePath = #{record.filepath,jdbcType=VARCHAR},
-      fileSize = #{record.filesize,jdbcType=DOUBLE},
-      uploadTime = #{record.uploadtime,jdbcType=TIMESTAMP}
+      publish_time = #{record.publishTime,jdbcType=TIMESTAMP},
+      type_id = #{record.typeId,jdbcType=INTEGER},
+      type_name = #{record.typeName,jdbcType=VARCHAR},
+      file_name = #{record.fileName,jdbcType=VARCHAR},
+      file_path = #{record.filePath,jdbcType=VARCHAR},
+      file_size = #{record.fileSize,jdbcType=DOUBLE},
+      upload_time = #{record.uploadTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -318,26 +318,26 @@
       <if test="publisher != null" >
         publisher = #{publisher,jdbcType=VARCHAR},
       </if>
-      <if test="publishtime != null" >
-        publishTime = #{publishtime,jdbcType=TIMESTAMP},
+      <if test="publishTime != null" >
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="typeid != null" >
-        typeId = #{typeid,jdbcType=INTEGER},
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=INTEGER},
       </if>
-      <if test="typename != null" >
-        typeName = #{typename,jdbcType=VARCHAR},
+      <if test="typeName != null" >
+        type_name = #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="filename != null" >
-        fileName = #{filename,jdbcType=VARCHAR},
+      <if test="fileName != null" >
+        file_name = #{fileName,jdbcType=VARCHAR},
       </if>
-      <if test="filepath != null" >
-        filePath = #{filepath,jdbcType=VARCHAR},
+      <if test="filePath != null" >
+        file_path = #{filePath,jdbcType=VARCHAR},
       </if>
-      <if test="filesize != null" >
-        fileSize = #{filesize,jdbcType=DOUBLE},
+      <if test="fileSize != null" >
+        file_size = #{fileSize,jdbcType=DOUBLE},
       </if>
-      <if test="uploadtime != null" >
-        uploadTime = #{uploadtime,jdbcType=TIMESTAMP},
+      <if test="uploadTime != null" >
+        upload_time = #{uploadTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
         content = #{content,jdbcType=LONGVARCHAR},
@@ -350,13 +350,13 @@
     set title = #{title,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
       publisher = #{publisher,jdbcType=VARCHAR},
-      publishTime = #{publishtime,jdbcType=TIMESTAMP},
-      typeId = #{typeid,jdbcType=INTEGER},
-      typeName = #{typename,jdbcType=VARCHAR},
-      fileName = #{filename,jdbcType=VARCHAR},
-      filePath = #{filepath,jdbcType=VARCHAR},
-      fileSize = #{filesize,jdbcType=DOUBLE},
-      uploadTime = #{uploadtime,jdbcType=TIMESTAMP},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      file_name = #{fileName,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      file_size = #{fileSize,jdbcType=DOUBLE},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -365,13 +365,13 @@
     set title = #{title,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
       publisher = #{publisher,jdbcType=VARCHAR},
-      publishTime = #{publishtime,jdbcType=TIMESTAMP},
-      typeId = #{typeid,jdbcType=INTEGER},
-      typeName = #{typename,jdbcType=VARCHAR},
-      fileName = #{filename,jdbcType=VARCHAR},
-      filePath = #{filepath,jdbcType=VARCHAR},
-      fileSize = #{filesize,jdbcType=DOUBLE},
-      uploadTime = #{uploadtime,jdbcType=TIMESTAMP}
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      file_name = #{fileName,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      file_size = #{fileSize,jdbcType=DOUBLE},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

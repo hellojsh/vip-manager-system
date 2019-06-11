@@ -1,10 +1,10 @@
 $("#loginBtn").click(function(){
 	var user = new Object();
-	user.logincode = $.trim($("#logincode").val());
+	user.loginCode = $.trim($("#logincode").val());
 	user.password = $.trim($("#password").val());
-	user.isstart = 1;
+	user.isStart = 1;
 	
-	if(user.logincode == "" || user.logincode == null){
+	if(user.loginCode == "" || user.loginCode == null){
 		 $("#logincode").focus();
 		 $("#formtip").css("color","red");
 		 $("#formtip").html("对不起，登录账号不能为空。");

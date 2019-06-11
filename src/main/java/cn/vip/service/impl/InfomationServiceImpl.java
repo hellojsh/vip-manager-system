@@ -39,7 +39,9 @@ public class InfomationServiceImpl implements InfomationService {
     @Override
     public List<Information> findAllInfomationByPage(Integer pageNo,Integer pageSize) {
         InformationExample informationExample = new InformationExample();
+        pageNo = (pageNo-1)*pageSize;
         List<Information> information = informationMapper.selectByPage(pageNo, pageSize);
+
         return information;
     }
 }

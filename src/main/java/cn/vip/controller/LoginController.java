@@ -126,6 +126,7 @@ public class LoginController{
         return menuList;
     }
 
+    //用户登出
     @RequestMapping(value = "/logout.html")
     public String logout(HttpSession session) {
         AuUser auUser = (AuUser) session.getAttribute(Constants.LOGIN_USER);

@@ -3,6 +3,8 @@ package cn.vip.mapper;
 import cn.vip.pojo.Affiche;
 import cn.vip.pojo.AfficheExample;
 import java.util.List;
+
+import cn.vip.pojo.Information;
 import org.apache.ibatis.annotations.Param;
 
 public interface AfficheMapper {
@@ -33,4 +35,6 @@ public interface AfficheMapper {
     int updateByPrimaryKeyWithBLOBs(Affiche record);
 
     int updateByPrimaryKey(Affiche record);
+
+    List<Affiche> selectByPage(@Param("pageNo")Integer pageNo, @Param("pageSize")Integer pageSize);
 }

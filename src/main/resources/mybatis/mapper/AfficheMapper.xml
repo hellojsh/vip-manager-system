@@ -301,4 +301,12 @@
       endTime = #{endtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="Integer" >
+    select
+      id,code,title,publisher,publishTime,startTime,endTime,content
+    from affiche
+      order by ${orderByClause}
+     limit #{pageNo},#{pageSize}
+  </select>
 </mapper>

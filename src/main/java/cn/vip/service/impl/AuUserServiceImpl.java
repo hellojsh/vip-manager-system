@@ -98,4 +98,17 @@ public class AuUserServiceImpl implements AuUserService {
         }
         return null;
     }
+
+    /**
+     * 修改用户本人信息
+     * @param auUser
+     * @return
+     */
+    @Override
+    public int updateAuUserByMy(AuUser auUser) {
+
+        int update = auUserMapper.updateByPrimaryKeySelective(auUser);
+        return update;
+    }
+
 }

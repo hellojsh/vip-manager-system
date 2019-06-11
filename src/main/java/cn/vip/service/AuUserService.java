@@ -43,4 +43,11 @@ public interface AuUserService {
      * @return
      */
     AuUser selectByLoginCode(String loginCode);
+
+    /**
+     * 用户修改本人信息
+     * @param auUser
+     * @return
+     */
+    int updateAuUserByMy(AuUser auUser);
 }

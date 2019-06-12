@@ -62,7 +62,6 @@
 				
 					</div>
 					
-					
 					<div class="form-horizontal" >
 						<fieldset>
 							<div class="input-prepend" title="登录账号" data-rel="tooltip">
@@ -165,7 +164,6 @@
 	<!-- application script for Charisma demo -->
 	<script src="/statics/js/charisma.js"></script>
 	<script src="/statics/localjs/index.js"></script>
-	
 		
 </body>
 </html>

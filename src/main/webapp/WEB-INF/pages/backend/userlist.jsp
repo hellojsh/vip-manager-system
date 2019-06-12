@@ -69,16 +69,16 @@
 						  <c:if test="${page.items != null}">
 						  <c:forEach items="${page.items}" var="user">
 							<tr>
-								<td class="center">${user.logincode}</td>
-								<td class="center">${user.rolename}</td>
-								<td class="center">${user.usertypename}</td>
-								<td class="center">${user.refercode}</td>
+								<td class="center">${user.loginCode}</td>
+								<td class="center">${user.roleName}</td>
+								<td class="center">${user.userTypeName}</td>
+								<td class="center">${user.referCode}</td>
 								<td class="center">
-								<c:if test="${user.isstart == 2}"><input type="checkbox" disabled="disabled"/></c:if>
-                    			<c:if test="${user.isstart == 1}"><input type="checkbox" checked="true" disabled="disabled"/></c:if>
+								<c:if test="${user.isStart == 2}"><input type="checkbox" disabled="disabled"/></c:if>
+                    			<c:if test="${user.isStart == 1}"><input type="checkbox" checked="true" disabled="disabled"/></c:if>
 								</td>
 								<td class="center">
-								<fmt:formatDate value="${user.createtime}" pattern="yyyy-MM-dd"/>
+								<fmt:formatDate value="${user.createTime}" pattern="yyyy-MM-dd"/>
 								</td>
 								<td class="center">
 									<a class="btn btn-success viewuser" href="#" id="${user.id}">
@@ -89,7 +89,7 @@
 										<i class="icon-edit icon-white"></i>  
 										修改                                            
 									</a>
-									<a class="btn btn-danger deluser" href="#" usertype="${user.usertype}" usertypename="${user.usertypename}" logincode="${user.logincode}" id="${user.id}" idcardpicpath="${user.idcardpicpath}" bankpicpath="${user.bankpicpath}">
+									<a class="btn btn-danger deluser" href="#" usertype="${user.userType}" usertypename="${user.userTypeName}" logincode="${user.loginCode}" id="${user.id}" idcardpicpath="${user.idCardPicPath}" bankpicpath="${user.bankPicPath}">
 										<i class="icon-trash icon-white"></i> 
 										删除
 									</a>

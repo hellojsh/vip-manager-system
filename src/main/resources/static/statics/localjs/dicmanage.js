@@ -387,6 +387,7 @@ $("#addDicsubExeBtn").click(function(){
 					tip.css("color","green");
 					tip.html("数据字典添加成功。^_^。");
 					window.location.href = "/backend/dicmanage.html";
+
 				}else if("failed" == result){
 					tip.css("color","red");
 					tip.html("数据字典添加失败！请重试。");

@@ -47,4 +47,5 @@ public interface DictionaryService {
      * @return
      */
     DataDictionary selectById(Long id);
+
 }

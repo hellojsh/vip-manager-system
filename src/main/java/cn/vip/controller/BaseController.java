@@ -161,6 +161,7 @@ public class BaseController {
         for (DataDictionary list:typeCodeList) {
             if ( list.getValueName().equals(dictionary.getValueName())){
                 //失败（数据重复）
+
                 return "rename";
             }
         }

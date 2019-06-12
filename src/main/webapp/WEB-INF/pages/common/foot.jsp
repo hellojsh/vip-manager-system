@@ -4,8 +4,8 @@
 				</div><!--/fluid-row-->
 		<hr>
 		<footer>
-			<p class="pull-left">&copy; <a href="#" target="_blank">bdqn</a> 2014</p>
-			<p class="pull-right">Powered by: <a href="#">北大青鸟</a></p>
+			<p class="pull-left">&copy; <a href="#" target="_blank">GG</a> 2014</p>
+			<p class="pull-right">Powered by: <a href="www.xiaomi.com">Teayeon</a></p>
 		</footer>
 		
 	</div><!--/.fluid-container-->
@@ -83,15 +83,6 @@
 	<!-- application script for Charisma demo -->
 	<script src="/statics/js/charisma.js"></script>
 	<script src="/statics/js/json2.js"></script>
-	
-	<!-- 华丽丽滴分割线 北大青鸟 start 2014-->
-	
-	<!-- add by bdqn_hl 2013-2-27 start multiple file ajaxfileupload plugin-->
 	<script src="/statics/js/ajaxfileupload.js"></script>
-	<!-- add by bdqn_hl 2013-2-27 end-->
-	<!-- add by bdqn_hl 2013-3-17 start WdatePicker plugin-->
 	<script type="text/javascript" src="/statics/medire/WdatePicker.js"></script>
-	<!-- add by bdqn_hl 2013-3-17 end-->
-	
-	<!-- 华丽丽滴分割线 北大青鸟 end 2014 -->
 	</html>

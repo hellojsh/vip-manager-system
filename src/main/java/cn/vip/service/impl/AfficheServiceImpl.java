@@ -17,6 +17,7 @@ public class AfficheServiceImpl implements AfficheService {
 
     /**
      * 查询所有公告
+     *
      * @return
      */
     @Override
@@ -28,6 +29,7 @@ public class AfficheServiceImpl implements AfficheService {
 
     /**
      * 通过id查询公告详情
+     *
      * @param id
      * @return
      */
@@ -39,19 +41,21 @@ public class AfficheServiceImpl implements AfficheService {
 
     /**
      * 查询所有公告（分页）
+     *
      * @param pageNo
      * @param pageSize
      * @return
      */
     @Override
     public List<Affiche> findAllAfficheByPage(Integer pageNo, Integer pageSize) {
-        pageNo = (pageNo-1)*pageSize;
-        List<Affiche> informationList = afficheMapper.selectByPage(pageNo,pageSize);
+        pageNo = (pageNo - 1) * pageSize;
+        List<Affiche> informationList = afficheMapper.selectByPage(pageNo, pageSize);
         return informationList;
     }
 
     /**
      * 查询总记录数
+     *
      * @return
      */
     @Override
@@ -60,4 +64,22 @@ public class AfficheServiceImpl implements AfficheService {
         int count = afficheMapper.countByExample(afficheExample);
         return count;
     }
+
+    /**
+     * 根据id删除公告
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public boolean delAuAfficheById(Long id) {
+        int result = afficheMapper.deleteByPrimaryKey(id);
+
+        if (result > 0) {
+            return true;
+        }
+        return false;
+    }
+
+
 }

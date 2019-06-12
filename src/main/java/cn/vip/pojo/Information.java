@@ -1,5 +1,7 @@
 package cn.vip.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Information {
@@ -11,6 +13,7 @@ public class Information {
 
     private String publisher;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date publishTime;
 
     private Integer typeId;
@@ -22,7 +25,7 @@ public class Information {
     private String filePath;
 
     private Double fileSize;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date uploadTime;
 
     private String content;

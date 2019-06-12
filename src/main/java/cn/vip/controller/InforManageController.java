@@ -161,7 +161,7 @@ public class InforManageController extends BaseController {
         }
 
         //查询当前分页下的公告信息
-        List<Affiche> affiches = afficheService.findAllAfficheByPage(page.getPage(), pageSize);
+        List<Affiche> affiches = this.findAffiche(page.getPage(), pageSize);
 
         page.setItems(affiches);
 
@@ -192,7 +192,7 @@ public class InforManageController extends BaseController {
         }
 
         //查询当前的资讯信息
-        List<Information> informations = infomationService.findAllInfomationByPage(page.getPage(), pageSize);
+        List<Information> informations = this.findInfomation(page.getPage(), pageSize);
         page.setItems(informations);
 
         return page;
@@ -302,6 +302,43 @@ public class InforManageController extends BaseController {
         } else {
             return "nodata";
         }
+    }
+
+    @PostMapping(value = "/modifyInfoState.html")
+    @ResponseBody
+    public String modifyInfoState(@RequestParam("inforState") String inforState) {
+        Information information = null;
+
+        try {
+            information = JacksonUtil.json2Bean(inforState, Information.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "nodata";
+        }
+
+        int state = information.getState();
+
+        //根据当前状态码动态生成要修改的状态码
+        if (state == 0) {
+            information.setState(1);
+        } else if (state == 1) {
+            information.setState(0);
+        } else {
+            return "nodata";
+        }
+
+        try {
+            boolean flag = infomationService.modifyInfoState(information);
+            if (flag) {
+                return "success";
+            } else {
+                return "failed";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "nodata";
     }
 
 

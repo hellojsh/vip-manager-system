@@ -74,4 +74,14 @@ public class InfomationServiceImpl implements InfomationService {
         return false;
     }
 
+    @Override
+    public boolean modifyInfoState(Information information) throws Exception {
+        int result = informationMapper.updateByPrimaryKeySelective(information);
+
+        if (result > 0) {
+            return true;
+        }
+        return false;
+    }
+
 }

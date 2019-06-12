@@ -1,6 +1,7 @@
 package cn.vip.service;
 
 import cn.vip.pojo.Affiche;
+import cn.vip.pojo.Information;
 
 import java.util.List;
 

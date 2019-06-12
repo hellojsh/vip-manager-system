@@ -80,4 +80,6 @@ public class AfficheServiceImpl implements AfficheService {
         }
         return false;
     }
+
+
 }

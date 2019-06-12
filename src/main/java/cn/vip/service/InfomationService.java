@@ -41,4 +41,14 @@ public interface InfomationService {
      * @throws Exception
      */
     boolean delInfomationById(Long id) throws Exception;
+
+
+    /**
+     * 根据id修改当前状态
+     *
+     * @param information
+     * @return
+     * @throws Exception
+     */
+    boolean modifyInfoState(Information information) throws Exception;
 }

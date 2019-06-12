@@ -1,14 +1,15 @@
 package cn.vip.controller;
 
-import cn.vip.pojo.AuAuthority;
-import cn.vip.pojo.AuFunction;
-import cn.vip.pojo.AuUser;
-import cn.vip.pojo.Menu;
+import cn.vip.pojo.*;
+import cn.vip.service.AfficheService;
 import cn.vip.service.AuFunctionService;
 import cn.vip.service.AuUserService;
+import cn.vip.service.InfomationService;
 import cn.vip.utils.Constants;
 import cn.vip.utils.EncryptUtil;
 import cn.vip.utils.JacksonUtil;
+import cn.vip.utils.PageSupport;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -31,7 +34,6 @@ public class LoginController extends BaseController {
 
     @Resource
     private AuUserService auUserService;
-
 
     /**
      * 用户登陆
@@ -54,6 +56,9 @@ public class LoginController extends BaseController {
                 return "pwderror";
             } else {
                 session.setAttribute(Constants.LOGIN_USER, auUser);
+                //更新最后登陆时间
+                auUser.setLastLoginTime(new Date());
+                auUserService.updateAuUserByMy(auUser);
                 return "success";
             }
         } else {
@@ -77,7 +82,7 @@ public class LoginController extends BaseController {
             if (mList != null) {
                 try {
                     String jsonString = JacksonUtil.bean2Json(mList);
-                    model.addAttribute("mList", jsonString);
+                    //model.addAttribute("mList", jsonString);
 
                     //将用户的列表放入session中
                     session.setAttribute(Constants.SESSION_BASE_MODEL, jsonString);
@@ -86,6 +91,21 @@ public class LoginController extends BaseController {
                     e.printStackTrace();
                 }
             }
+
+            List<Information> informationList = findInfomation(1, 5);
+
+            //将当前的资讯返回给页面
+            if (informationList != null) {
+                model.addAttribute("infoList", informationList);
+            }
+
+            List<Affiche> affiches = findAffiche(1, 5);
+
+            //将当前的公告返回给页面
+            if(affiches != null){
+                model.addAttribute("afficheList",affiches);
+            }
+
         }
         return "main";
     }
@@ -130,6 +150,8 @@ public class LoginController extends BaseController {
     //用户登出
     @RequestMapping(value = "/logout.html")
     public String logout(HttpSession session) {
+
+
         session.removeAttribute(Constants.LOGIN_USER);
         session.invalidate();
         //设置当前的用户为null
@@ -137,4 +159,5 @@ public class LoginController extends BaseController {
 
         return "index";
     }
+
 }

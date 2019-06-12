@@ -30,4 +30,24 @@ public interface AuUserService {
      * @return
      */
     boolean updatePasswordById(Long id, String password, String password2);
+    /**
+     * 用户注册
+     * @param auUser
+     * @return
+     */
+    int auUserRegister(AuUser auUser);
+
+    /**
+     * 根据用户（登陆的用户名）名查询用户
+     * @param loginCode
+     * @return
+     */
+    AuUser selectByLoginCode(String loginCode);
+
+    /**
+     * 用户修改本人信息
+     * @param auUser
+     * @return
+     */
+    int updateAuUserByMy(AuUser auUser);
 }

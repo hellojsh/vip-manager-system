@@ -23,6 +23,7 @@ public class AuFunctionServiceImpl implements AuFunctionService {
 
     @Override
     public List<AuFunction> getMainFunctionList(AuAuthority auAuthority) throws Exception {
+
         return auFunctionMapper.getMainFunctionList(auAuthority);
     }
 

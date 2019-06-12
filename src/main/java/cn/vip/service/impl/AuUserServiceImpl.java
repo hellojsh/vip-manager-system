@@ -69,4 +69,46 @@ public class AuUserServiceImpl implements AuUserService {
 
         return flag;
     }
+
+    /**
+     * 注册
+     * @param auUser
+     * @return
+     */
+    @Override
+    public int auUserRegister(AuUser auUser) {
+        int insert = auUserMapper.insert(auUser);
+        return insert;
+    }
+
+    /**
+     * 根据用户（登陆的用户名）名查询用户
+     * @param loginCode
+     * @return
+     */
+    @Override
+    public AuUser selectByLoginCode(String loginCode) {
+        AuUserExample auUserExample = new AuUserExample();
+        AuUserExample.Criteria criteria = auUserExample.createCriteria();
+        criteria.andLoginCodeEqualTo("loginCode");
+
+        List<AuUser> auUserList = auUserMapper.selectByExample(auUserExample);
+        if (auUserList.size()>0){
+            return auUserList.get(0);
+        }
+        return null;
+    }
+
+    /**
+     * 修改用户本人信息
+     * @param auUser
+     * @return
+     */
+    @Override
+    public int updateAuUserByMy(AuUser auUser) {
+
+        int update = auUserMapper.updateByPrimaryKeySelective(auUser);
+        return update;
+    }
+
 }

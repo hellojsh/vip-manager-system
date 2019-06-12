@@ -1,86 +1,70 @@
 package cn.vip.controller;
 
 import cn.vip.pojo.AuUser;
-import cn.vip.pojo.DataDictionary;
-import cn.vip.service.DictionaryService;
+import cn.vip.service.AuUserService;
 import cn.vip.service.MemberService;
+import cn.vip.utils.EncryptUtil;
 import cn.vip.utils.JacksonUtil;
-import cn.vip.utils.PageSupport;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * 会员管理 Controller
+ *
  * @author hellojsh
  * @create 2019-06-10 16:10
  */
 @Api
 @Controller
-public class MemberController {
+@RequestMapping("/member")
+public class MemberController extends BaseController {
 
     @Resource
     private MemberService memberService;
+
     @Resource
-    private DictionaryService dictionaryService;
-
-    @PostMapping("/member/modifymember.html")
-    public String updateMember(AuUser auUser) {
-        System.out.println(auUser);
-        int result = memberService.updateAuUser(auUser);
-        return "redirect:/member/memberlist.html";
-    }
+    private AuUserService auUserService;
 
     /**
-     * 查询会员信息
-     * @param id 会员id
-     * @param model 封装信息模型
-     * @return json String
+     * 修改个人密码页面的跳转
+     *
+     * @return
      */
-    @PostMapping("/backend/getuser.html")
-    @ResponseBody
-    public String getMemberInfo(@RequestParam("id") Long id, Model model) {
-        try {
-            // 获取到会员信息
-            AuUser currentUser = memberService.getAuUserById(id);
-            System.out.println("currentUser = " + currentUser);
-            if(currentUser == null) {
-                return "nodata";
-            }
-            String s = JacksonUtil.bean2Json(currentUser);
-            System.out.println("s = " + s);
-            return s;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "failed";
+    @RequestMapping(value = "/modifypersonalpwd.html")
+    public String modifyPersonalPwd() {
+        AuUser user = this.getCurrentUser();
+        if (user != null) {
+            return "/member/modifypersonalpwd";
         }
+        return "index";
     }
 
-    /**
-     * 获取会员列表
-     * @param model 存放对象的模型
-     * @return 对应的视图名
-     */
-    @RequestMapping("/member/memberlist.html")
-    public String memberList(Model model) {
-        PageSupport page = new PageSupport();
-        // 查询所有的会员类型信息
-        List<DataDictionary> userTypeList = dictionaryService.selectBy("USER_TYPE");
-        // 获取到所有的证件类型信息
-        List<DataDictionary> cardTypeList = dictionaryService.selectBy("CARD_TYPE");
+    @RequestMapping(value = "savesecondpwd.html")
+    @ResponseBody
+    public String saveSecondPwd(@RequestParam("userJson") String userJson) {
+        AuUser sessionUser = this.getCurrentUser();
+        if (null == userJson || "".equals(userJson)) {
+            return "nodata";
+        } else {
+            try {
+                AuUser user = JacksonUtil.json2Bean(userJson, AuUser.class);
 
-        model.addAttribute("cardTypeList", cardTypeList);
-        model.addAttribute("userTypeList", userTypeList);
+                if (auUserService.findUserById(sessionUser.getId()).getPassword2().equals(EncryptUtil.MD5(user.getPassword()))) {
 
-        List<AuUser> auUserList = memberService.getAuUserList();
-        page.setItems(auUserList);
-
-        model.addAttribute("page", page);
-        return "member/memberlist";
+                    auUserService.updatePasswordById(sessionUser.getId(), null, EncryptUtil.MD5(user.getPassword2()));
+                } else {
+                    return "oldpwdwrong";
+                }
+            } catch (Exception e) {
+                return "failed";
+            }
+        }
+        return "success";
     }
 }

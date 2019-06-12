@@ -130,7 +130,7 @@ public class BackendController extends BaseController {
         try {
             AuUser user = JacksonUtil.json2Bean(userJson, AuUser.class);
 
-            AuUser oldUser = auUserService.findUserById(this.getCurrentUser().getId());
+            AuUser oldUser = this.getCurrentUser();
 
             if (oldUser != null) {
                 String newUserPassword = EncryptUtil.MD5(user.getPassword());   //用户的原密码
@@ -139,7 +139,7 @@ public class BackendController extends BaseController {
                 //当前用户输入的原密码一致
                 if (newUserPassword.equals(oldUser.getPassword())) {
                     //修改用户密码
-                    boolean flag = auUserService.updatePasswordById(oldUser.getId(), newUserNewPassword, newUserNewPassword);
+                    boolean flag = auUserService.updatePasswordById(oldUser.getId(), newUserNewPassword, null);
                     if (flag) { //密码修改成功
                         return "success";
                     } else {

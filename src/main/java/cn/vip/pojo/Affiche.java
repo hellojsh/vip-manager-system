@@ -1,5 +1,7 @@
 package cn.vip.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Affiche {
@@ -11,10 +13,11 @@ public class Affiche {
 
     private String publisher;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date publishTime;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date startTime;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date endTime;
 
     private String content;

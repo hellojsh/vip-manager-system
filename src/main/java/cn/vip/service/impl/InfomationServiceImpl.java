@@ -33,11 +33,12 @@ public class InfomationServiceImpl implements InfomationService {
 
     /**
      * 分页查询
+     *
      * @return
      */
     @Override
-    public List<Information> findAllInfomationByPage(Integer pageNo,Integer pageSize) {
-        pageNo = (pageNo-1)*pageSize;
+    public List<Information> findAllInfomationByPage(Integer pageNo, Integer pageSize) {
+        pageNo = (pageNo - 1) * pageSize;
         List<Information> information = informationMapper.selectByPage(pageNo, pageSize);
 
         return information;
@@ -45,6 +46,7 @@ public class InfomationServiceImpl implements InfomationService {
 
     /**
      * 查询总记录数
+     *
      * @return
      */
     @Override
@@ -53,4 +55,23 @@ public class InfomationServiceImpl implements InfomationService {
         int count = informationMapper.countByExample(informationExample);
         return count;
     }
+
+    /**
+     * 根据id删除公告
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public boolean delInfomationById(Long id) throws Exception {
+        int result = informationMapper.deleteByPrimaryKey(id);
+
+        if (result > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
 }

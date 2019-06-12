@@ -53,6 +53,21 @@ public class BaseController {
         return currentUser;
     }
 
+    //用户注销
+    public boolean loginOut() {
+        boolean flag = false;
+
+        if (null == this.currentUser) {
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            HttpSession session = request.getSession(false);
+
+            if (session != null) {
+                session.removeAttribute(Constants.LOGIN_USER);
+                flag = true;
+            }
+        }
+        return flag;
+    }
 
     public void setCurrentUser(AuUser currentUser) {
         this.currentUser = currentUser;
@@ -82,5 +97,47 @@ public class BaseController {
 
         });
     }
+
+    /**
+     * 查询当前公告
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    protected List<Affiche> findAffiche(Integer pageNo, Integer pageSize) {
+        List<Affiche> affiches = null;
+
+        //查询公告
+        affiches = afficheService.findAllAfficheByPage(pageNo, pageSize);
+
+        if (affiches.size() > 0) {
+            return affiches;
+        }
+
+        return affiches;
+    }
+
+    /**
+     * 查询当前资讯
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    protected List<Information> findInfomation(Integer pageNo, Integer pageSize) {
+
+        List<Information> infomations = null;
+
+        //查询资讯
+        infomations = infomationService.findAllInfomationByPage(pageNo, pageSize);
+
+        if (infomations.size() > 0) {
+            return infomations;
+        }
+
+        return infomations;
+    }
+
 
 }

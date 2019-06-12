@@ -56,6 +56,9 @@ public class LoginController extends BaseController {
                 return "pwderror";
             } else {
                 session.setAttribute(Constants.LOGIN_USER, auUser);
+                //更新最后登陆时间
+                auUser.setLastLoginTime(new Date());
+                auUserService.updateAuUserByMy(auUser);
                 return "success";
             }
         } else {
@@ -147,11 +150,7 @@ public class LoginController extends BaseController {
     //用户登出
     @RequestMapping(value = "/logout.html")
     public String logout(HttpSession session) {
-        AuUser auUser = (AuUser)session.getAttribute(Constants.LOGIN_USER);
 
-        //更新最后登陆时间
-        auUser.setLastLoginTime(new Date());
-        auUserService.updateAuUserByMy(auUser);
 
         session.removeAttribute(Constants.LOGIN_USER);
         session.invalidate();

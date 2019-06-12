@@ -29,6 +29,13 @@ public class MemberController {
     @Resource
     private DictionaryService dictionaryService;
 
+    @PostMapping("/member/modifymember.html")
+    public String updateMember(AuUser auUser) {
+        System.out.println(auUser);
+        int result = memberService.updateAuUser(auUser);
+        return "redirect:/member/memberlist.html";
+    }
+
     /**
      * 查询会员信息
      * @param id 会员id
@@ -37,14 +44,16 @@ public class MemberController {
      */
     @PostMapping("/backend/getuser.html")
     @ResponseBody
-    public String getUser(@RequestParam("id") Long id, Model model) {
+    public String getMemberInfo(@RequestParam("id") Long id, Model model) {
         try {
             // 获取到会员信息
             AuUser currentUser = memberService.getAuUserById(id);
+            System.out.println("currentUser = " + currentUser);
             if(currentUser == null) {
                 return "nodata";
             }
             String s = JacksonUtil.bean2Json(currentUser);
+            System.out.println("s = " + s);
             return s;
         } catch (IOException e) {
             e.printStackTrace();

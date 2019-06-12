@@ -1,6 +1,7 @@
 package cn.vip.service;
 
 import cn.vip.pojo.AuUser;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ public interface MemberService {
 
     AuUser getAuUserById(Long id);
 
-    void updateAuUser(AuUser auUser);
+    int updateAuUser(AuUser auUser);
+
 }

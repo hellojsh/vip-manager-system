@@ -141,9 +141,9 @@
 								     <input type="button" id="m_uploadbtnID_h" value="上传" style="display:none;"/>
 									 <p><span style="color:red;font-weight: bold;">*注：1、正反面.2、大小不得超过50k.3、图片格式：jpg、png、jpeg、pneg</span></p>
 									 <div id="m_idPic">
-									 <p><span onclick="delpic('${currentUser.id}','m_idPic','m_uploadbtnID_h',this,'${currentUser.idCardPicPath}','m_fileInputIDPath','m_fileInputID');">x</span>
-									 <img src="${currentUser.idCardPicPath}"?m="+Math.random()+"" />
-									 </p>
+										 <p><span onclick="delpic('${currentUser.id}','m_idPic','m_uploadbtnID_h',this,'${currentUser.idCardPicPath}','m_fileInputIDPath','m_fileInputID');">x</span>
+										 	<img src="${currentUser.idCardPicPath}"?m="+Math.random()+" />
+										 </p>
 									 </div>
 								</c:if>
 							 </li>
@@ -163,7 +163,7 @@
 									 <p><span style="color:red;font-weight: bold;">*注：1、大小不得超过50k.2、图片格式：jpg、png、jpeg、pneg</span></p>
 									 <div id="m_bankPic">
 									 <p><span onclick="delpic('${currentUser.id}','m_bankPic','m_uploadbtnBank_h',this,'${currentUser.bankPicPath}','m_fileInputBankPath','m_fileInputBank');">x</span>
-									 <img src="${currentUser.bankPicPath}"?m="+Math.random()+"" />
+									 <img src="${currentUser.bankPicPath}"?m="+Math.random()+" />
 									 </p>
 									 </div>
 								</c:if>

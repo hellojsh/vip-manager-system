@@ -121,6 +121,7 @@ $('.modifymembercancel').click(function(e){
 	$("#m_isstart").html('');
 });
 
+var tempClick = 0;
 $('.viewmember').click(function(e){
 	var m_id = $(this).attr('id');
 	$.ajax({
@@ -173,14 +174,19 @@ $('.viewmember').click(function(e){
 				}else{
 					$("#v_idPic").append("<p><img src=\""+v_idcardpicpath+"?m="+Math.random()+"\" /></p>");
 				}
-				
+
 				$("#v_fileInputBankPath").val(m.bankPicPath);
-				var v_bankpicpath = m.bankPicPath;
-				if(v_bankpicpath == null || v_bankpicpath == "" ){
-					$("#v_bankPic").append("暂无");
-				}else{
-					$("#v_bankPic").append("<p><img src=\""+v_bankpicpath+"?m="+Math.random()+"\" /></p>");
+                var v_bankpicpath = m.bankPicPath;
+
+                if(tempClick == 0){
+                    if(v_bankpicpath == null || v_bankpicpath == "" ){
+                    	$("#v_bankPic").append("暂无");
+                    }else{
+                    	$("#v_bankPic").append("<p><img src=\""+v_bankpicpath+"?m="+Math.random()+"\" /></p>");
+                    }
+                    tempClick++;
 				}
+
 				e.preventDefault();
 				$('#viewMemberDiv').modal('show');
 			}

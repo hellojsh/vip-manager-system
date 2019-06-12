@@ -9,4 +9,8 @@ public class Constants {
 
     //当前登陆用户的基础业务数据(菜单列表)
     public static final String SESSION_BASE_MODEL = "mList";
+
+    // 用户字典中的 用户类型
+    public static final String DATA_DICTIONARY_USER_TYPE_CODE = "USER_TYPE";
+    public static final String DATA_DICTIONARY_CARD_TYPE_CODE = "CARD_TYPE";
 }

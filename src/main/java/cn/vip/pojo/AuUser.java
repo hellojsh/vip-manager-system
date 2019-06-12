@@ -18,6 +18,42 @@ public class AuUser {
 
     private String sex;
 
+    @Override
+    public String toString() {
+        return "AuUser{" +
+                "id=" + id +
+                ", loginCode='" + loginCode + '\'' +
+                ", password='" + password + '\'' +
+                ", password2='" + password2 + '\'' +
+                ", userName='" + userName + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday=" + birthday +
+                ", cardType='" + cardType + '\'' +
+                ", cardTypeName='" + cardTypeName + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", country='" + country + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", userAddress='" + userAddress + '\'' +
+                ", postCode='" + postCode + '\'' +
+                ", createTime=" + createTime +
+                ", referId=" + referId +
+                ", referCode='" + referCode + '\'' +
+                ", roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                ", userType='" + userType + '\'' +
+                ", userTypeName='" + userTypeName + '\'' +
+                ", isStart=" + isStart +
+                ", lastUpdateTime=" + lastUpdateTime +
+                ", lastLoginTime=" + lastLoginTime +
+                ", bankAccount='" + bankAccount + '\'' +
+                ", bankName='" + bankName + '\'' +
+                ", accountHolder='" + accountHolder + '\'' +
+                ", idCardPicPath='" + idCardPicPath + '\'' +
+                ", bankPicPath='" + bankPicPath + '\'' +
+                '}';
+    }
+
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;

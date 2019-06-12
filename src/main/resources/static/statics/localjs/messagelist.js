@@ -69,13 +69,13 @@ $('.viewmessage').click(function(e){
 				alert("没有数据！");
 			}else{
 				m = eval('(' + result + ')');
-				$("#viewmessage_createdBy").html(m.leaveMessage.createdBy);
-				$("#viewmessage_messageContent").html(m.leaveMessage.messageContent);
-				$("#viewmessage_createTime").html(m.leaveMessage.createTime);
+				$("#viewmessage_createdBy").html(m.createdBy);
+				$("#viewmessage_messageContent").html(m.messageContent);
+				$("#viewmessage_createTime").html(m.createTime);
 				$("#viewreplylist").html('');
-				for(var i = 0; i < m.replyList.length; i++){
-					$("#viewreplylist").append("<li><lable><b>回复内容：</b></lable>"+m.replyList[i].replyContent+" ("+m.replyList[i].createdBy + " " + m.replyList[i].createTime +")</li>");
-				}
+				 for(var i = 0; i < m.replyList.length; i++){
+				 	$("#viewreplylist").append("<li><lable><b>回复内容：</b></lable>"+m.replyList[i].replyContent+" ("+m.replyList[i].createdBy + " " + m.replyList[i].createTime +")</li>");
+				 }
 				e.preventDefault();
 				$('#viewreplyMessageDiv').modal('show');
 			}

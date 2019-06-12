@@ -5,7 +5,7 @@
 		<hr>
 		<footer>
 			<p class="pull-left">&copy; <a href="#" target="_blank">GG</a> 2014</p>
-			<p class="pull-right">Powered by: <a href="www.xiaomi.com">Teayeon</a></p>
+			<p class="pull-right">Powered by: <a href="http://www.xiaomi.com">Teayeon</a></p>
 		</footer>
 		
 	</div><!--/.fluid-container-->

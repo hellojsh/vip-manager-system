@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -316,16 +317,8 @@ public class InforManageController extends BaseController {
             return "nodata";
         }
 
-        int state = information.getState();
-
-        //根据当前状态码动态生成要修改的状态码
-        if (state == 0) {
-            information.setState(1);
-        } else if (state == 1) {
-            information.setState(0);
-        } else {
-            return "nodata";
-        }
+        information.setUploadTime(new Date());
+        information.setPublisher((this.getCurrentUser()).getLoginCode());
 
         try {
             boolean flag = infomationService.modifyInfoState(information);

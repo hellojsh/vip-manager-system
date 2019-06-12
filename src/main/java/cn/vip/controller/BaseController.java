@@ -3,12 +3,16 @@ package cn.vip.controller;
 
 import cn.vip.pojo.Affiche;
 import cn.vip.pojo.AuUser;
+import cn.vip.pojo.DataDictionary;
 import cn.vip.pojo.Information;
 import cn.vip.service.AfficheService;
+import cn.vip.service.DictionaryService;
 import cn.vip.service.InfomationService;
 import cn.vip.utils.Constants;
+import cn.vip.utils.JacksonUtil;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -16,6 +20,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.beans.PropertyEditorSupport;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,6 +41,9 @@ public class BaseController {
 
     @Resource
     private AfficheService afficheService;
+
+    @Resource
+    private DictionaryService dictionaryService;
 
 
     //获取当前session中的用户
@@ -139,5 +147,36 @@ public class BaseController {
         return infomations;
     }
 
+    /**
+     * 添加字典表
+     */
+    protected String addDic(String dic){
+        DataDictionary dictionary = null;
+        try {
+            dictionary = JacksonUtil.json2Bean(dic, DataDictionary.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<DataDictionary> typeCodeList = dictionaryService.selectBy(dictionary.getTypeCode());
+        for (DataDictionary list:typeCodeList) {
+            if ( list.getValueName().equals(dictionary.getValueName())){
+                //失败（数据重复）
+                return "rename";
+            }
+        }
+        if(dic == null){
+            //失败（没有数据）
+            return "nodata";
+        }else {
+            int cont = dictionaryService.addDic(dictionary);
+            if (cont < 0){
+                //添加失败
+                return "failed";
+            }else {
+                //添加成功
+                return "success";
+            }
+        }
 
+    }
 }

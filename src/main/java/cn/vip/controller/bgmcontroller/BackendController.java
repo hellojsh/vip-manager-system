@@ -5,6 +5,7 @@ import cn.vip.controller.BaseController;
 import cn.vip.pojo.AuUser;
 import cn.vip.pojo.DataDictionary;
 import cn.vip.service.AuUserService;
+import cn.vip.service.DictionaryService;
 import cn.vip.service.bgmanagement.BackendUser;
 import cn.vip.utils.EncryptUtil;
 import cn.vip.utils.JacksonUtil;
@@ -37,6 +38,9 @@ public class BackendController extends BaseController {
 
     @Resource
     private AuUserService auUserService;
+
+    @Resource
+    private DictionaryService dictionaryService;
 
     /**
      * 分页返回用户数据
@@ -157,4 +161,57 @@ public class BackendController extends BaseController {
         }
         return "nodata";
     }
+
+    /**
+     * 数据字典页面跳转
+     * 显示数据字典表
+     */
+    @RequestMapping("/dicmanage.html")
+    public String dictionaryDo(Model model){
+        List<DataDictionary> dictionaryList = dictionaryService.queryBy();
+        model.addAttribute("dataList",dictionaryList);
+        return "/backend/dicmanage";
+    }
+
+    /**
+     * 查询数据字典
+     */
+    @RequestMapping(value = "/getJsonDic.html",method = RequestMethod.POST)
+    @ResponseBody
+    public String selectDic(String tcode)  {
+        List<DataDictionary> list = dictionaryService.selectBy(tcode);
+        String s =null;
+        try {
+             s = JacksonUtil.bean2Json(list);
+             if (s.equals("") && s == null){
+                 return "nodata";
+             }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "failed";
+        }
+        return s;
+    }
+
+    /**
+     * 添加字典表的类型代码和类型名称
+     */
+    @RequestMapping(value = "/addDic.html",method = RequestMethod.POST)
+    @ResponseBody
+    public String addDicTypeCode(String dic){
+        String s = this.addDic(dic);
+        return s;
+    }
+
+
+    /**
+     * 添加字典表的数据名称
+     */
+    @RequestMapping(value = "/addDicSub.html",method = RequestMethod.POST)
+    @ResponseBody
+    public String addDicValueName(String dic) {
+        String s = this.addDic(dic);
+        return s;
+    }
+
 }

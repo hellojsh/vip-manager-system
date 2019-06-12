@@ -85,10 +85,9 @@
 								  <input id="typeCode"  type="text">
 								<label>类型名称：</label>
 								  <input id="typeName"  type="text">
-								  <!-- 
 								<label>数据名称：</label>
 								  <input id="valueName"  type="text">
-								   -->
+
 						</p>
 						<p id="addDictip">
 						</p>

@@ -47,7 +47,7 @@ public class LoginController extends BaseController {
 
         AuUser loginUser = JacksonUtil.json2Bean(user, AuUser.class);
         String password = EncryptUtil.MD5(loginUser.getPassword());
-        AuUser auUser = auUserService.loginDo(loginUser.getLogincode());
+        AuUser auUser = auUserService.loginDo(loginUser.getLoginCode());
 
         if (auUser != null) {
             if (!password.equals(auUser.getPassword())) {
@@ -72,7 +72,7 @@ public class LoginController extends BaseController {
             model.addAttribute("user", auUser);
 
             //获取菜单列表
-            mList = getFunByCurrentUser(auUser.getRoleid());
+            mList = getFunByCurrentUser(auUser.getRoleId());
 
             if (mList != null) {
                 try {
@@ -99,7 +99,7 @@ public class LoginController extends BaseController {
     protected List<Menu> getFunByCurrentUser(Long roleId) {
         List<Menu> menuList = new ArrayList<>();
         AuAuthority auAuthority = new AuAuthority(); //用户的权限类
-        auAuthority.setRoleid(roleId);
+        auAuthority.setRoleId(roleId);
 
         //根据当前用户的权限查找菜单
         try {

@@ -92,7 +92,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, login_code, password, password2, user_name, sex, birthday, card_type, card_type_name, 
+    id, login_code, password, password2, user_name, sex, birthday, card_type, card_type_name,
     id_card, country, mobile, email, user_address, post_code, create_time, refer_id, 
     refer_code, role_id, role_name, user_type, user_type_name, is_start, last_update_time, 
     last_login_time, bank_account, bank_name, account_holder, id_card_pic_path, bank_pic_path
@@ -114,9 +114,9 @@
 
   <select id="selectByExampleLimit" resultMap="BaseResultMap" parameterType="cn.vip.pojo.AuUserExample" >
     select
-    `id`,`loginCode`,`password`,`password2`,`userName`,`sex`,`birthday`,`cardType`,`cardTypeName`,`idCard`,`country`,`mobile`,`email`,`userAddress`,`postCode`,`createTime`,`referId`,`referCode`,`roleId`,`roleName`,`userType`,`userTypeName`,`isStart`,`lastUpdateTime`,`lastLoginTime`,`bankAccount`,`bankName`,`accountHolder`,`idCardPicPath`,`bankPicPath`
+    <include refid="Base_Column_List" />
     from au_user
-    order by createTime desc
+    order by create_time desc
     <if test="pageNo != null and pageSize != null">
       limit #{pageNo},#{pageSize}
     </if>

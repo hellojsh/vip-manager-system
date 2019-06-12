@@ -1,9 +1,9 @@
 function checkEmail(str){
 	var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
-	if(str == null || str == "" || reg.test(str))
-		return true;
-	else
+	if(str == null || str == "" || !reg.test(str))
 		return false;
+	else
+		return true;
 }
 
 $('.adduser').click(function(e){
@@ -51,10 +51,10 @@ $('.addusercancel').click(function(e){
 $('.viewuser').click(function(e){
 	var m_id = $(this).attr('id');
 	$.ajax({
-		url: '/backend/getuser.html',
+		url: '/backend/getuser.action',
 		type: 'POST',
 		data:{id:m_id},
-		dataType: 'html',
+		dataType: 'JSON',
 		timeout: 1000,
 		error: function(){
 			alert("error");
@@ -65,7 +65,7 @@ $('.viewuser').click(function(e){
 			}else if("nodata" == result){
 				alert("没有数据！");
 			}else{
-				m = eval('(' + result + ')');
+				m = result;
 				$("#v_id").val(m.id);
 				$("#v_logincode").val(m.loginCode);
 				$("#v_username").val(m.userName);
@@ -118,10 +118,10 @@ $('.viewuser').click(function(e){
 $('.modifyuser').click(function(e){
 	var m_id = $(this).attr('id');
 	$.ajax({
-		url: '/backend/getuser.html',
+		url: '/backend/getuser.action',
 		type: 'POST',
 		data:{id:m_id},
-		dataType: 'html',
+		dataType: 'JSON',
 		timeout: 1000,
 		error: function(){
 			alert("error");
@@ -132,7 +132,7 @@ $('.modifyuser').click(function(e){
 			}else if("nodata" == result){
 				alert("没有数据！");
 			}else{
-				m = eval('(' + result + ')');
+				m = result;
 				$("#m_id").val(m.id);
 				$("#m_logincode").val(m.loginCode);
 				$("#m_username").val(m.userName);
@@ -171,7 +171,7 @@ $('.modifyuser').click(function(e){
 					var userTypeName = m.userTypeName;
 					if(userType == null || userType == "")
 						$("#m_selectusertype").append("<option value=\"\" selected=\"selected\">--请选择--</option>");
-					$.post("/backend/loadUserTypeList.html",{'s_role':roleId},function(result){
+					$.post("/backend/loadUserTypeList.action",{'s_role':roleId},function(result){
 						if(result != ""){
 							for(var i=0;i<result.length;i++){
 								if(result[i].valueId == userType){
@@ -188,6 +188,26 @@ $('.modifyuser').click(function(e){
 				}else if(roleId == "1"){
 					$("#m_selectusertype").append("<option value=\"\" selected=\"selected\">--请选择--</option>");
 				}
+
+				var cardType = m.cardType;
+				var cardTypeName = m.cardTypeName;
+
+                $.post("/backend/loadCardTypeList.action",{'s_role':roleId},function(result){
+                    if(result != ""){
+                        for(var i=0;i<result.length;i++){
+                        	if (cardType != null) {
+                                if(result[i].valueId == cardType){
+                                    $("#m_cardtype").append("<option value=\""+cardType+"\" selected=\"selected\">"+cardTypeName+"</option>");
+                                }else{
+                                    $("#m_cardtype").append("<option value=\""+result[i].valueId+"\">"+result[i].valueName+"</option>");
+                                }
+							}
+                        }
+                    }else{
+                        alert("证件类型加载失败！");
+                    }
+                },'json');
+
 				var sex = m.sex;
 				$("#m_sex").html('');
 				if(sex == ''){
@@ -253,7 +273,7 @@ $('.deluser').click(function(e){
 	var d_bankpicpath = d.attr('bankpicpath');
 	if(confirm("您确定要删除【"+d_logincode+"】这个用户吗？")){
 		//delete
-		$.post("/backend/deluser.html",{'delId':d_id,'delIdCardPicPath':d_idcardpicpath,'delBankPicPath':d_bankpicpath,'delUserType':d_usertype},function(result){
+		$.post("/backend/deluser.action",{'delId':d_id,'delIdCardPicPath':d_idcardpicpath,'delBankPicPath':d_bankpicpath,'delUserType':d_usertype},function(result){
 			if("success" == result){
 				alert("删除成功！");
 				window.location.href="/backend/userlist.html";
@@ -359,7 +379,7 @@ $("#a_logincode").blur(function(){
 $("#m_logincode").blur(function(){
 	var mlc = $("#m_logincode").val();
 	if(mlc != ""){
-		$.post("/backend/logincodeisexit.html",{'loginCode':mlc,'id':$("#m_id").val()},function(result){
+		$.post("/backend/logincodeisexit.action",{'loginCode':mlc,'id':$("#m_id").val()},function(result){
 			if(result == "repeat"){
 				$("#modify_formtip").css("color","red");
 				$("#modify_formtip").html("<li>对不起，该用户名已存在。</li>");
@@ -537,6 +557,9 @@ function modifyUserFunction(){
 		$("#modify_formtip").append("<li>email格式不正确</li>");
 		result = false;
 	}
+
+
+
 	if(result == true) alert("修改成功 ^_^");
 	return result;
 }

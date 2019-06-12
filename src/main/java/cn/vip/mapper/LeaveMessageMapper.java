@@ -33,4 +33,6 @@ public interface LeaveMessageMapper {
     int updateByPrimaryKeyWithBLOBs(LeaveMessage record);
 
     int updateByPrimaryKey(LeaveMessage record);
+
+    List<LeaveMessage> selectByPage(@Param("pageNo")Integer pageNo,@Param("pageSize")Integer pageSize);
 }

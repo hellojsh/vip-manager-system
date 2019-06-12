@@ -1,6 +1,9 @@
 package cn.vip.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
+import java.util.List;
 
 public class LeaveMessage {
     private Long id;
@@ -12,10 +15,20 @@ public class LeaveMessage {
     private String messageTitle;
 
     private Integer state;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
 
     private String messageContent;
+
+    private List<Reply> replyList;
+
+    public List<Reply> getReplyList() {
+        return replyList;
+    }
+
+    public void setReplyList(List<Reply> replyList) {
+        this.replyList = replyList;
+    }
 
     public Long getId() {
         return id;

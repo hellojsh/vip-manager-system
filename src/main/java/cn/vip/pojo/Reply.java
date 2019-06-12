@@ -1,5 +1,7 @@
 package cn.vip.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Reply {
@@ -8,7 +10,7 @@ public class Reply {
     private Long messageId;
 
     private String createdBy;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
 
     private String replyContent;

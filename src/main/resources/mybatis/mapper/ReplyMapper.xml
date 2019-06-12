@@ -6,6 +6,7 @@
     <result column="message_id" property="messageId" jdbcType="BIGINT" />
     <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="reply_content" property="replyContent" jdbcType="VARCHAR" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.Reply" extends="BaseResultMap" >
     <result column="reply_content" property="replyContent" jdbcType="LONGVARCHAR" />
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, message_id, created_by, create_time
+    id, message_id, created_by, create_time,reply_content
   </sql>
   <sql id="Blob_Column_List" >
     reply_content

@@ -8,6 +8,7 @@
     <result column="message_title" property="messageTitle" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="message_content" property="messageContent" jdbcType="VARCHAR"/>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.vip.pojo.LeaveMessage" extends="BaseResultMap" >
     <result column="message_content" property="messageContent" jdbcType="LONGVARCHAR" />
@@ -106,7 +107,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -125,7 +126,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.vip.pojo.LeaveMessage" >
-    insert into leave_message (id, created_by, message_code, 
+    insert into leave_message (id, created_by, message_code,
       message_title, state, create_time, 
       message_content)
     values (#{id,jdbcType=BIGINT}, #{createdBy,jdbcType=VARCHAR}, #{messageCode,jdbcType=VARCHAR}, 
@@ -284,4 +285,13 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="Integer" >
+    select
+      id,created_by,message_code,message_title,state,create_time,message_content
+    from leave_message
+      order by create_time
+      limit #{pageNo},#{pageSize}
+  </select>
+
 </mapper>

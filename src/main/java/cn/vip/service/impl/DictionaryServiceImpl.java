@@ -86,4 +86,5 @@ public class DictionaryServiceImpl implements DictionaryService {
         DataDictionary dataDictionary = dataDictionaryMapper.selectByPrimaryKey(id);
         return dataDictionary;
     }
+
 }

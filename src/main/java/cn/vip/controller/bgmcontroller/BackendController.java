@@ -199,20 +199,172 @@ public class BackendController extends BaseController {
     @RequestMapping(value = "/addDic.html",method = RequestMethod.POST)
     @ResponseBody
     public String addDicTypeCode(String dic){
-        String s = this.addDic(dic);
-        return s;
+        DataDictionary dictionary = null;
+        try {
+            dictionary = JacksonUtil.json2Bean(dic, DataDictionary.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Boolean s = this.judgeDicByVaueName(dictionary);
+        if (!s) {
+            return "rename";
+        }
+        if(dic == null){
+            //失败（没有数据）
+            return "nodata";
+        }else {
+            int cont = dictionaryService.addDic(dictionary);
+            if (cont < 0){
+                //添加失败
+                return "failed";
+            }else {
+                //添加成功
+                return "success";
+            }
+        }
     }
 
 
 
     /**
-     * 添加字典表的数据名称
+     * 添加字典表的数据名称,数据数值
      */
     @RequestMapping(value = "/addDicSub.html",method = RequestMethod.POST)
     @ResponseBody
     public String addDicValueName(String dic) {
-        String s = this.addDic(dic);
-        return s;
+        DataDictionary dictionary = null;
+        try {
+            dictionary = JacksonUtil.json2Bean(dic, DataDictionary.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //数据值等于当前类型名称下集合的长度加一
+        List<DataDictionary> dictionaryList = dictionaryService.selectBy(dictionary.getTypeCode());
+        dictionary.setValueId(dictionaryList.size()+1);
+
+        Boolean s = this.judgeDicByVaueName(dictionary);
+        if (!s) {
+            return "rename";
+        }
+        if(dic == null){
+            //失败（没有数据）
+            return "nodata";
+        }else {
+            int cont = dictionaryService.addDic(dictionary);
+            if (cont < 0){
+                //添加失败
+                return "failed";
+            }else {
+                //添加成功
+                return "success";
+            }
+        }
+
     }
 
+
+    /**
+     * 修改字典表数据值和数据名称
+     */
+    @RequestMapping(value = "/modifyDic.html",method = RequestMethod.POST)
+    @ResponseBody
+    public String updateDicByValueName(String  dicJson){
+        DataDictionary dictionary = null;
+        try {
+            dictionary = JacksonUtil.json2Bean(dicJson, DataDictionary.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Boolean s = this.judgeDicByVaueName(dictionary);
+        if (!s) {
+            return "rename";
+        }
+        if(dicJson == null){
+            //失败（没有数据）
+            return "nodata";
+        }else {
+            int cont = dictionaryService.updateDic(dictionary);
+            if (cont < 0){
+                //修改失败
+                return "failed";
+            }else {
+                //修改成功
+                return "success";
+            }
+        }
+
+    }
+    /**
+     * 修改字典表类型编码和类型名称
+     */
+    @RequestMapping(value = "/modifylDic.html",method = RequestMethod.POST)
+    @ResponseBody
+    public String updateDicByTypeCode(String olddic,String newdic){
+        System.out.println("olddic"+olddic+"==="+"newdic"+newdic);
+        DataDictionary olddictionary = null;
+        DataDictionary newdictionary = null;
+        try {
+            olddictionary = JacksonUtil.json2Bean(olddic, DataDictionary.class);
+            newdictionary = JacksonUtil.json2Bean(newdic, DataDictionary.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(newdic == olddic){
+            //失败（没有数据）
+            return "nodata";
+        }else {
+            int cont = dictionaryService.updateDic(newdictionary);
+            if (cont < 0) {
+                //修改失败
+                return "failed";
+            } else {
+                //修改成功
+                return "success";
+            }
+        }
+    }
+    /**
+     * 删除字典表数值名称
+     */
+    @RequestMapping(value = "/delDic.html",method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteDicByID(String id){
+        Long dicId = Long.valueOf(id);
+
+        int i = dictionaryService.deleteDic(dicId);
+
+        if(id == null){
+            return "nodata";
+        }else {
+
+            if(i>0){
+                return "success";
+            }
+            return "failed";
+        }
+
+    }
+    /**
+     * 删除字典表类型名称和类型编号
+     */
+    @RequestMapping(value = "/delMainDic.html", method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteDic(String dic){
+        DataDictionary dictionary = null;
+        try {
+            dictionary = JacksonUtil.json2Bean(dic, DataDictionary.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(dic == null){
+            return "nodata";
+        }
+        int i = dictionaryService.deleteDicByTypeCode(dictionary.getTypeCode());
+
+        if(i>0){
+            return "success";
+        }else {
+            return "failed";
+        }
+    }
 }

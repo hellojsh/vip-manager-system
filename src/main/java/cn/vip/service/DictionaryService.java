@@ -42,6 +42,13 @@ public interface DictionaryService {
     int deleteDic(Long id);
 
     /**
+     * typeCode删除字典表
+     * @param typeCode
+     * @return
+     */
+    int deleteDicByTypeCode(String typeCode);
+
+    /**
      * id查询字典表
      * @param id
      * @return

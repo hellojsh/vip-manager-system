@@ -77,6 +77,21 @@ public class DictionaryServiceImpl implements DictionaryService {
     }
 
     /**
+     * typeCode删除
+     * @param typeCode
+     * @return
+     */
+    @Override
+    public int deleteDicByTypeCode(String typeCode) {
+        DataDictionaryExample dictionaryExample = new DataDictionaryExample();
+        DataDictionaryExample.Criteria criteria = dictionaryExample.createCriteria();
+        criteria.andTypeCodeEqualTo(typeCode);
+
+        int i = dataDictionaryMapper.deleteByExample(dictionaryExample);
+        return i;
+    }
+
+    /**
      * id查询
      * @param id
      * @return

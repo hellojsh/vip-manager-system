@@ -148,36 +148,18 @@ public class BaseController {
     }
 
     /**
-     * 添加字典表
+     * 判断字典表值名称是否重复
      */
-    protected String addDic(String dic){
-        DataDictionary dictionary = null;
-        try {
-            dictionary = JacksonUtil.json2Bean(dic, DataDictionary.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    protected Boolean judgeDicByVaueName(DataDictionary dictionary) {
+
         List<DataDictionary> typeCodeList = dictionaryService.selectBy(dictionary.getTypeCode());
-        for (DataDictionary list:typeCodeList) {
-            if ( list.getValueName().equals(dictionary.getValueName())){
+        for (DataDictionary list : typeCodeList) {
+            if (list.getValueName().equals(dictionary.getValueName())) {
                 //失败（数据重复）
 
-                return "rename";
+                return false;
             }
         }
-        if(dic == null){
-            //失败（没有数据）
-            return "nodata";
-        }else {
-            int cont = dictionaryService.addDic(dictionary);
-            if (cont < 0){
-                //添加失败
-                return "failed";
-            }else {
-                //添加成功
-                return "success";
-            }
-        }
-
+        return true;
     }
 }
